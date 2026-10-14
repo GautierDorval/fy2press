@@ -1,0 +1,58 @@
+{
+  "schema_version": "2.0.0",
+  "documented_plugin_version": "1.0.0",
+  "distribution": {
+    "freemius": {
+      "current_package_verified": false,
+      "public_download_url": null,
+      "reported_on": "2026-10-12",
+      "state": "observed_published"
+    },
+    "wordpress_org": {
+      "approved": true,
+      "current_package": {
+        "digest_prefix": "83058fa73f32",
+        "file_count": 488,
+        "observed_on": "2026-10-13",
+        "svn_revision": 3742640
+      },
+      "current_package_verified": true,
+      "listed_on": "2026-10-12",
+      "listing_url": "https://wordpress.org/plugins/fy2press/",
+      "published": true,
+      "runtime_verified_on": "2026-10-12",
+      "state": "verified_published",
+      "submitted_on": "2026-09-11"
+    }
+  },
+  "commercial": {
+    "checkout_url": "https://checkout.freemius.com/plugin/38057/plan/63338/",
+    "currency": "USD, EUR or GBP, chosen at checkout",
+    "download_enabled": true,
+    "pricing": {
+      "billing_cycles": [
+        "monthly",
+        "annual"
+      ],
+      "currencies": [
+        "USD",
+        "EUR",
+        "GBP"
+      ],
+      "displayed_on_site": false,
+      "licence_sites": [
+        1,
+        3,
+        5
+      ],
+      "note": "Amounts are not copied here: the checkout shows the authoritative price, currency and taxes before payment. The dated read-only observation is kept in the private evidence register.",
+      "observed_on": "2026-10-12",
+      "plan": "PRO",
+      "source": "freemius_checkout"
+    },
+    "purchase_enabled": true,
+    "refund_terms_url": "https://freemius.com/product/38057/shopipress/legal/eula/",
+    "state": "verified",
+    "trial_terms": null
+  }
+}

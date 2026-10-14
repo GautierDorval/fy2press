@@ -1,0 +1,15 @@
+{
+  "cff-version": "1.2.0",
+  "message": "Cite this documentation candidate, not an installable plugin package.",
+  "title": "Fy2Press: architecture and integration reference",
+  "type": "software",
+  "authors": [
+    {
+      "name": "PAGUP"
+    }
+  ],
+  "version": "docs-v1.0.0-rc.1",
+  "license": "CC-BY-4.0",
+  "url": "https://fy2press.com/",
+  "abstract": "Architecture decisions, integration reference and reusable documentation for Fy2Press. Local candidate; no publication date asserted."
+}

@@ -1,0 +1,3477 @@
+{
+  "schema_version": "1.0.0",
+  "edition": "FREE",
+  "plugin_version": "1.0.0",
+  "environment": {
+    "wordpress": "7.1",
+    "php": "8.4.25",
+    "network": "Docker internal network; all WordPress HTTP blocked",
+    "producer": "Codex",
+    "observed_on": "2026-10-14"
+  },
+  "fixture": {
+    "kind": "synthetic-local",
+    "product_count": 2,
+    "collection_count": 1,
+    "real_store": false
+  },
+  "shortcodes": [
+    {
+      "name": "fy2press_product",
+      "alias": "shopipress_product",
+      "context": "anywhere",
+      "group": "product",
+      "defaults": {
+        "id": "",
+        "handle": "",
+        "show_description": "yes",
+        "show_collections": "yes",
+        "show_tags": "no",
+        "class": ""
+      },
+      "source": "admin/page-builders/shortcodes/product/Product.php",
+      "source_sha256": "25b9b220deb27b8edfd534cb8f5ed456f86bf35ef0d8fe83742af901d06c07da",
+      "example": "[fy2press_product id=\"123\"]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 4041,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_product_title",
+      "alias": "shopipress_product_title",
+      "context": "product",
+      "group": "product",
+      "defaults": {
+        "id": "",
+        "fallback": "Product Title Placeholder",
+        "show_fallback_in_editor": "yes",
+        "tag": "h1",
+        "font_size": "",
+        "font_weight": "",
+        "color": "",
+        "text_align": "",
+        "margin": "",
+        "padding": "",
+        "css_class": ""
+      },
+      "source": "admin/page-builders/shortcodes/product/ProductTitle.php",
+      "source_sha256": "84fb7234d2e1bd23898be4d0245a2a2ca078b62ba73927b1f0fc23922a968ebc",
+      "example": "[fy2press_product_title]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 89,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_product_description",
+      "alias": "shopipress_product_description",
+      "context": "product",
+      "group": "product",
+      "defaults": {
+        "id": "",
+        "content_type": "full",
+        "word_limit": "150",
+        "tag": "div",
+        "fallback": "",
+        "font_size": "",
+        "font_weight": "400",
+        "color": "",
+        "text_align": "",
+        "line_height": "",
+        "margin_top": "",
+        "margin_bottom": "",
+        "padding": "",
+        "css_class": "",
+        "css_id": "",
+        "debug": "false"
+      },
+      "source": "admin/page-builders/shortcodes/product/ProductDescription.php",
+      "source_sha256": "e65a15348e487b11954fa1c6ec976abc72781af85d00410b2f72d8a03943f465",
+      "example": "[fy2press_product_description content_type=\"excerpt\"]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 173,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_product_price",
+      "alias": "shopipress_product_price",
+      "context": "product",
+      "group": "product",
+      "defaults": {
+        "id": "",
+        "type": "single",
+        "currency": "symbol",
+        "fallback": "$29.99",
+        "tag": "div",
+        "font_size": "",
+        "font_weight": "",
+        "color": "",
+        "text_align": "",
+        "margin": "",
+        "padding": "",
+        "css_class": "",
+        "show_compare": "no",
+        "compare_color": "#9ca3af",
+        "show_sale_badge": "no",
+        "badge_color": "#ef4444",
+        "badge_text_color": "#ffffff",
+        "badge_text": "On Sale"
+      },
+      "source": "admin/page-builders/shortcodes/product/ProductPrice.php",
+      "source_sha256": "3596b7329176d51289addb0a7443f765ff88b35f93258968a03af5ef1392d34e",
+      "example": "[fy2press_product_price type=\"range\"]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 67,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_product_image",
+      "alias": "shopipress_product_image",
+      "context": "product",
+      "group": "product",
+      "defaults": {
+        "id": "",
+        "size": "large",
+        "width": "",
+        "height": "",
+        "object_fit": "",
+        "align": "",
+        "link_to": "none",
+        "custom_url": "",
+        "target_blank": "",
+        "border_radius": "",
+        "border": "",
+        "box_shadow": "",
+        "margin": "",
+        "css_class": "",
+        "css_id": "",
+        "alt_text": ""
+      },
+      "source": "admin/page-builders/shortcodes/product/ProductImage.php",
+      "source_sha256": "8562e0001f29c87d74f6eaa213e7fb2606faa7ee0266f98641855792cfffb2a9",
+      "example": "[fy2press_product_image link_to=\"product\"]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 272,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_product_url",
+      "alias": "shopipress_product_url",
+      "context": "product",
+      "group": "product",
+      "defaults": {
+        "id": "",
+        "format": "url",
+        "text": "View on Shopify",
+        "target": "_blank",
+        "class": "shopipress-product-url shopipress-d-product-url"
+      },
+      "source": "admin/page-builders/shortcodes/product/ProductUrl.php",
+      "source_sha256": "aea7015dec7d8c2620e4c0c305e24f3f6a468554040755d25070a5b31e1900db",
+      "example": "[fy2press_product_url]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "URL by default; HTML with format=link",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 63,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_product_vendor",
+      "alias": "shopipress_product_vendor",
+      "context": "product",
+      "group": "product",
+      "defaults": {
+        "id": "",
+        "class": "shopipress-product-vendor shopipress-d-product-vendor",
+        "prefix": "",
+        "suffix": ""
+      },
+      "source": "admin/page-builders/shortcodes/product/ProductVendor.php",
+      "source_sha256": "8069750f6624b55b2d92277c03f0822fdbc609f68f0c70679dec4596432215aa",
+      "example": "[fy2press_product_vendor]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 86,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_product_type",
+      "alias": "shopipress_product_type",
+      "context": "product",
+      "group": "product",
+      "defaults": {
+        "id": "",
+        "class": "shopipress-product-type shopipress-d-product-type",
+        "prefix": "",
+        "suffix": ""
+      },
+      "source": "admin/page-builders/shortcodes/product/ProductType.php",
+      "source_sha256": "e0038bebbfd16dd1580f97c8554625e3ec274061a09837b5e6646b33f4c2640e",
+      "example": "[fy2press_product_type]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 0,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_product_tags",
+      "alias": "shopipress_product_tags",
+      "context": "product",
+      "group": "product",
+      "defaults": {
+        "id": "",
+        "separator": ", ",
+        "limit": 0,
+        "class": "shopipress-product-tags shopipress-d-product-tags",
+        "tag_class": "shopipress-product-tag shopipress-d-product-tag",
+        "style": "links",
+        "prefix": "",
+        "suffix": "",
+        "title": "Tags:",
+        "wrapper": "div",
+        "wrapper_class": "shopipress-tags-section shopipress-d-tags-section",
+        "hide_if_empty": true
+      },
+      "source": "admin/page-builders/shortcodes/product/ProductTags.php",
+      "source_sha256": "c93adc8859498eebb4b27f39f77f09c1c6a14ebb0c2bf1e8381373e0f5c13875",
+      "example": "[fy2press_product_tags]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 285,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_product_gallery",
+      "alias": "shopipress_product_gallery",
+      "context": "product",
+      "group": "product",
+      "defaults": {
+        "id": "",
+        "show": "all",
+        "layout": "gallery",
+        "thumbs": "bottom",
+        "size": "large",
+        "columns": 4,
+        "class": "shopipress-product-gallery shopipress-d-product-gallery",
+        "main_class": "shopipress-main-image shopipress-d-main-image",
+        "thumb_class": "shopipress-thumb-image shopipress-d-thumb-image"
+      },
+      "source": "admin/page-builders/shortcodes/product/ProductGallery.php",
+      "source_sha256": "3c9b107697b34115e14d248c50d444c66be5afc1b9a365a4acd2845cd618bcc8",
+      "example": "[fy2press_product_gallery]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 263,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_product_availability",
+      "alias": "shopipress_product_availability",
+      "context": "product",
+      "group": "product",
+      "defaults": {
+        "id": "",
+        "show": "status",
+        "format": "text",
+        "in_stock_text": "In Stock",
+        "out_of_stock_text": "Out of Stock",
+        "low_stock_text": "Low Stock",
+        "low_stock_threshold": 5,
+        "show_quantity": false,
+        "class": "shopipress-product-availability shopipress-d-product-availability"
+      },
+      "source": "admin/page-builders/shortcodes/product/ProductAvailability.php",
+      "source_sha256": "4a38a60af87bad033ec80da1922457fde966ef042b7141af149843c3d70fa6ec",
+      "example": "[fy2press_product_availability]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 156,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_product_variants",
+      "alias": "shopipress_product_variants",
+      "context": "product",
+      "group": "product",
+      "defaults": {
+        "id": "",
+        "style": "dropdown",
+        "show_prices": false,
+        "show_images": false,
+        "show_labels": true,
+        "class": "shopipress-product-variants shopipress-d-product-variants",
+        "option_class": "shopipress-variant-option shopipress-d-variant-option",
+        "hide_default_variant": true
+      },
+      "source": "admin/page-builders/shortcodes/product/ProductVariants.php",
+      "source_sha256": "35a1086d86423ed77c05da1688305fbf8607b2e8efa623de86257a1f80bf9f16",
+      "example": "[fy2press_product_variants]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 602,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_product_collections",
+      "alias": "shopipress_product_collections",
+      "context": "product",
+      "group": "product",
+      "defaults": {
+        "id": "",
+        "style": "links",
+        "separator": ", ",
+        "limit": 0,
+        "class": "shopipress-product-collections shopipress-d-product-collections",
+        "collection_class": "shopipress-product-collection shopipress-d-product-collection",
+        "prefix": "",
+        "suffix": "",
+        "title": "Collections:",
+        "wrapper": "div",
+        "wrapper_class": "shopipress-collections-section shopipress-d-collections-section",
+        "hide_if_empty": true
+      },
+      "source": "admin/page-builders/shortcodes/product/ProductCollections.php",
+      "source_sha256": "c1a636d483084f9f7cfc2469089012f8584f88366370e33cf00800233c3bc125",
+      "example": "[fy2press_product_collections]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 353,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_add_to_cart",
+      "alias": "shopipress_add_to_cart",
+      "context": "product",
+      "group": "product",
+      "defaults": {
+        "id": ""
+      },
+      "source": "admin/page-builders/shortcodes/product/AddToCart.php",
+      "source_sha256": "dbdb6c89241cb6dbb033922133054c8f3639b900b9417423f654075134bbe494",
+      "example": "[fy2press_add_to_cart]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 1077,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_buy_now",
+      "alias": "shopipress_buy_now",
+      "context": "product",
+      "group": "product",
+      "defaults": {
+        "id": "",
+        "text": "Buy Now",
+        "class": "shopipress-buy-now-btn shopipress-d-buy-now-btn",
+        "target": "_self"
+      },
+      "source": "admin/page-builders/shortcodes/product/BuyNow.php",
+      "source_sha256": "bda7750b786870fb866796011de26266dc8b66369b33f20949b4ecfa05e9ff0c",
+      "example": "[fy2press_buy_now]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 475,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_related_products",
+      "alias": "shopipress_related_products",
+      "context": "product",
+      "group": "product",
+      "defaults": {
+        "id": "",
+        "limit": 4,
+        "title": "You may also like",
+        "orderby": "date",
+        "class": ""
+      },
+      "source": "admin/page-builders/shortcodes/product/RelatedProducts.php",
+      "source_sha256": "1fcae6a5cf5aef405b62489904372457e34d52f875e9494856d9ad4479329f1b",
+      "example": "[fy2press_related_products limit=\"4\"]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 4305,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_collection",
+      "alias": "shopipress_collection",
+      "context": "anywhere",
+      "group": "collection",
+      "defaults": {
+        "id": "",
+        "handle": "",
+        "limit": 24,
+        "columns": 4,
+        "show_title": "yes",
+        "show_description": "yes",
+        "pagination": "infinite",
+        "class": ""
+      },
+      "source": "admin/page-builders/shortcodes/collection/Collection.php",
+      "source_sha256": "be1e7243221cd1543429c65356cfc55c28bc141405bdf079f6407c2531200d7d",
+      "example": "[fy2press_collection handle=\"morrowfield\"]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 6155,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_products_loop",
+      "alias": "shopipress_products_loop",
+      "context": "anywhere",
+      "group": "collection",
+      "defaults": {
+        "limit": 24,
+        "columns": 4,
+        "collection": "",
+        "class": "shopipress-d-products-loop",
+        "item_class": "shopipress-product-card",
+        "pagination": "infinite",
+        "sort_by": ""
+      },
+      "source": "admin/page-builders/shortcodes/collection/ProductsLoop.php",
+      "source_sha256": "bc4bfd7f76bdf6865d86b8caf20e48b6ea75a632deed4a90d4bd9699dd8fffcc",
+      "example": "[fy2press_products_loop collection=\"morrowfield\" limit=\"12\"]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 3207,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_collection_title",
+      "alias": "shopipress_collection_title",
+      "context": "collection",
+      "group": "collection",
+      "defaults": {
+        "tag": "h1",
+        "class": "shopipress-collection-title shopipress-d-collection-title",
+        "prefix": "",
+        "suffix": ""
+      },
+      "source": "admin/page-builders/shortcodes/collection/CollectionTitle.php",
+      "source_sha256": "23b224013701b88cd06c4cfcd2835cc61ac1f3e47e3979f9663e7cb81c826b7e",
+      "example": "[fy2press_collection_title]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 90,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_collection_description",
+      "alias": "shopipress_collection_description",
+      "context": "collection",
+      "group": "collection",
+      "defaults": {
+        "class": "shopipress-collection-description shopipress-d-collection-description",
+        "wrapper": "div",
+        "hide_if_empty": true
+      },
+      "source": "admin/page-builders/shortcodes/collection/CollectionDescription.php",
+      "source_sha256": "ee6d1f5290228d9fe21ae179fdd4a7a4ac27f33c3c7586b51b7475a2f32d0bca",
+      "example": "[fy2press_collection_description]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 161,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_collection_sort",
+      "alias": "shopipress_collection_sort",
+      "context": "loop",
+      "group": "collection",
+      "defaults": {
+        "class": "shopipress-collection-sort",
+        "label": "Sort by:",
+        "show_label": true,
+        "default_option": "Sort by...",
+        "wrapper": "div",
+        "wrapper_class": "shopipress-sort-wrapper shopipress-d-collection-sort"
+      },
+      "source": "admin/page-builders/shortcodes/collection/CollectionSort.php",
+      "source_sha256": "399356d42e2517c0adf08b0a0402cc2eb86c0a62942efeb9fcb7ba44ca5572a6",
+      "example": "[fy2press_collection_sort]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 822,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_product_search",
+      "alias": "shopipress_product_search",
+      "context": "loop",
+      "group": "filters",
+      "defaults": {
+        "placeholder": "Search products...",
+        "class": "shopipress-product-search",
+        "wrapper_class": "shopipress-search-wrapper",
+        "input_class": "search-input",
+        "button_class": "search-button",
+        "button_text": "Search",
+        "show_results_count": "yes",
+        "search_in": "title,description,tags"
+      },
+      "source": "admin/page-builders/shortcodes/filters/ProductSearch.php",
+      "source_sha256": "b6ef0bdba233ba8011ea292c4bcef97968b199639e3362f5322b3509d894ef55",
+      "example": "[fy2press_product_search]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 482,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_collection_filter",
+      "alias": "shopipress_collection_filter",
+      "context": "loop",
+      "group": "filters",
+      "defaults": {
+        "type": "dropdown",
+        "show_count": "yes",
+        "class": "shopipress-collection-filter",
+        "wrapper_class": "shopipress-filter-wrapper",
+        "title": "Collection",
+        "show_title": "yes",
+        "show_all_option": "yes",
+        "all_text": "All Collections",
+        "limit": "0",
+        "orderby": "name",
+        "order": "ASC",
+        "hide_empty": "yes",
+        "hierarchical": "yes",
+        "behavior": "collection_archive"
+      },
+      "source": "admin/page-builders/shortcodes/filters/CollectionFilter.php",
+      "source_sha256": "3c11441ce5fe06ac758e9e986dd2b98bc4481e644374b9c0d416250f303af0a6",
+      "example": "[fy2press_collection_filter type=\"dropdown\"]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 425,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_tag_filter",
+      "alias": "shopipress_tag_filter",
+      "context": "loop",
+      "group": "filters",
+      "defaults": {
+        "type": "tags",
+        "show_count": "yes",
+        "class": "shopipress-tag-filter",
+        "wrapper_class": "shopipress-filter-wrapper",
+        "title": "Filter by Tags",
+        "show_title": "yes",
+        "show_all_option": "yes",
+        "all_text": "All Tags",
+        "limit": "10",
+        "orderby": "count",
+        "order": "DESC",
+        "hide_empty": "yes",
+        "multiple": "yes",
+        "style": "badges",
+        "max_display": "20"
+      },
+      "source": "admin/page-builders/shortcodes/filters/TagFilter.php",
+      "source_sha256": "a44152a6180aa6b1a31807870ef5ac7a84e577dfb48e7b44bb819a8649f9056e",
+      "example": "[fy2press_tag_filter type=\"tags\"]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 226,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "dynamic_defaults": {
+        "type": "Saved collection design displayType when valid; otherwise tags. Recorded fixture: tags."
+      },
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_filter_sidebar",
+      "alias": "shopipress_filter_sidebar",
+      "context": "loop",
+      "group": "filters",
+      "defaults": {
+        "class": "shopipress-filter-sidebar",
+        "wrapper_class": "filter-sidebar-wrapper",
+        "title": "Filter Products",
+        "show_title": "yes",
+        "style": "sidebar",
+        "background": "#f8f9fa",
+        "padding": "20px",
+        "border_radius": "8px",
+        "gap": "20px"
+      },
+      "source": "admin/page-builders/shortcodes/filters/FilterSidebar.php",
+      "source_sha256": "ffde1c41d5d28d2a29945a190909a69ceaef9ebddb190ae504d985884e4b1fc3",
+      "example": "[fy2press_filter_sidebar][fy2press_product_search][fy2press_collection_filter][/fy2press_filter_sidebar]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 1234,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_price_filter",
+      "alias": "shopipress_price_filter",
+      "context": "loop",
+      "group": "filters",
+      "defaults": {
+        "min": "0",
+        "max": "1000",
+        "default_min": "0",
+        "default_max": "250",
+        "step": "10",
+        "currency": "auto",
+        "title": "Filter by Price"
+      },
+      "source": "admin/page-builders/shortcodes/filters/PriceFilter.php",
+      "source_sha256": "97c12202c076895f4b065651c453b199f449cd35e228b92bbfbd17a8966143f1",
+      "example": "[fy2press_price_filter min=\"0\" max=\"250\"]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 3186,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "fy2press_availability_filter",
+      "alias": "shopipress_availability_filter",
+      "context": "loop",
+      "group": "filters",
+      "defaults": {
+        "type": "tags",
+        "options": "in_stock,out_of_stock",
+        "title": "Availability",
+        "show_count": "yes",
+        "class": "availability-filter-container"
+      },
+      "source": "admin/page-builders/shortcodes/filters/AvailabilityFilter.php",
+      "source_sha256": "5729a7bef6e47ba843dca5e4ff55f2fb91a5a0aae39d236bb0c3572c1857fb82",
+      "example": "[fy2press_availability_filter type=\"checkbox\"]",
+      "registered": true,
+      "alias_registered": true,
+      "result_kind": "HTML string",
+      "test": {
+        "state": "PASS",
+        "scope": "native WordPress callback; fictional local product/collection; no real Shopify request",
+        "output_bytes": 511,
+        "echo_bytes": 0,
+        "same_registered_callback": true
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "shopipress/title",
+      "title": "Fy2Press Product Title",
+      "api_version": 3,
+      "attributes": {
+        "htmlTag": {
+          "type": "string",
+          "default": "h1"
+        },
+        "fallbackText": {
+          "type": "string",
+          "default": "Product title will appear here"
+        },
+        "textAlign": {
+          "type": "string",
+          "default": "left"
+        },
+        "textColor": {
+          "type": "string",
+          "default": "#333333"
+        },
+        "className": {
+          "type": "string",
+          "default": ""
+        },
+        "anchor": {
+          "type": "string",
+          "default": ""
+        },
+        "lock": {
+          "type": "object"
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "align": {
+          "type": "string",
+          "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+          ]
+        },
+        "style": {
+          "type": "object"
+        },
+        "backgroundColor": {
+          "type": "string"
+        },
+        "gradient": {
+          "type": "string"
+        },
+        "fontSize": {
+          "type": "string"
+        },
+        "fontFamily": {
+          "type": "string"
+        },
+        "borderColor": {
+          "type": "string"
+        }
+      },
+      "supports": {
+        "html": false,
+        "align": [
+          "left",
+          "center",
+          "right",
+          "wide",
+          "full"
+        ],
+        "alignWide": true,
+        "anchor": true,
+        "className": true,
+        "color": {
+          "background": true,
+          "text": false,
+          "gradients": true
+        },
+        "typography": {
+          "fontSize": true,
+          "lineHeight": true,
+          "__experimentalFontFamily": true,
+          "__experimentalFontWeight": true,
+          "__experimentalFontStyle": true,
+          "__experimentalTextTransform": true,
+          "__experimentalTextDecoration": true,
+          "__experimentalLetterSpacing": true,
+          "__experimentalDefaultControls": {
+            "fontSize": true
+          }
+        },
+        "spacing": {
+          "margin": true,
+          "padding": true
+        },
+        "__experimentalBorder": {
+          "color": true,
+          "radius": true,
+          "style": true,
+          "width": true
+        }
+      },
+      "context": "product",
+      "source": "admin/page-builders/gutenberg/blocks/ProductTitle.php",
+      "source_sha256": "23513887f840eab14d5cfbace6e245e5f463730f4dadfc24efc17117efc909ac",
+      "example": "<!-- wp:shopipress/title /-->",
+      "test": {
+        "state": "PASS",
+        "scope": "native do_blocks with fictional local data; no browser or connected-commerce claim",
+        "output_bytes": 160,
+        "echo_bytes": 0
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "shopipress/price",
+      "title": "Fy2Press Product Price",
+      "api_version": 3,
+      "attributes": {
+        "showCurrency": {
+          "type": "boolean",
+          "default": true
+        },
+        "showComparePrice": {
+          "type": "boolean",
+          "default": true
+        },
+        "priceFormat": {
+          "type": "string",
+          "default": "default"
+        },
+        "fallbackText": {
+          "type": "string",
+          "default": "Price will appear here"
+        },
+        "textAlign": {
+          "type": "string",
+          "default": "left"
+        },
+        "comparePriceColor": {
+          "type": "string",
+          "default": "#999999"
+        },
+        "className": {
+          "type": "string",
+          "default": ""
+        },
+        "anchor": {
+          "type": "string",
+          "default": ""
+        },
+        "lock": {
+          "type": "object"
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "align": {
+          "type": "string",
+          "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+          ]
+        },
+        "style": {
+          "type": "object"
+        },
+        "backgroundColor": {
+          "type": "string"
+        },
+        "textColor": {
+          "type": "string"
+        },
+        "gradient": {
+          "type": "string"
+        },
+        "fontSize": {
+          "type": "string"
+        },
+        "fontFamily": {
+          "type": "string"
+        },
+        "borderColor": {
+          "type": "string"
+        }
+      },
+      "supports": {
+        "html": false,
+        "align": [
+          "left",
+          "center",
+          "right",
+          "wide",
+          "full"
+        ],
+        "alignWide": true,
+        "anchor": true,
+        "className": true,
+        "color": {
+          "background": true,
+          "text": true,
+          "gradients": true
+        },
+        "typography": {
+          "fontSize": true,
+          "lineHeight": true,
+          "__experimentalFontFamily": true,
+          "__experimentalFontWeight": true,
+          "__experimentalFontStyle": true,
+          "__experimentalTextTransform": true,
+          "__experimentalTextDecoration": true,
+          "__experimentalLetterSpacing": true,
+          "__experimentalDefaultControls": {
+            "fontSize": true
+          }
+        },
+        "spacing": {
+          "margin": true,
+          "padding": true
+        },
+        "__experimentalBorder": {
+          "color": true,
+          "radius": true,
+          "style": true,
+          "width": true
+        }
+      },
+      "context": "product",
+      "source": "admin/page-builders/gutenberg/blocks/ProductPrice.php",
+      "source_sha256": "ecc743df5d41240320c76753f5f974816d569a319dc94a15e28e54b32e50d73a",
+      "example": "<!-- wp:shopipress/price /-->",
+      "test": {
+        "state": "PASS",
+        "scope": "native do_blocks with fictional local data; no browser or connected-commerce claim",
+        "output_bytes": 101,
+        "echo_bytes": 0
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "shopipress/description",
+      "title": "Fy2Press Product Description",
+      "api_version": 3,
+      "attributes": {
+        "showExcerpt": {
+          "type": "boolean",
+          "default": false
+        },
+        "wordLimit": {
+          "type": "number",
+          "default": 0
+        },
+        "stripHtml": {
+          "type": "boolean",
+          "default": false
+        },
+        "fallbackText": {
+          "type": "string",
+          "default": "Product description will appear here"
+        },
+        "textAlign": {
+          "type": "string",
+          "default": "left"
+        },
+        "fontSize": {
+          "type": "string",
+          "default": "medium"
+        },
+        "customFontSize": {
+          "type": "number",
+          "default": 16
+        },
+        "textColor": {
+          "type": "string",
+          "default": ""
+        },
+        "backgroundColor": {
+          "type": "string",
+          "default": ""
+        },
+        "className": {
+          "type": "string",
+          "default": ""
+        },
+        "anchor": {
+          "type": "string",
+          "default": ""
+        },
+        "lock": {
+          "type": "object"
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "align": {
+          "type": "string",
+          "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+          ]
+        },
+        "style": {
+          "type": "object"
+        },
+        "gradient": {
+          "type": "string"
+        },
+        "fontFamily": {
+          "type": "string"
+        },
+        "borderColor": {
+          "type": "string"
+        }
+      },
+      "supports": {
+        "html": false,
+        "align": [
+          "left",
+          "center",
+          "right",
+          "wide",
+          "full"
+        ],
+        "alignWide": true,
+        "anchor": true,
+        "className": true,
+        "color": {
+          "background": true,
+          "text": true,
+          "gradients": true
+        },
+        "typography": {
+          "fontSize": true,
+          "lineHeight": true,
+          "__experimentalFontFamily": true,
+          "__experimentalFontWeight": true,
+          "__experimentalFontStyle": true,
+          "__experimentalTextTransform": true,
+          "__experimentalTextDecoration": true,
+          "__experimentalLetterSpacing": true,
+          "__experimentalDefaultControls": {
+            "fontSize": true
+          }
+        },
+        "spacing": {
+          "margin": true,
+          "padding": true
+        },
+        "__experimentalBorder": {
+          "color": true,
+          "radius": true,
+          "style": true,
+          "width": true
+        }
+      },
+      "context": "product",
+      "source": "admin/page-builders/gutenberg/blocks/ProductDescription.php",
+      "source_sha256": "d4e013f4eafece4e9ec5286f1ad04b268ef8d4f1ef99580ad54d222308150d80",
+      "example": "<!-- wp:shopipress/description /-->",
+      "test": {
+        "state": "PASS",
+        "scope": "native do_blocks with fictional local data; no browser or connected-commerce claim",
+        "output_bytes": 248,
+        "echo_bytes": 0
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "shopipress/image",
+      "title": "Fy2Press Product Image",
+      "api_version": 3,
+      "attributes": {
+        "imageSize": {
+          "type": "string",
+          "default": "large"
+        },
+        "linkToProduct": {
+          "type": "boolean",
+          "default": false
+        },
+        "showCaption": {
+          "type": "boolean",
+          "default": false
+        },
+        "altText": {
+          "type": "string",
+          "default": ""
+        },
+        "fallbackText": {
+          "type": "string",
+          "default": "Product image will appear here"
+        },
+        "textAlign": {
+          "type": "string",
+          "default": "center"
+        },
+        "className": {
+          "type": "string",
+          "default": ""
+        },
+        "anchor": {
+          "type": "string",
+          "default": ""
+        },
+        "lock": {
+          "type": "object"
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "align": {
+          "type": "string",
+          "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+          ]
+        },
+        "style": {
+          "type": "object"
+        },
+        "borderColor": {
+          "type": "string"
+        }
+      },
+      "supports": {
+        "html": false,
+        "align": [
+          "left",
+          "center",
+          "right",
+          "wide",
+          "full"
+        ],
+        "alignWide": true,
+        "anchor": true,
+        "className": true,
+        "spacing": {
+          "margin": true,
+          "padding": true
+        },
+        "__experimentalBorder": {
+          "color": true,
+          "radius": true,
+          "style": true,
+          "width": true
+        }
+      },
+      "context": "product",
+      "source": "admin/page-builders/gutenberg/blocks/ProductImage.php",
+      "source_sha256": "f731ce069660b2a7740cc07fe7e961abeeb49969291c60842f65c32b302cab26",
+      "example": "<!-- wp:shopipress/image /-->",
+      "test": {
+        "state": "PASS",
+        "scope": "native do_blocks with fictional local data; no browser or connected-commerce claim",
+        "output_bytes": 313,
+        "echo_bytes": 0
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "shopipress/variants",
+      "title": "Fy2Press Product Variants",
+      "api_version": 3,
+      "attributes": {
+        "displayStyle": {
+          "type": "string",
+          "default": "buttons"
+        },
+        "showLabels": {
+          "type": "boolean",
+          "default": true
+        },
+        "buttonStyle": {
+          "type": "string",
+          "default": "outline"
+        },
+        "buttonSize": {
+          "type": "string",
+          "default": "medium"
+        },
+        "textColor": {
+          "type": "string",
+          "default": "#333333"
+        },
+        "backgroundColor": {
+          "type": "string",
+          "default": "#ffffff"
+        },
+        "borderColor": {
+          "type": "string",
+          "default": "#dddddd"
+        },
+        "hoverTextColor": {
+          "type": "string",
+          "default": "#333333"
+        },
+        "hoverBackgroundColor": {
+          "type": "string",
+          "default": "#f5f5f5"
+        },
+        "hoverBorderColor": {
+          "type": "string",
+          "default": "#333333"
+        },
+        "activeTextColor": {
+          "type": "string",
+          "default": "#ffffff"
+        },
+        "activeBackgroundColor": {
+          "type": "string",
+          "default": "#333333"
+        },
+        "activeBorderColor": {
+          "type": "string",
+          "default": "#333333"
+        },
+        "borderWidth": {
+          "type": "number",
+          "default": 1
+        },
+        "gap": {
+          "type": "number",
+          "default": 10
+        },
+        "borderRadius": {
+          "type": "number",
+          "default": 4
+        },
+        "fallbackText": {
+          "type": "string",
+          "default": "Product variants will appear here"
+        },
+        "className": {
+          "type": "string",
+          "default": ""
+        },
+        "anchor": {
+          "type": "string",
+          "default": ""
+        },
+        "lock": {
+          "type": "object"
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "align": {
+          "type": "string",
+          "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+          ]
+        },
+        "style": {
+          "type": "object"
+        }
+      },
+      "supports": {
+        "html": false,
+        "align": [
+          "left",
+          "center",
+          "right",
+          "wide",
+          "full"
+        ],
+        "alignWide": true,
+        "anchor": true,
+        "className": true,
+        "color": {
+          "background": true,
+          "text": true
+        },
+        "spacing": {
+          "margin": true,
+          "padding": true
+        }
+      },
+      "context": "product",
+      "source": "admin/page-builders/gutenberg/blocks/ProductVariants.php",
+      "source_sha256": "156c73541161db489eea27a8cf20b95fe7af43a14445ee847e1242a2f6aa6438",
+      "example": "<!-- wp:shopipress/variants /-->",
+      "test": {
+        "state": "PASS",
+        "scope": "native do_blocks with fictional local data; no browser or connected-commerce claim",
+        "output_bytes": 814,
+        "echo_bytes": 0
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "shopipress/gallery",
+      "title": "Fy2Press Product Gallery",
+      "api_version": 3,
+      "attributes": {
+        "layout": {
+          "type": "string",
+          "default": "gallery"
+        },
+        "thumbnailPosition": {
+          "type": "string",
+          "default": "bottom"
+        },
+        "showThumbnails": {
+          "type": "boolean",
+          "default": true
+        },
+        "showMainImage": {
+          "type": "boolean",
+          "default": true
+        },
+        "enableLightbox": {
+          "type": "boolean",
+          "default": true
+        },
+        "mainImageBorderRadius": {
+          "type": "string",
+          "default": "8px"
+        },
+        "mainImageBoxShadow": {
+          "type": "string",
+          "default": "0 4px 12px rgba(0,0,0,0.1)"
+        },
+        "mainImageMarginBottom": {
+          "type": "string",
+          "default": "15px"
+        },
+        "thumbnailWidth": {
+          "type": "string",
+          "default": "70px"
+        },
+        "thumbnailHeight": {
+          "type": "string",
+          "default": "70px"
+        },
+        "thumbnailBorderRadius": {
+          "type": "string",
+          "default": "6px"
+        },
+        "thumbnailGap": {
+          "type": "string",
+          "default": "8px"
+        },
+        "thumbnailBorderColor": {
+          "type": "string",
+          "default": "transparent"
+        },
+        "thumbnailActiveBorderColor": {
+          "type": "string",
+          "default": "#007cba"
+        },
+        "thumbnailHoverScale": {
+          "type": "string",
+          "default": "1.05"
+        },
+        "containerPosition": {
+          "type": "string",
+          "default": "sticky"
+        },
+        "stickyTopOffset": {
+          "type": "string",
+          "default": "20px"
+        },
+        "thumbnailAlignment": {
+          "type": "string",
+          "default": "center"
+        },
+        "mobileThumbWidth": {
+          "type": "string",
+          "default": "50px"
+        },
+        "mobileThumbHeight": {
+          "type": "string",
+          "default": "50px"
+        },
+        "fallbackText": {
+          "type": "string",
+          "default": "Product gallery will appear here"
+        },
+        "className": {
+          "type": "string",
+          "default": ""
+        },
+        "anchor": {
+          "type": "string",
+          "default": ""
+        },
+        "lock": {
+          "type": "object"
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "align": {
+          "type": "string",
+          "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+          ]
+        },
+        "style": {
+          "type": "object"
+        }
+      },
+      "supports": {
+        "html": false,
+        "align": [
+          "left",
+          "center",
+          "right",
+          "wide",
+          "full"
+        ],
+        "alignWide": true,
+        "anchor": true,
+        "className": true,
+        "spacing": {
+          "margin": true,
+          "padding": true
+        }
+      },
+      "context": "product",
+      "source": "admin/page-builders/gutenberg/blocks/ProductGallery.php",
+      "source_sha256": "2f35a922ec798db38f8422d952eb44ebd540531506dd8f20ab2faec6838ab0a1",
+      "example": "<!-- wp:shopipress/gallery /-->",
+      "test": {
+        "state": "PASS",
+        "scope": "native do_blocks with fictional local data; no browser or connected-commerce claim",
+        "output_bytes": 309,
+        "echo_bytes": 0
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "shopipress/add-to-cart",
+      "title": "Fy2Press Add to Cart",
+      "api_version": 3,
+      "attributes": {
+        "buttonText": {
+          "type": "string",
+          "default": "Add to Cart"
+        },
+        "showQuantity": {
+          "type": "boolean",
+          "default": true
+        },
+        "quantityLabel": {
+          "type": "string",
+          "default": "Quantity:"
+        },
+        "showPrice": {
+          "type": "boolean",
+          "default": false
+        },
+        "unavailableText": {
+          "type": "string",
+          "default": "Unavailable"
+        },
+        "fallbackText": {
+          "type": "string",
+          "default": "Add to cart button will appear here"
+        },
+        "buttonSize": {
+          "type": "string",
+          "default": "medium"
+        },
+        "buttonWidth": {
+          "type": "string",
+          "default": "full"
+        },
+        "customWidth": {
+          "type": "string",
+          "default": ""
+        },
+        "alignment": {
+          "type": "string",
+          "default": "left"
+        },
+        "backgroundColor": {
+          "type": "string",
+          "default": "#000000"
+        },
+        "textColor": {
+          "type": "string",
+          "default": "#ffffff"
+        },
+        "hoverBackgroundColor": {
+          "type": "string",
+          "default": "#333333"
+        },
+        "hoverTextColor": {
+          "type": "string",
+          "default": "#ffffff"
+        },
+        "fontSize": {
+          "type": "string",
+          "default": "0.9em"
+        },
+        "fontWeight": {
+          "type": "string",
+          "default": "500"
+        },
+        "textTransform": {
+          "type": "string",
+          "default": "uppercase"
+        },
+        "letterSpacing": {
+          "type": "string",
+          "default": "0.05em"
+        },
+        "borderRadius": {
+          "type": "string",
+          "default": "4px"
+        },
+        "border": {
+          "type": "string",
+          "default": "none"
+        },
+        "boxShadow": {
+          "type": "string",
+          "default": ""
+        },
+        "customPadding": {
+          "type": "string",
+          "default": "16px 32px"
+        },
+        "customMargin": {
+          "type": "string",
+          "default": ""
+        },
+        "className": {
+          "type": "string",
+          "default": ""
+        },
+        "anchor": {
+          "type": "string",
+          "default": ""
+        },
+        "lock": {
+          "type": "object"
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "align": {
+          "type": "string",
+          "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+          ]
+        },
+        "style": {
+          "type": "object"
+        },
+        "gradient": {
+          "type": "string"
+        },
+        "fontFamily": {
+          "type": "string"
+        },
+        "borderColor": {
+          "type": "string"
+        }
+      },
+      "supports": {
+        "html": false,
+        "align": [
+          "left",
+          "center",
+          "right",
+          "wide",
+          "full"
+        ],
+        "anchor": true,
+        "className": true,
+        "color": {
+          "background": true,
+          "text": true,
+          "gradients": true
+        },
+        "typography": {
+          "fontSize": true,
+          "fontWeight": true,
+          "textTransform": true,
+          "__experimentalFontFamily": true,
+          "__experimentalFontStyle": true,
+          "__experimentalTextDecoration": true,
+          "__experimentalLetterSpacing": true,
+          "__experimentalDefaultControls": {
+            "fontSize": true,
+            "fontWeight": true,
+            "textTransform": true
+          }
+        },
+        "spacing": {
+          "margin": true,
+          "padding": true
+        },
+        "__experimentalBorder": {
+          "color": true,
+          "radius": true,
+          "style": true,
+          "width": true
+        }
+      },
+      "context": "product",
+      "source": "admin/page-builders/gutenberg/blocks/AddToCart.php",
+      "source_sha256": "4877d8b270490b8686d521d01140003e6edc672efa91ebc1cdaad92d4a3e11e7",
+      "example": "<!-- wp:shopipress/add-to-cart /-->",
+      "test": {
+        "state": "PASS",
+        "scope": "native do_blocks with fictional local data; no browser or connected-commerce claim",
+        "output_bytes": 916,
+        "echo_bytes": 0
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "shopipress/availability",
+      "title": "Fy2Press Product Availability",
+      "api_version": 3,
+      "attributes": {
+        "displayType": {
+          "type": "string",
+          "default": "status"
+        },
+        "statusStyle": {
+          "type": "string",
+          "default": "badge"
+        },
+        "showIcon": {
+          "type": "boolean",
+          "default": false
+        },
+        "inStockText": {
+          "type": "string",
+          "default": "In Stock"
+        },
+        "outOfStockText": {
+          "type": "string",
+          "default": "Out of Stock"
+        },
+        "lowStockText": {
+          "type": "string",
+          "default": "Only {quantity} left in stock"
+        },
+        "lowStockThreshold": {
+          "type": "number",
+          "default": 5
+        },
+        "showQuantity": {
+          "type": "boolean",
+          "default": true
+        },
+        "inStockColor": {
+          "type": "string",
+          "default": "#27ae60"
+        },
+        "outOfStockColor": {
+          "type": "string",
+          "default": "#e74c3c"
+        },
+        "lowStockColor": {
+          "type": "string",
+          "default": "#f39c12"
+        },
+        "textColor": {
+          "type": "string",
+          "default": "#ffffff"
+        },
+        "fontSize": {
+          "type": "string",
+          "default": "0.9em"
+        },
+        "fontWeight": {
+          "type": "string",
+          "default": "500"
+        },
+        "textTransform": {
+          "type": "string",
+          "default": "uppercase"
+        },
+        "borderRadius": {
+          "type": "string",
+          "default": "4px"
+        },
+        "padding": {
+          "type": "string",
+          "default": "6px 12px"
+        },
+        "margin": {
+          "type": "string",
+          "default": "15px 0"
+        },
+        "fallbackStatus": {
+          "type": "string",
+          "default": "in-stock"
+        },
+        "fallbackQuantity": {
+          "type": "number",
+          "default": 15
+        },
+        "className": {
+          "type": "string",
+          "default": ""
+        },
+        "anchor": {
+          "type": "string",
+          "default": ""
+        },
+        "lock": {
+          "type": "object"
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "align": {
+          "type": "string",
+          "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+          ]
+        },
+        "style": {
+          "type": "object"
+        },
+        "backgroundColor": {
+          "type": "string"
+        },
+        "fontFamily": {
+          "type": "string"
+        },
+        "borderColor": {
+          "type": "string"
+        }
+      },
+      "supports": {
+        "html": false,
+        "align": [
+          "left",
+          "center",
+          "right"
+        ],
+        "anchor": true,
+        "className": true,
+        "color": {
+          "background": true,
+          "text": true,
+          "gradients": false
+        },
+        "typography": {
+          "fontSize": true,
+          "fontWeight": true,
+          "__experimentalFontFamily": true,
+          "__experimentalTextTransform": true,
+          "__experimentalDefaultControls": {
+            "fontSize": true
+          }
+        },
+        "spacing": {
+          "margin": true,
+          "padding": true
+        },
+        "__experimentalBorder": {
+          "color": true,
+          "radius": true,
+          "style": true,
+          "width": true
+        }
+      },
+      "context": "product",
+      "source": "admin/page-builders/gutenberg/blocks/ProductAvailability.php",
+      "source_sha256": "3c5643b2cf8fdb9f076dcd8aa7302f9a8606beaa2ab1719bb003b99516106a70",
+      "example": "<!-- wp:shopipress/availability /-->",
+      "test": {
+        "state": "PASS",
+        "scope": "native do_blocks with fictional local data; no browser or connected-commerce claim",
+        "output_bytes": 478,
+        "echo_bytes": 0
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "shopipress/vendor",
+      "title": "Fy2Press Product Vendor",
+      "api_version": 3,
+      "attributes": {
+        "htmlTag": {
+          "type": "string",
+          "default": "div"
+        },
+        "showLabel": {
+          "type": "boolean",
+          "default": true
+        },
+        "labelText": {
+          "type": "string",
+          "default": "BY:"
+        },
+        "prefix": {
+          "type": "string",
+          "default": ""
+        },
+        "suffix": {
+          "type": "string",
+          "default": ""
+        },
+        "linkToVendor": {
+          "type": "boolean",
+          "default": false
+        },
+        "vendorUrl": {
+          "type": "string",
+          "default": ""
+        },
+        "openInNewTab": {
+          "type": "boolean",
+          "default": false
+        },
+        "textAlign": {
+          "type": "string",
+          "default": "left"
+        },
+        "fallbackVendor": {
+          "type": "string",
+          "default": "Sample Brand"
+        },
+        "className": {
+          "type": "string",
+          "default": ""
+        },
+        "anchor": {
+          "type": "string",
+          "default": ""
+        },
+        "lock": {
+          "type": "object"
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "align": {
+          "type": "string",
+          "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+          ]
+        },
+        "style": {
+          "type": "object"
+        },
+        "backgroundColor": {
+          "type": "string"
+        },
+        "textColor": {
+          "type": "string"
+        },
+        "fontSize": {
+          "type": "string"
+        },
+        "fontFamily": {
+          "type": "string"
+        },
+        "borderColor": {
+          "type": "string"
+        }
+      },
+      "supports": {
+        "html": false,
+        "align": [
+          "left",
+          "center",
+          "right"
+        ],
+        "anchor": true,
+        "className": true,
+        "color": {
+          "background": true,
+          "text": true,
+          "link": true,
+          "gradients": false
+        },
+        "typography": {
+          "fontSize": true,
+          "fontWeight": true,
+          "textTransform": true,
+          "letterSpacing": true,
+          "__experimentalFontFamily": true,
+          "__experimentalFontStyle": true,
+          "__experimentalDefaultControls": {
+            "fontSize": true
+          }
+        },
+        "spacing": {
+          "margin": true,
+          "padding": true
+        },
+        "__experimentalBorder": {
+          "color": true,
+          "radius": true,
+          "style": true,
+          "width": true
+        }
+      },
+      "context": "product",
+      "source": "admin/page-builders/gutenberg/blocks/ProductVendor.php",
+      "source_sha256": "ba041bb28c0fb9a7fd448b88d9723a6f72901cff806c29b0a3d6edbdb2883c6a",
+      "example": "<!-- wp:shopipress/vendor /-->",
+      "test": {
+        "state": "PASS",
+        "scope": "native do_blocks with fictional local data; no browser or connected-commerce claim",
+        "output_bytes": 202,
+        "echo_bytes": 0
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "shopipress/collections",
+      "title": "Fy2Press Product Collections",
+      "api_version": 3,
+      "attributes": {
+        "showLabel": {
+          "type": "boolean",
+          "default": true
+        },
+        "labelText": {
+          "type": "string",
+          "default": "Collections:"
+        },
+        "displayStyle": {
+          "type": "string",
+          "default": "inline"
+        },
+        "separator": {
+          "type": "string",
+          "default": ", "
+        },
+        "maxCollections": {
+          "type": "number",
+          "default": 0
+        },
+        "linkToCollection": {
+          "type": "boolean",
+          "default": true
+        },
+        "hideIfEmpty": {
+          "type": "boolean",
+          "default": true
+        },
+        "textAlign": {
+          "type": "string",
+          "default": "left"
+        },
+        "fontSize": {
+          "type": "string",
+          "default": "14px"
+        },
+        "fontWeight": {
+          "type": "string",
+          "default": "400"
+        },
+        "textDecoration": {
+          "type": "string",
+          "default": "underline"
+        },
+        "linkColor": {
+          "type": "string",
+          "default": "#666666"
+        },
+        "linkHoverColor": {
+          "type": "string",
+          "default": "#000000"
+        },
+        "labelColor": {
+          "type": "string",
+          "default": "#333333"
+        },
+        "labelFontWeight": {
+          "type": "string",
+          "default": "bold"
+        },
+        "backgroundColor": {
+          "type": "string",
+          "default": ""
+        },
+        "margin": {
+          "type": "string",
+          "default": "0 0 15px 0"
+        },
+        "padding": {
+          "type": "string",
+          "default": "0"
+        },
+        "fallbackCollections": {
+          "type": "array",
+          "default": [
+            "Sample Collection 1",
+            "Sample Collection 2"
+          ]
+        },
+        "className": {
+          "type": "string",
+          "default": ""
+        },
+        "anchor": {
+          "type": "string",
+          "default": ""
+        },
+        "lock": {
+          "type": "object"
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "align": {
+          "type": "string",
+          "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+          ]
+        },
+        "style": {
+          "type": "object"
+        },
+        "textColor": {
+          "type": "string"
+        },
+        "fontFamily": {
+          "type": "string"
+        }
+      },
+      "supports": {
+        "html": false,
+        "align": [
+          "left",
+          "center",
+          "right"
+        ],
+        "anchor": true,
+        "className": true,
+        "color": {
+          "background": true,
+          "text": true,
+          "link": true,
+          "gradients": false
+        },
+        "typography": {
+          "fontSize": true,
+          "fontWeight": true,
+          "__experimentalFontFamily": true,
+          "__experimentalTextDecoration": true,
+          "__experimentalDefaultControls": {
+            "fontSize": true
+          }
+        },
+        "spacing": {
+          "margin": true,
+          "padding": true
+        }
+      },
+      "context": "product",
+      "source": "admin/page-builders/gutenberg/blocks/ProductCollections.php",
+      "source_sha256": "64e0ae52a90f0bd0d0ea864cfb5da54d2250d4c18f13fb707201b0dc8ce861c1",
+      "example": "<!-- wp:shopipress/collections /-->",
+      "test": {
+        "state": "PASS",
+        "scope": "native do_blocks with fictional local data; no browser or connected-commerce claim",
+        "output_bytes": 465,
+        "echo_bytes": 0
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "shopipress/tags",
+      "title": "Fy2Press Product Tags",
+      "api_version": 3,
+      "attributes": {
+        "showLabel": {
+          "type": "boolean",
+          "default": true
+        },
+        "labelText": {
+          "type": "string",
+          "default": "Tags:"
+        },
+        "displayStyle": {
+          "type": "string",
+          "default": "inline"
+        },
+        "separator": {
+          "type": "string",
+          "default": ", "
+        },
+        "showHash": {
+          "type": "boolean",
+          "default": false
+        },
+        "maxTags": {
+          "type": "number",
+          "default": 0
+        },
+        "linkToTag": {
+          "type": "boolean",
+          "default": true
+        },
+        "hideIfEmpty": {
+          "type": "boolean",
+          "default": true
+        },
+        "textAlign": {
+          "type": "string",
+          "default": "left"
+        },
+        "fontSize": {
+          "type": "string",
+          "default": "14px"
+        },
+        "fontWeight": {
+          "type": "string",
+          "default": "400"
+        },
+        "textDecoration": {
+          "type": "string",
+          "default": "underline"
+        },
+        "linkColor": {
+          "type": "string",
+          "default": "#666666"
+        },
+        "linkHoverColor": {
+          "type": "string",
+          "default": "#000000"
+        },
+        "hashColor": {
+          "type": "string",
+          "default": "#999999"
+        },
+        "labelColor": {
+          "type": "string",
+          "default": "#333333"
+        },
+        "labelFontWeight": {
+          "type": "string",
+          "default": "bold"
+        },
+        "backgroundColor": {
+          "type": "string",
+          "default": ""
+        },
+        "badgeBackgroundColor": {
+          "type": "string",
+          "default": "#f0f0f0"
+        },
+        "badgeTextColor": {
+          "type": "string",
+          "default": "#333333"
+        },
+        "badgePadding": {
+          "type": "string",
+          "default": "4px 8px"
+        },
+        "badgeBorderRadius": {
+          "type": "string",
+          "default": "4px"
+        },
+        "margin": {
+          "type": "string",
+          "default": "0 0 15px 0"
+        },
+        "padding": {
+          "type": "string",
+          "default": "0"
+        },
+        "fallbackTags": {
+          "type": "array",
+          "default": [
+            "casual",
+            "summer",
+            "comfortable"
+          ]
+        },
+        "className": {
+          "type": "string",
+          "default": ""
+        },
+        "anchor": {
+          "type": "string",
+          "default": ""
+        },
+        "lock": {
+          "type": "object"
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "align": {
+          "type": "string",
+          "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+          ]
+        },
+        "style": {
+          "type": "object"
+        },
+        "textColor": {
+          "type": "string"
+        },
+        "fontFamily": {
+          "type": "string"
+        },
+        "borderColor": {
+          "type": "string"
+        }
+      },
+      "supports": {
+        "html": false,
+        "align": [
+          "left",
+          "center",
+          "right"
+        ],
+        "anchor": true,
+        "className": true,
+        "color": {
+          "background": true,
+          "text": true,
+          "link": true,
+          "gradients": false
+        },
+        "typography": {
+          "fontSize": true,
+          "fontWeight": true,
+          "__experimentalFontFamily": true,
+          "__experimentalTextDecoration": true,
+          "__experimentalDefaultControls": {
+            "fontSize": true
+          }
+        },
+        "spacing": {
+          "margin": true,
+          "padding": true
+        },
+        "__experimentalBorder": {
+          "color": true,
+          "radius": true,
+          "style": true,
+          "width": true
+        }
+      },
+      "context": "product",
+      "source": "admin/page-builders/gutenberg/blocks/ProductTags.php",
+      "source_sha256": "2d9a12a3a6943b1f72984722bd14166fdf969b43887e66dd186d950e7123c639",
+      "example": "<!-- wp:shopipress/tags /-->",
+      "test": {
+        "state": "PASS",
+        "scope": "native do_blocks with fictional local data; no browser or connected-commerce claim",
+        "output_bytes": 378,
+        "echo_bytes": 0
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "shopipress/buy-now",
+      "title": "Fy2Press Buy Now",
+      "api_version": 3,
+      "attributes": {
+        "buttonText": {
+          "type": "string",
+          "default": "Buy Now"
+        },
+        "linkTarget": {
+          "type": "string",
+          "default": "_blank"
+        },
+        "customUrl": {
+          "type": "string",
+          "default": ""
+        },
+        "buttonSize": {
+          "type": "string",
+          "default": "medium"
+        },
+        "buttonWidth": {
+          "type": "string",
+          "default": "full"
+        },
+        "customWidth": {
+          "type": "string",
+          "default": ""
+        },
+        "alignment": {
+          "type": "string",
+          "default": "center"
+        },
+        "backgroundColor": {
+          "type": "string",
+          "default": "#ffffff"
+        },
+        "textColor": {
+          "type": "string",
+          "default": "#000000"
+        },
+        "hoverBackgroundColor": {
+          "type": "string",
+          "default": "#f8f8f8"
+        },
+        "hoverTextColor": {
+          "type": "string",
+          "default": "#000000"
+        },
+        "fontSize": {
+          "type": "string",
+          "default": "0.9em"
+        },
+        "fontWeight": {
+          "type": "string",
+          "default": "500"
+        },
+        "textTransform": {
+          "type": "string",
+          "default": "uppercase"
+        },
+        "letterSpacing": {
+          "type": "string",
+          "default": "0.05em"
+        },
+        "textDecoration": {
+          "type": "string",
+          "default": "none"
+        },
+        "borderRadius": {
+          "type": "string",
+          "default": "4px"
+        },
+        "border": {
+          "type": "string",
+          "default": "1px solid #e1e1e1"
+        },
+        "boxShadow": {
+          "type": "string",
+          "default": ""
+        },
+        "customPadding": {
+          "type": "string",
+          "default": "16px 32px"
+        },
+        "customMargin": {
+          "type": "string",
+          "default": ""
+        },
+        "className": {
+          "type": "string",
+          "default": ""
+        },
+        "anchor": {
+          "type": "string",
+          "default": ""
+        },
+        "lock": {
+          "type": "object"
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "align": {
+          "type": "string",
+          "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+          ]
+        },
+        "style": {
+          "type": "object"
+        },
+        "gradient": {
+          "type": "string"
+        },
+        "fontFamily": {
+          "type": "string"
+        },
+        "borderColor": {
+          "type": "string"
+        }
+      },
+      "supports": {
+        "html": false,
+        "align": [
+          "left",
+          "center",
+          "right",
+          "wide",
+          "full"
+        ],
+        "anchor": true,
+        "className": true,
+        "color": {
+          "background": true,
+          "text": true,
+          "gradients": true
+        },
+        "typography": {
+          "fontSize": true,
+          "fontWeight": true,
+          "textTransform": true,
+          "__experimentalFontFamily": true,
+          "__experimentalFontStyle": true,
+          "__experimentalTextDecoration": true,
+          "__experimentalLetterSpacing": true,
+          "__experimentalDefaultControls": {
+            "fontSize": true,
+            "fontWeight": true,
+            "textTransform": true
+          }
+        },
+        "spacing": {
+          "margin": true,
+          "padding": true
+        },
+        "__experimentalBorder": {
+          "color": true,
+          "radius": true,
+          "style": true,
+          "width": true
+        }
+      },
+      "context": "product",
+      "source": "admin/page-builders/gutenberg/blocks/ProductBuyNow.php",
+      "source_sha256": "db9e3262068f5d75ae2179bd4d3f2e26260095eb85d30877b262f6062f4e4c3e",
+      "example": "<!-- wp:shopipress/buy-now /-->",
+      "test": {
+        "state": "PASS",
+        "scope": "native do_blocks with fictional local data; no browser or connected-commerce claim",
+        "output_bytes": 655,
+        "echo_bytes": 0
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "shopipress/collection-title",
+      "title": "Fy2Press Collection Title",
+      "api_version": 3,
+      "attributes": {
+        "htmlTag": {
+          "type": "string",
+          "default": "h1"
+        },
+        "prefix": {
+          "type": "string",
+          "default": ""
+        },
+        "suffix": {
+          "type": "string",
+          "default": ""
+        },
+        "textAlign": {
+          "type": "string",
+          "default": "left"
+        },
+        "textColor": {
+          "type": "string",
+          "default": "#333333"
+        },
+        "fontSize": {
+          "type": "string",
+          "default": "28px"
+        },
+        "backgroundColor": {
+          "type": "string",
+          "default": ""
+        },
+        "padding": {
+          "type": "string",
+          "default": "0"
+        },
+        "className": {
+          "type": "string",
+          "default": ""
+        },
+        "anchor": {
+          "type": "string",
+          "default": ""
+        },
+        "lock": {
+          "type": "object"
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "align": {
+          "type": "string",
+          "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+          ]
+        },
+        "style": {
+          "type": "object"
+        },
+        "gradient": {
+          "type": "string"
+        },
+        "fontFamily": {
+          "type": "string"
+        },
+        "borderColor": {
+          "type": "string"
+        }
+      },
+      "supports": {
+        "html": false,
+        "align": [
+          "left",
+          "center",
+          "right",
+          "wide",
+          "full"
+        ],
+        "alignWide": true,
+        "anchor": true,
+        "className": true,
+        "color": {
+          "background": true,
+          "text": false,
+          "gradients": true
+        },
+        "typography": {
+          "fontSize": false,
+          "lineHeight": true,
+          "__experimentalFontFamily": true,
+          "__experimentalFontWeight": true,
+          "__experimentalFontStyle": true,
+          "__experimentalTextTransform": true,
+          "__experimentalTextDecoration": true,
+          "__experimentalLetterSpacing": true,
+          "__experimentalDefaultControls": {
+            "fontSize": false
+          }
+        },
+        "spacing": {
+          "margin": true,
+          "padding": true
+        },
+        "__experimentalBorder": {
+          "color": true,
+          "radius": true,
+          "style": true,
+          "width": true
+        }
+      },
+      "context": "collection",
+      "source": "admin/page-builders/gutenberg/blocks/CollectionTitle.php",
+      "source_sha256": "44b74ca77a17e5b521132ce045f30bc9c528a1cef704a851135f3048aa9ceec4",
+      "example": "<!-- wp:shopipress/collection-title /-->",
+      "test": {
+        "state": "PASS",
+        "scope": "native do_blocks with fictional local data; no browser or connected-commerce claim",
+        "output_bytes": 178,
+        "echo_bytes": 0
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "shopipress/collection-description",
+      "title": "Fy2Press Collection Description",
+      "api_version": 3,
+      "attributes": {
+        "wrapper": {
+          "type": "string",
+          "default": "div"
+        },
+        "hideIfEmpty": {
+          "type": "boolean",
+          "default": true
+        },
+        "textAlign": {
+          "type": "string",
+          "default": "left"
+        },
+        "textColor": {
+          "type": "string",
+          "default": "#666666"
+        },
+        "fontSize": {
+          "type": "string",
+          "default": "16px"
+        },
+        "backgroundColor": {
+          "type": "string",
+          "default": ""
+        },
+        "padding": {
+          "type": "string",
+          "default": "0"
+        },
+        "className": {
+          "type": "string",
+          "default": ""
+        },
+        "anchor": {
+          "type": "string",
+          "default": ""
+        },
+        "lock": {
+          "type": "object"
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "align": {
+          "type": "string",
+          "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+          ]
+        },
+        "style": {
+          "type": "object"
+        },
+        "gradient": {
+          "type": "string"
+        },
+        "fontFamily": {
+          "type": "string"
+        },
+        "borderColor": {
+          "type": "string"
+        }
+      },
+      "supports": {
+        "html": false,
+        "align": [
+          "left",
+          "center",
+          "right",
+          "wide",
+          "full"
+        ],
+        "alignWide": true,
+        "anchor": true,
+        "className": true,
+        "color": {
+          "background": true,
+          "text": false,
+          "gradients": true
+        },
+        "typography": {
+          "fontSize": false,
+          "lineHeight": true,
+          "__experimentalFontFamily": true,
+          "__experimentalFontWeight": true,
+          "__experimentalFontStyle": true,
+          "__experimentalTextDecoration": true,
+          "__experimentalLetterSpacing": true
+        },
+        "spacing": {
+          "margin": true,
+          "padding": true
+        },
+        "__experimentalBorder": {
+          "color": true,
+          "radius": true,
+          "style": true,
+          "width": true
+        }
+      },
+      "context": "collection",
+      "source": "admin/page-builders/gutenberg/blocks/CollectionDescription.php",
+      "source_sha256": "f517c3bcf7897cba239a23f5b79a38fa478f496e92166f36f735b45169b78f96",
+      "example": "<!-- wp:shopipress/collection-description /-->",
+      "test": {
+        "state": "PASS",
+        "scope": "native do_blocks with fictional local data; no browser or connected-commerce claim",
+        "output_bytes": 274,
+        "echo_bytes": 0
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "shopipress/products-loop",
+      "title": "Fy2Press Products Loop",
+      "api_version": 3,
+      "attributes": {
+        "limit": {
+          "type": "number",
+          "default": 12
+        },
+        "columns": {
+          "type": "number",
+          "default": 4
+        },
+        "collection": {
+          "type": "string",
+          "default": ""
+        },
+        "showPagination": {
+          "type": "boolean",
+          "default": true
+        },
+        "gap": {
+          "type": "number",
+          "default": 20
+        },
+        "showImage": {
+          "type": "boolean",
+          "default": true
+        },
+        "showTitle": {
+          "type": "boolean",
+          "default": true
+        },
+        "showPrice": {
+          "type": "boolean",
+          "default": true
+        },
+        "showCartButton": {
+          "type": "boolean",
+          "default": true
+        },
+        "cardBackgroundColor": {
+          "type": "string",
+          "default": "#ffffff"
+        },
+        "cardBorderColor": {
+          "type": "string",
+          "default": "#eeeeee"
+        },
+        "cardBorderWidth": {
+          "type": "number",
+          "default": 1
+        },
+        "cardBorderRadius": {
+          "type": "number",
+          "default": 8
+        },
+        "cardPadding": {
+          "type": "number",
+          "default": 15
+        },
+        "cardHoverShadow": {
+          "type": "boolean",
+          "default": true
+        },
+        "cardBoxShadow": {
+          "type": "boolean",
+          "default": true
+        },
+        "cardShadowColor": {
+          "type": "string",
+          "default": "rgba(0, 0, 0, 0.1)"
+        },
+        "cardShadowHorizontal": {
+          "type": "number",
+          "default": 0
+        },
+        "cardShadowVertical": {
+          "type": "number",
+          "default": 2
+        },
+        "cardShadowBlur": {
+          "type": "number",
+          "default": 4
+        },
+        "cardShadowSpread": {
+          "type": "number",
+          "default": 0
+        },
+        "imageHeight": {
+          "type": "number",
+          "default": 200
+        },
+        "imageBorderRadius": {
+          "type": "number",
+          "default": 4
+        },
+        "imageHoverEffect": {
+          "type": "boolean",
+          "default": true
+        },
+        "titleFontSize": {
+          "type": "number",
+          "default": 16
+        },
+        "titleFontWeight": {
+          "type": "string",
+          "default": "600"
+        },
+        "titleColor": {
+          "type": "string",
+          "default": "#333333"
+        },
+        "titleHoverColor": {
+          "type": "string",
+          "default": "#007cba"
+        },
+        "titleMarginTop": {
+          "type": "number",
+          "default": 10
+        },
+        "titleMarginBottom": {
+          "type": "number",
+          "default": 8
+        },
+        "priceFontSize": {
+          "type": "number",
+          "default": 16
+        },
+        "priceFontWeight": {
+          "type": "string",
+          "default": "600"
+        },
+        "priceColor": {
+          "type": "string",
+          "default": "#333333"
+        },
+        "priceMarginBottom": {
+          "type": "number",
+          "default": 8
+        },
+        "buttonFontSize": {
+          "type": "number",
+          "default": 14
+        },
+        "buttonBackgroundColor": {
+          "type": "string",
+          "default": "#3498db"
+        },
+        "buttonTextColor": {
+          "type": "string",
+          "default": "#ffffff"
+        },
+        "buttonHoverBackgroundColor": {
+          "type": "string",
+          "default": "#2980b9"
+        },
+        "buttonHoverTextColor": {
+          "type": "string",
+          "default": "#ffffff"
+        },
+        "buttonBorderRadius": {
+          "type": "number",
+          "default": 4
+        },
+        "buttonPaddingVertical": {
+          "type": "number",
+          "default": 8
+        },
+        "buttonPaddingHorizontal": {
+          "type": "number",
+          "default": 16
+        },
+        "buttonMarginTop": {
+          "type": "number",
+          "default": 8
+        },
+        "buttonDisabledBackgroundColor": {
+          "type": "string",
+          "default": "#95a5a6"
+        },
+        "className": {
+          "type": "string",
+          "default": ""
+        },
+        "anchor": {
+          "type": "string",
+          "default": ""
+        },
+        "lock": {
+          "type": "object"
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "align": {
+          "type": "string",
+          "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+          ]
+        },
+        "style": {
+          "type": "object"
+        },
+        "backgroundColor": {
+          "type": "string"
+        },
+        "textColor": {
+          "type": "string"
+        },
+        "gradient": {
+          "type": "string"
+        },
+        "borderColor": {
+          "type": "string"
+        }
+      },
+      "supports": {
+        "html": false,
+        "align": [
+          "left",
+          "center",
+          "right",
+          "wide",
+          "full"
+        ],
+        "alignWide": true,
+        "anchor": true,
+        "className": true,
+        "color": {
+          "background": true,
+          "text": true,
+          "gradients": true
+        },
+        "spacing": {
+          "margin": true,
+          "padding": true
+        },
+        "__experimentalBorder": {
+          "color": true,
+          "radius": true,
+          "style": true,
+          "width": true
+        }
+      },
+      "context": "anywhere",
+      "source": "admin/page-builders/gutenberg/blocks/ProductsLoop.php",
+      "source_sha256": "7fe2428cc89430336a8490abdcff6daacb837b7a57677540f1fb979c655f62d7",
+      "example": "<!-- wp:shopipress/products-loop /-->",
+      "test": {
+        "state": "PASS",
+        "scope": "native do_blocks with fictional local data; no browser or connected-commerce claim",
+        "output_bytes": 3234,
+        "echo_bytes": 0
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "shopipress/collection-sort",
+      "title": "Fy2Press Collection Sort",
+      "api_version": 3,
+      "attributes": {
+        "label": {
+          "type": "string",
+          "default": "Sort by:"
+        },
+        "showLabel": {
+          "type": "boolean",
+          "default": true
+        },
+        "defaultOption": {
+          "type": "string",
+          "default": "Sort by..."
+        },
+        "wrapper": {
+          "type": "string",
+          "default": "div"
+        },
+        "alignment": {
+          "type": "string",
+          "default": "left"
+        },
+        "className": {
+          "type": "string",
+          "default": ""
+        },
+        "anchor": {
+          "type": "string",
+          "default": ""
+        },
+        "lock": {
+          "type": "object"
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "align": {
+          "type": "string",
+          "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+          ]
+        },
+        "style": {
+          "type": "object"
+        },
+        "backgroundColor": {
+          "type": "string"
+        },
+        "textColor": {
+          "type": "string"
+        },
+        "gradient": {
+          "type": "string"
+        },
+        "fontSize": {
+          "type": "string"
+        },
+        "fontFamily": {
+          "type": "string"
+        },
+        "borderColor": {
+          "type": "string"
+        }
+      },
+      "supports": {
+        "html": false,
+        "align": [
+          "left",
+          "center",
+          "right",
+          "wide",
+          "full"
+        ],
+        "alignWide": true,
+        "anchor": true,
+        "className": true,
+        "color": {
+          "background": true,
+          "text": true,
+          "gradients": true
+        },
+        "typography": {
+          "fontSize": true,
+          "lineHeight": true,
+          "__experimentalFontFamily": true,
+          "__experimentalFontWeight": true,
+          "__experimentalFontStyle": true
+        },
+        "spacing": {
+          "margin": true,
+          "padding": true
+        },
+        "__experimentalBorder": {
+          "color": true,
+          "radius": true,
+          "style": true,
+          "width": true
+        }
+      },
+      "context": "collection",
+      "source": "admin/page-builders/gutenberg/blocks/CollectionSort.php",
+      "source_sha256": "340b3038ed65d31998a1cbdb615247d0cd65414815e2fcbc526556fb9196e074",
+      "example": "<!-- wp:shopipress/collection-sort /-->",
+      "test": {
+        "state": "PASS",
+        "scope": "native do_blocks with fictional local data; no browser or connected-commerce claim",
+        "output_bytes": 668,
+        "echo_bytes": 0
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    },
+    {
+      "name": "shopipress/collection-products-per-page",
+      "title": "Fy2Press Products per Page",
+      "api_version": 3,
+      "attributes": {
+        "options": {
+          "type": "string",
+          "default": "12,24,48,96"
+        },
+        "defaultValue": {
+          "type": "string",
+          "default": "12"
+        },
+        "label": {
+          "type": "string",
+          "default": "Products per page:"
+        },
+        "showLabel": {
+          "type": "boolean",
+          "default": true
+        },
+        "wrapper": {
+          "type": "string",
+          "default": "div"
+        },
+        "alignment": {
+          "type": "string",
+          "default": "left"
+        },
+        "className": {
+          "type": "string",
+          "default": ""
+        },
+        "anchor": {
+          "type": "string",
+          "default": ""
+        },
+        "lock": {
+          "type": "object"
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "align": {
+          "type": "string",
+          "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+          ]
+        },
+        "style": {
+          "type": "object"
+        },
+        "backgroundColor": {
+          "type": "string"
+        },
+        "textColor": {
+          "type": "string"
+        },
+        "gradient": {
+          "type": "string"
+        },
+        "fontSize": {
+          "type": "string"
+        },
+        "fontFamily": {
+          "type": "string"
+        },
+        "borderColor": {
+          "type": "string"
+        }
+      },
+      "supports": {
+        "html": false,
+        "align": [
+          "left",
+          "center",
+          "right",
+          "wide",
+          "full"
+        ],
+        "alignWide": true,
+        "anchor": true,
+        "className": true,
+        "color": {
+          "background": true,
+          "text": true,
+          "gradients": true
+        },
+        "typography": {
+          "fontSize": true,
+          "lineHeight": true,
+          "__experimentalFontFamily": true,
+          "__experimentalFontWeight": true,
+          "__experimentalFontStyle": true
+        },
+        "spacing": {
+          "margin": true,
+          "padding": true
+        },
+        "__experimentalBorder": {
+          "color": true,
+          "radius": true,
+          "style": true,
+          "width": true
+        }
+      },
+      "context": "collection",
+      "source": "admin/page-builders/gutenberg/blocks/CollectionProductsPerPage.php",
+      "source_sha256": "71960145ea2da0d70ed26390d99972aac0fca17830799d2699404da759b50dec",
+      "example": "<!-- wp:shopipress/collection-products-per-page /-->",
+      "test": {
+        "state": "PASS",
+        "scope": "native do_blocks with fictional local data; no browser or connected-commerce claim",
+        "output_bytes": 493,
+        "echo_bytes": 0
+      },
+      "version": "1.0.0",
+      "edition": "FREE",
+      "contract": "public component name observed in this version; no forward compatibility guarantee"
+    }
+  ],
+  "url_modes": {
+    "url_is_scalar": true,
+    "link_is_html": true
+  },
+  "package_sha256": "ef6c0a38fef2311781e3a8e448102bd565c1c4abaf8b0fcf3e311d3651a093c0",
+  "svn_revision": 3744276
+}

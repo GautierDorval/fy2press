@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "documentation": {
+    "version": "docs-v1.0.0-rc.1",
+    "publication_state": "LOCAL_CANDIDATE",
+    "published_at": null
+  },
+  "FREE": {
+    "version": "1.0.0",
+    "distribution": "wordpress.org",
+    "observed_on": "2026-10-14",
+    "svn_revision": 3744276,
+    "file_count": 488,
+    "zip_sha256": "ef6c0a38fef2311781e3a8e448102bd565c1c4abaf8b0fcf3e311d3651a093c0",
+    "source_commit": null
+  },
+  "PRO": {
+    "version": "1.0.0",
+    "version_basis": "publisher documented version; current supplier package identity not reverified",
+    "distribution_state": "observed_published",
+    "current_package_verified": false,
+    "zip_sha256": null,
+    "connected_qualification": "NOT_RUN"
+  },
+  "policy_status": "proposed",
+  "divergences": [
+    {
+      "id": "WP-README-20261014",
+      "source": "release",
+      "field": "/distribution/wordpress_org/current_package",
+      "publisher_record_revision": 3742640,
+      "observed_revision": 3744276,
+      "difference": "Only readme.txt changed between these SVN revisions; plugin version remains 1.0.0. Current ZIP rehashed.",
+      "resolution": "Use current downloaded ZIP for this reference. Upstream release-state correction is prepared separately; original observation retained."
+    },
+    {
+      "id": "WORDPRESS-TESTED-DECLARATIONS",
+      "source": "wordpress",
+      "field": "/tested",
+      "api_value": "7.1.3",
+      "package_readme_value": "7.1",
+      "resolution": "Both are author/platform declarations, not independent tests. Local environment is recorded separately."
+    }
+  ]
+}

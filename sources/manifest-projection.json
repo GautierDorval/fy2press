@@ -1,0 +1,165 @@
+{
+  "schema_version": "2.0.0",
+  "entity": {
+    "canonical_url": "https://fy2press.com/",
+    "demonstration_brand": "Morrowfield",
+    "entity_type": "WordPress plugin",
+    "name": "Fy2Press",
+    "publisher_id": "https://pagup.com/#organization",
+    "publisher_name": "Pagup",
+    "publisher_url": "https://pagup.com/",
+    "software_id": "https://fy2press.com/product/#software"
+  },
+  "product_boundary": {
+    "shopify": "Source catalog, cart, transaction and checkout.",
+    "shopipress": "Connection, catalog discovery, manual synchronization and rendering contracts.",
+    "summary": "Publish a Shopify catalog as native WordPress catalog content while checkout remains on Shopify.",
+    "woocommerce_required": false,
+    "wordpress": "Native catalog content, taxonomies, templates, editorial context and SEO surface."
+  },
+  "capability_observation": {
+    "basis_kind": "revalidated_source_observation",
+    "capabilities": [
+      {
+        "edition": "FREE",
+        "id": "connection.single_store",
+        "implementation": "delivered"
+      },
+      {
+        "edition": "FREE",
+        "id": "catalog.wordpress_model",
+        "implementation": "delivered"
+      },
+      {
+        "edition": "FREE",
+        "id": "sync.manual_full_catalog",
+        "implementation": "partial"
+      },
+      {
+        "edition": "FREE",
+        "id": "storefront.default_templates",
+        "implementation": "delivered"
+      },
+      {
+        "count": 27,
+        "edition": "FREE",
+        "id": "builders.prefixed_shortcodes",
+        "implementation": "delivered"
+      },
+      {
+        "count": 17,
+        "edition": "FREE",
+        "id": "builders.gutenberg",
+        "implementation": "delivered"
+      },
+      {
+        "edition": "FREE",
+        "id": "storefront.basic_discovery",
+        "implementation": "delivered"
+      },
+      {
+        "edition": "FREE",
+        "id": "design.basic_workshop",
+        "implementation": "delivered"
+      },
+      {
+        "edition": "FREE",
+        "id": "commerce.cart_checkout",
+        "implementation": "delivered"
+      },
+      {
+        "edition": "FREE",
+        "id": "commerce.no_woocommerce",
+        "implementation": "delivered"
+      },
+      {
+        "edition": "FREE",
+        "id": "seo.baseline",
+        "implementation": "partial"
+      },
+      {
+        "edition": "FREE",
+        "id": "lifecycle.safe_uninstall_downgrade",
+        "implementation": "partial"
+      },
+      {
+        "count": 17,
+        "edition": "PRO",
+        "id": "builders.elementor_native",
+        "implementation": "delivered"
+      },
+      {
+        "count": 17,
+        "edition": "PRO",
+        "id": "builders.wpbakery_native",
+        "implementation": "delivered"
+      },
+      {
+        "edition": "PRO",
+        "id": "design.visual_design_advanced",
+        "implementation": "delivered"
+      },
+      {
+        "edition": "PRO",
+        "id": "design.component_customization",
+        "implementation": "delivered"
+      },
+      {
+        "edition": "PRO",
+        "id": "design.responsive_controls",
+        "implementation": "delivered"
+      },
+      {
+        "edition": "PRO",
+        "id": "design.multiple_templates",
+        "implementation": "delivered"
+      },
+      {
+        "edition": "PRO",
+        "id": "design.custom_css",
+        "implementation": "delivered"
+      },
+      {
+        "edition": "PRO",
+        "id": "sync.scheduled",
+        "implementation": "partial"
+      }
+    ],
+    "documented_version": "1.0.0",
+    "not_available": [
+      "Saved advanced facets and merchandising rules",
+      "Saved design presets",
+      "Settings import and export",
+      "Webhook queues and resumable synchronization",
+      "Local media mirroring",
+      "Shopify metafields and ACF mapping",
+      "Multilingual catalog synchronization",
+      "Multi-store agency tooling",
+      "Priority support"
+    ],
+    "original_observed_at": "2026-10-11T00:00:00Z",
+    "revalidated_on": "2026-10-11",
+    "source_matches_distributed_package": null
+  },
+  "states": {
+    "commercial": "verified",
+    "correction_channel": "unverified",
+    "freemius": "observed_published",
+    "meta_robots": "index, follow",
+    "policy": "proposed",
+    "site": "observed_live",
+    "wordpress_org": "verified_published"
+  },
+  "canonical_surfaces": {
+    "ai_governance": "https://fy2press.com/ai-governance/",
+    "changelog": "https://fy2press.com/changelog/",
+    "documentation": "https://fy2press.com/docs/",
+    "privacy": "https://fy2press.com/privacy/",
+    "product": "https://fy2press.com/product/",
+    "security": "https://fy2press.com/security/",
+    "seo_hub": "https://fy2press.com/seo-hub/",
+    "shopify_wordpress": "https://fy2press.com/shopify-wordpress/",
+    "support": "https://fy2press.com/support/",
+    "translation_policy": "https://fy2press.com/translation-policy/"
+  }
+}

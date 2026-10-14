@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Fy2Press support and confidential initial contact
+    url: https://fy2press.com/support/
+    about: Licences, product assistance and confidential reports. Do not send secrets.
+  - name: WordPress FREE support
+    url: https://wordpress.org/support/plugin/fy2press/
+    about: Public help with the WordPress.org edition.

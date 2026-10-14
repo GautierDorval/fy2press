@@ -1,0 +1,26 @@
+name: Documentation correction
+description: Clarify a document, example or source.
+title: "[Docs] "
+body:
+  - type: markdown
+    attributes:
+      value: Do not include credentials, exploitable security details or customer data. Use official support for confidential reports.
+  - type: input
+    id: document
+    attributes:
+      label: Document path or heading
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: What should change, and why?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public source or non-sensitive reproduction
+      description: Include edition and version if relevant. No private merchant URL is required.
+    validations:
+      required: true

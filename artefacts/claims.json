@@ -1,0 +1,505 @@
+{
+  "schema_version": "1.0.0",
+  "claims": [
+    {
+      "id": "connection.single_store",
+      "subject": "Fy2Press",
+      "edition": "FREE",
+      "version": "1.0.0",
+      "statement_en": "Connect one Shopify store",
+      "statement_fr_ca": "Connecter une boutique Shopify",
+      "implementation_status": "delivered",
+      "behaviour": "Connect one Shopify store",
+      "limitations": [
+        "Requires a public Storefront token; no multi-store management.",
+        "Exige un jeton Storefront public; aucune gestion multiboutique."
+      ],
+      "source_refs": [
+        {
+          "source_id": "manifest",
+          "pointer": "/capability_observation/capabilities/0"
+        }
+      ],
+      "validation": {
+        "state": "NOT_RUN",
+        "scope": "Publisher description; not a new runtime qualification"
+      },
+      "policy_status": null
+    },
+    {
+      "id": "catalog.wordpress_model",
+      "subject": "Fy2Press",
+      "edition": "FREE",
+      "version": "1.0.0",
+      "statement_en": "Publish native catalog records",
+      "statement_fr_ca": "Publier des fiches de catalogue natives",
+      "implementation_status": "delivered",
+      "behaviour": "Publish native catalog records",
+      "limitations": [
+        "Shopify owns commercial data; native records do not mean offline commerce.",
+        "Shopify gère les données commerciales; les fiches natives ne rendent pas le commerce hors ligne."
+      ],
+      "source_refs": [
+        {
+          "source_id": "manifest",
+          "pointer": "/capability_observation/capabilities/1"
+        }
+      ],
+      "validation": {
+        "state": "NOT_RUN",
+        "scope": "Publisher description; not a new runtime qualification"
+      },
+      "policy_status": null
+    },
+    {
+      "id": "sync.manual_full_catalog",
+      "subject": "Fy2Press",
+      "edition": "FREE",
+      "version": "1.0.0",
+      "statement_en": "Manually synchronize the catalog",
+      "statement_fr_ca": "Synchroniser manuellement le catalogue",
+      "implementation_status": "partial",
+      "behaviour": "Manually synchronize the catalog",
+      "limitations": [
+        "Publisher partial status; discovery, writing and interruption recovery need separate checks. No connected resumption test here.",
+        "Statut partiel de l’éditeur; découverte, écriture et reprise exigent des vérifications distinctes. Aucun essai connecté de reprise ici."
+      ],
+      "source_refs": [
+        {
+          "source_id": "manifest",
+          "pointer": "/capability_observation/capabilities/2"
+        }
+      ],
+      "validation": {
+        "state": "NOT_RUN",
+        "scope": "Publisher description; not a new runtime qualification"
+      },
+      "policy_status": null
+    },
+    {
+      "id": "storefront.default_templates",
+      "subject": "Fy2Press",
+      "edition": "FREE",
+      "version": "1.0.0",
+      "statement_en": "Use included catalog templates",
+      "statement_fr_ca": "Utiliser les modèles de catalogue inclus",
+      "implementation_status": "delivered",
+      "behaviour": "Use included catalog templates",
+      "limitations": [
+        "Verify the actual theme and page context.",
+        "Vérifier le thème réel et le contexte de page."
+      ],
+      "source_refs": [
+        {
+          "source_id": "manifest",
+          "pointer": "/capability_observation/capabilities/3"
+        }
+      ],
+      "validation": {
+        "state": "NOT_RUN",
+        "scope": "Publisher description; not a new runtime qualification"
+      },
+      "policy_status": null
+    },
+    {
+      "id": "builders.prefixed_shortcodes",
+      "subject": "Fy2Press",
+      "edition": "FREE",
+      "version": "1.0.0",
+      "statement_en": "Compose with public shortcodes",
+      "statement_fr_ca": "Composer avec les shortcodes publics",
+      "implementation_status": "delivered",
+      "behaviour": "Compose with public shortcodes",
+      "limitations": [
+        "27 canonical names plus compatibility aliases observed; aliases are not extra features.",
+        "27 noms canoniques et leurs alias observés; les alias ne sont pas des fonctions supplémentaires."
+      ],
+      "source_refs": [
+        {
+          "source_id": "manifest",
+          "pointer": "/capability_observation/capabilities/4"
+        }
+      ],
+      "validation": {
+        "state": "LOCAL_COMPONENT_OBSERVATION",
+        "scope": "Native FREE registry and local callback examples only"
+      },
+      "policy_status": null
+    },
+    {
+      "id": "builders.gutenberg",
+      "subject": "Fy2Press",
+      "edition": "FREE",
+      "version": "1.0.0",
+      "statement_en": "Compose with Gutenberg blocks",
+      "statement_fr_ca": "Composer avec les blocs Gutenberg",
+      "implementation_status": "delivered",
+      "behaviour": "Compose with Gutenberg blocks",
+      "limitations": [
+        "17 native registrations observed; product and collection contexts differ.",
+        "17 inscriptions natives observées; les contextes produit et collection diffèrent."
+      ],
+      "source_refs": [
+        {
+          "source_id": "manifest",
+          "pointer": "/capability_observation/capabilities/5"
+        }
+      ],
+      "validation": {
+        "state": "LOCAL_COMPONENT_OBSERVATION",
+        "scope": "Native FREE registry and local callback examples only"
+      },
+      "policy_status": null
+    },
+    {
+      "id": "storefront.basic_discovery",
+      "subject": "Fy2Press",
+      "edition": "FREE",
+      "version": "1.0.0",
+      "statement_en": "Search, filter, sort and paginate",
+      "statement_fr_ca": "Rechercher, filtrer, trier et paginer",
+      "implementation_status": "delivered",
+      "behaviour": "Search, filter, sort and paginate",
+      "limitations": [
+        "Basic navigation, not saved advanced merchandising rules.",
+        "Navigation de base, sans règles avancées de présentation sauvegardées."
+      ],
+      "source_refs": [
+        {
+          "source_id": "manifest",
+          "pointer": "/capability_observation/capabilities/6"
+        }
+      ],
+      "validation": {
+        "state": "NOT_RUN",
+        "scope": "Publisher description; not a new runtime qualification"
+      },
+      "policy_status": null
+    },
+    {
+      "id": "design.basic_workshop",
+      "subject": "Fy2Press",
+      "edition": "FREE",
+      "version": "1.0.0",
+      "statement_en": "Configure a basic product and collection design",
+      "statement_fr_ca": "Configurer un design de base produit et collection",
+      "implementation_status": "delivered",
+      "behaviour": "Configure a basic product and collection design",
+      "limitations": [
+        "One design of each kind in FREE.",
+        "Un design de chaque type dans FREE."
+      ],
+      "source_refs": [
+        {
+          "source_id": "manifest",
+          "pointer": "/capability_observation/capabilities/7"
+        }
+      ],
+      "validation": {
+        "state": "NOT_RUN",
+        "scope": "Publisher description; not a new runtime qualification"
+      },
+      "policy_status": null
+    },
+    {
+      "id": "commerce.cart_checkout",
+      "subject": "Fy2Press",
+      "edition": "FREE",
+      "version": "1.0.0",
+      "statement_en": "Present cart controls and continue to Shopify",
+      "statement_fr_ca": "Présenter le panier et poursuivre dans Shopify",
+      "implementation_status": "delivered",
+      "behaviour": "Present cart controls and continue to Shopify",
+      "limitations": [
+        "Shopify checkout; no completed transaction tested here.",
+        "Paiement Shopify; aucune transaction terminée testée ici."
+      ],
+      "source_refs": [
+        {
+          "source_id": "manifest",
+          "pointer": "/capability_observation/capabilities/8"
+        }
+      ],
+      "validation": {
+        "state": "NOT_RUN",
+        "scope": "Publisher description; not a new runtime qualification"
+      },
+      "policy_status": null
+    },
+    {
+      "id": "commerce.no_woocommerce",
+      "subject": "Fy2Press",
+      "edition": "FREE",
+      "version": "1.0.0",
+      "statement_en": "Run without WooCommerce",
+      "statement_fr_ca": "Fonctionner sans WooCommerce",
+      "implementation_status": "delivered",
+      "behaviour": "Run without WooCommerce",
+      "limitations": [
+        "Shopify and WordPress services remain required.",
+        "Les services Shopify et WordPress restent nécessaires."
+      ],
+      "source_refs": [
+        {
+          "source_id": "manifest",
+          "pointer": "/capability_observation/capabilities/9"
+        }
+      ],
+      "validation": {
+        "state": "NOT_RUN",
+        "scope": "Publisher description; not a new runtime qualification"
+      },
+      "policy_status": null
+    },
+    {
+      "id": "seo.baseline",
+      "subject": "Fy2Press",
+      "edition": "FREE",
+      "version": "1.0.0",
+      "statement_en": "Control catalog indexing and product URL preference",
+      "statement_fr_ca": "Régler l’indexation et la préférence d’URL produit",
+      "implementation_status": "partial",
+      "behaviour": "Control catalog indexing and product URL preference",
+      "limitations": [
+        "Product canonical and taxonomy indexing are different controls; no ranking guarantee.",
+        "Canonique produit et indexation des taxonomies sont distinctes; aucun classement garanti."
+      ],
+      "source_refs": [
+        {
+          "source_id": "manifest",
+          "pointer": "/capability_observation/capabilities/10"
+        }
+      ],
+      "validation": {
+        "state": "NOT_RUN",
+        "scope": "Publisher description; not a new runtime qualification"
+      },
+      "policy_status": null
+    },
+    {
+      "id": "lifecycle.safe_uninstall_downgrade",
+      "subject": "Fy2Press",
+      "edition": "FREE",
+      "version": "1.0.0",
+      "statement_en": "Retain FREE access when returning from PRO",
+      "statement_fr_ca": "Conserver FREE après un retour de PRO",
+      "implementation_status": "partial",
+      "behaviour": "Retain FREE access when returning from PRO",
+      "limitations": [
+        "Partial scope; verify premium layout fallback and the chosen uninstall option.",
+        "Portée partielle; vérifier le remplacement des designs premium et l’option de désinstallation."
+      ],
+      "source_refs": [
+        {
+          "source_id": "manifest",
+          "pointer": "/capability_observation/capabilities/11"
+        }
+      ],
+      "validation": {
+        "state": "NOT_RUN",
+        "scope": "Publisher description; not a new runtime qualification"
+      },
+      "policy_status": null
+    },
+    {
+      "id": "builders.elementor_native",
+      "subject": "Fy2Press",
+      "edition": "PRO",
+      "version": "1.0.0",
+      "statement_en": "Use native Elementor components",
+      "statement_fr_ca": "Utiliser les composants Elementor natifs",
+      "implementation_status": "delivered",
+      "behaviour": "Use native Elementor components",
+      "limitations": [
+        "PRO and a separately licensed builder; exact connected/licensed combination not tested here.",
+        "PRO et constructeur sous licence distincte; combinaison exacte sous licence non testée ici."
+      ],
+      "source_refs": [
+        {
+          "source_id": "manifest",
+          "pointer": "/capability_observation/capabilities/12"
+        }
+      ],
+      "validation": {
+        "state": "NOT_RUN",
+        "scope": "Publisher description; not a new runtime qualification"
+      },
+      "policy_status": null
+    },
+    {
+      "id": "builders.wpbakery_native",
+      "subject": "Fy2Press",
+      "edition": "PRO",
+      "version": "1.0.0",
+      "statement_en": "Use native WPBakery components",
+      "statement_fr_ca": "Utiliser les composants WPBakery natifs",
+      "implementation_status": "delivered",
+      "behaviour": "Use native WPBakery components",
+      "limitations": [
+        "PRO and a separately licensed builder; exact connected/licensed combination not tested here.",
+        "PRO et constructeur sous licence distincte; combinaison exacte sous licence non testée ici."
+      ],
+      "source_refs": [
+        {
+          "source_id": "manifest",
+          "pointer": "/capability_observation/capabilities/13"
+        }
+      ],
+      "validation": {
+        "state": "NOT_RUN",
+        "scope": "Publisher description; not a new runtime qualification"
+      },
+      "policy_status": null
+    },
+    {
+      "id": "design.visual_design_advanced",
+      "subject": "Fy2Press",
+      "edition": "PRO",
+      "version": "1.0.0",
+      "statement_en": "Use advanced design controls",
+      "statement_fr_ca": "Utiliser les réglages de design avancés",
+      "implementation_status": "delivered",
+      "behaviour": "Use advanced design controls",
+      "limitations": [
+        "Publisher PRO observation; no licensed PRO runtime test here.",
+        "Observation PRO de l’éditeur; aucun essai runtime PRO sous licence ici."
+      ],
+      "source_refs": [
+        {
+          "source_id": "manifest",
+          "pointer": "/capability_observation/capabilities/14"
+        }
+      ],
+      "validation": {
+        "state": "NOT_RUN",
+        "scope": "Publisher description; not a new runtime qualification"
+      },
+      "policy_status": null
+    },
+    {
+      "id": "design.component_customization",
+      "subject": "Fy2Press",
+      "edition": "PRO",
+      "version": "1.0.0",
+      "statement_en": "Customize components",
+      "statement_fr_ca": "Personnaliser les composants",
+      "implementation_status": "delivered",
+      "behaviour": "Customize components",
+      "limitations": [
+        "Publisher PRO observation; validate the selected component and theme.",
+        "Observation PRO de l’éditeur; valider composant et thème choisis."
+      ],
+      "source_refs": [
+        {
+          "source_id": "manifest",
+          "pointer": "/capability_observation/capabilities/15"
+        }
+      ],
+      "validation": {
+        "state": "NOT_RUN",
+        "scope": "Publisher description; not a new runtime qualification"
+      },
+      "policy_status": null
+    },
+    {
+      "id": "design.responsive_controls",
+      "subject": "Fy2Press",
+      "edition": "PRO",
+      "version": "1.0.0",
+      "statement_en": "Adjust device-specific presentation",
+      "statement_fr_ca": "Ajuster la présentation selon l’appareil",
+      "implementation_status": "delivered",
+      "behaviour": "Adjust device-specific presentation",
+      "limitations": [
+        "Publisher PRO observation; inspect actual mobile and desktop output.",
+        "Observation PRO de l’éditeur; inspecter le rendu mobile et ordinateur réel."
+      ],
+      "source_refs": [
+        {
+          "source_id": "manifest",
+          "pointer": "/capability_observation/capabilities/16"
+        }
+      ],
+      "validation": {
+        "state": "NOT_RUN",
+        "scope": "Publisher description; not a new runtime qualification"
+      },
+      "policy_status": null
+    },
+    {
+      "id": "design.multiple_templates",
+      "subject": "Fy2Press",
+      "edition": "PRO",
+      "version": "1.0.0",
+      "statement_en": "Maintain multiple templates",
+      "statement_fr_ca": "Entretenir plusieurs modèles",
+      "implementation_status": "delivered",
+      "behaviour": "Maintain multiple templates",
+      "limitations": [
+        "Publisher PRO observation; document template assignments and downgrade behavior.",
+        "Observation PRO de l’éditeur; consigner les affectations et le retour à FREE."
+      ],
+      "source_refs": [
+        {
+          "source_id": "manifest",
+          "pointer": "/capability_observation/capabilities/17"
+        }
+      ],
+      "validation": {
+        "state": "NOT_RUN",
+        "scope": "Publisher description; not a new runtime qualification"
+      },
+      "policy_status": null
+    },
+    {
+      "id": "design.custom_css",
+      "subject": "Fy2Press",
+      "edition": "PRO",
+      "version": "1.0.0",
+      "statement_en": "Add custom CSS",
+      "statement_fr_ca": "Ajouter du CSS personnalisé",
+      "implementation_status": "delivered",
+      "behaviour": "Add custom CSS",
+      "limitations": [
+        "Publisher PRO observation; custom styling needs its own accessibility and mobile checks.",
+        "Observation PRO de l’éditeur; vérifier accessibilité et mobile du style ajouté."
+      ],
+      "source_refs": [
+        {
+          "source_id": "manifest",
+          "pointer": "/capability_observation/capabilities/18"
+        }
+      ],
+      "validation": {
+        "state": "NOT_RUN",
+        "scope": "Publisher description; not a new runtime qualification"
+      },
+      "policy_status": null
+    },
+    {
+      "id": "sync.scheduled",
+      "subject": "Fy2Press",
+      "edition": "PRO",
+      "version": "1.0.0",
+      "statement_en": "Schedule catalog synchronization",
+      "statement_fr_ca": "Planifier la synchronisation du catalogue",
+      "implementation_status": "partial",
+      "behaviour": "Schedule catalog synchronization",
+      "limitations": [
+        "Active PRO licence and WordPress cron; not instant. Live-store qualification is not established by this reference.",
+        "Licence PRO active et cron WordPress; non instantané. La qualification en boutique réelle n’est pas établie par cette référence."
+      ],
+      "source_refs": [
+        {
+          "source_id": "manifest",
+          "pointer": "/capability_observation/capabilities/19"
+        }
+      ],
+      "validation": {
+        "state": "NOT_RUN",
+        "scope": "Publisher description; not a new runtime qualification"
+      },
+      "policy_status": null
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "hash_scope": {
+      "const": "exact UTF-8 file bytes"
+    },
+    "translations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "translation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "translation_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "review_state": {
+            "const": "AI_REVIEWED_HUMAN_PENDING"
+          },
+          "reviewer": {
+            "const": "Codex"
+          },
+          "reviewed_on": {
+            "const": "2026-10-14"
+          }
+        },
+        "required": [
+          "source",
+          "source_sha256",
+          "translation",
+          "translation_sha256",
+          "review_state",
+          "reviewer",
+          "reviewed_on"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "hash_scope",
+    "translations"
+  ],
+  "additionalProperties": false
+}

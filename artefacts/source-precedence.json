@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "by_question": {
+    "behaviour": [
+      "identified distributed package",
+      "reproducible scoped runtime observation",
+      "publisher descriptions"
+    ],
+    "distribution": [
+      "provider response and downloaded bytes",
+      "dated publisher receipt"
+    ],
+    "permissions": [
+      "explicit owner decision"
+    ],
+    "site": [
+      "served response"
+    ],
+    "rights": [
+      "applicable licence and rights holder"
+    ]
+  },
+  "rules": [
+    "Record conflicting scope and dates; do not silently select the convenient source.",
+    "A manifest does not invalidate reproducible contrary behaviour.",
+    "Proposed policy does not mean proposed software.",
+    "A test against FREE never qualifies PRO.",
+    "Network failure is UNAVAILABLE, not absence."
+  ]
+}

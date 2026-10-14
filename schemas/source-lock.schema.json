@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "documentation_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "retrieved_at": {
+            "type": "string",
+            "minLength": 1
+          },
+          "observed_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "raw_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "retained_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "retained_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "export_policy": {
+            "const": "reviewed_projection_not_raw_copy"
+          },
+          "mapping_version": {
+            "const": "1.0.0"
+          },
+          "source_fields": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "omissions": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_schema_version": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "url",
+          "role",
+          "retrieved_at",
+          "observed_at",
+          "raw_sha256",
+          "retained_path",
+          "retained_sha256",
+          "export_policy",
+          "mapping_version",
+          "source_fields",
+          "omissions",
+          "source_schema_version"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "documentation_version",
+    "sources"
+  ],
+  "additionalProperties": false
+}

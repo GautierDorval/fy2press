@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "subject": {
+            "const": "Fy2Press"
+          },
+          "edition": {
+            "enum": [
+              "FREE",
+              "PRO"
+            ]
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "statement_en": {
+            "type": "string",
+            "minLength": 1
+          },
+          "statement_fr_ca": {
+            "type": "string",
+            "minLength": 1
+          },
+          "implementation_status": {
+            "enum": [
+              "delivered",
+              "partial",
+              "absent",
+              "unknown",
+              null
+            ]
+          },
+          "behaviour": {
+            "type": "string",
+            "minLength": 1
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "source_refs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "source_id": {
+                  "const": "manifest"
+                },
+                "pointer": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "source_id",
+                "pointer"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "validation": {
+            "type": "object",
+            "properties": {
+              "state": {
+                "enum": [
+                  "NOT_RUN",
+                  "LOCAL_COMPONENT_OBSERVATION"
+                ]
+              },
+              "scope": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "state",
+              "scope"
+            ],
+            "additionalProperties": false
+          },
+          "policy_status": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "id",
+          "subject",
+          "edition",
+          "version",
+          "statement_en",
+          "statement_fr_ca",
+          "implementation_status",
+          "behaviour",
+          "limitations",
+          "source_refs",
+          "validation",
+          "policy_status"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "claims"
+  ],
+  "additionalProperties": false
+}

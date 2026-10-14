@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0.0",
+  "documentation_version": "docs-v1.0.0-rc.1",
+  "sources": [
+    {
+      "id": "manifest",
+      "url": "https://fy2press.com/ai-manifest.json",
+      "role": "Publisher capability descriptions",
+      "retrieved_at": "2026-10-14T16:59:28.6485801Z",
+      "observed_at": "2026-10-11T00:00:00Z",
+      "raw_sha256": "5beae3bcb67171c377aa24ba5f066218ac8f89abd6314a0c3ab29d8826c90a58",
+      "retained_path": "sources/manifest-projection.json",
+      "retained_sha256": "7e9ac55dcd2d97a38c6e2c420aa3adca8c4d962ff28764928fbad3dc5166471e",
+      "export_policy": "reviewed_projection_not_raw_copy",
+      "mapping_version": "1.0.0",
+      "source_fields": [
+        "schema_version",
+        "entity",
+        "product_boundary",
+        "capability_observation",
+        "states",
+        "canonical_surfaces"
+      ],
+      "omissions": "Private references, historical review archives, incidental metadata and unrelated policies are omitted. No absent capability is inferred.",
+      "source_schema_version": "2.0.0"
+    },
+    {
+      "id": "release",
+      "url": "https://fy2press.com/governance/release-state.json",
+      "role": "Dated distribution and commercial observations",
+      "retrieved_at": "2026-10-14T16:59:28.9826969Z",
+      "observed_at": null,
+      "raw_sha256": "6b350ccbebf73407928204c54bc0bdbe91f3d0cbda02c3d2b7cedfb7ce215877",
+      "retained_path": "sources/release-projection.json",
+      "retained_sha256": "f6a1e1804123b0c187bae2db1330c35de0b7850a54b3dade3b1503416e04e0f7",
+      "export_policy": "reviewed_projection_not_raw_copy",
+      "mapping_version": "1.0.0",
+      "source_fields": [
+        "schema_version",
+        "documented_plugin_version",
+        "distribution",
+        "commercial"
+      ],
+      "omissions": "Private references, historical review archives, incidental metadata and unrelated policies are omitted. No absent capability is inferred.",
+      "source_schema_version": "2.0.0"
+    },
+    {
+      "id": "policy",
+      "url": "https://fy2press.com/governance/claim-rules.json",
+      "role": "Interpretation constraints, paraphrased; not runtime maturity",
+      "retrieved_at": "2026-10-14T16:59:29.2182446Z",
+      "observed_at": null,
+      "raw_sha256": "3196833c493213796509c5748f60dd2cea5d0048ea1f5fa08968aea3e430d98b",
+      "retained_path": "sources/policy-projection.json",
+      "retained_sha256": "f1bd3c8bf3a1f63a50c71307d48373d65952341ea38f955b4ba61f77d4726493",
+      "export_policy": "reviewed_projection_not_raw_copy",
+      "mapping_version": "1.0.0",
+      "source_fields": [
+        "/document_status",
+        "/rules"
+      ],
+      "omissions": "Private references, historical review archives, incidental metadata and unrelated policies are omitted. No absent capability is inferred.",
+      "source_schema_version": "2.0.0"
+    },
+    {
+      "id": "wordpress",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request[slug]=fy2press",
+      "role": "WordPress distribution metadata, supplemented by ZIP and SVN",
+      "retrieved_at": "2026-10-14T16:59:28.8164414Z",
+      "observed_at": "2026-10-14",
+      "raw_sha256": "c19aa3d8e461656b9e0fd1e9f4ee6b3d2020496022bc1f2fa7d0b608bc7007b8",
+      "retained_path": "sources/wordpress-projection.json",
+      "retained_sha256": "96116e4ab795ca3b40e48fe6c204f65576547b9b4368d49557a70f1e86547482",
+      "export_policy": "reviewed_projection_not_raw_copy",
+      "mapping_version": "1.0.0",
+      "source_fields": [
+        "/name",
+        "/slug",
+        "/version",
+        "/requires",
+        "/tested",
+        "/requires_php",
+        "/last_updated",
+        "/download_link"
+      ],
+      "omissions": "Private references, historical review archives, incidental metadata and unrelated policies are omitted. No absent capability is inferred.",
+      "source_schema_version": null
+    },
+    {
+      "id": "developer",
+      "url": "https://downloads.wordpress.org/plugin/fy2press.1.0.0.zip",
+      "role": "Observed public package registry and offline native callbacks",
+      "retrieved_at": "2026-10-14T16:59:30Z",
+      "observed_at": "2026-10-14",
+      "raw_sha256": "ef6c0a38fef2311781e3a8e448102bd565c1c4abaf8b0fcf3e311d3651a093c0",
+      "retained_path": "sources/developer-observation.json",
+      "retained_sha256": "3a876984d42f7d0f7f66cbf4b2351b9c875591f933815d09145c4a81f6f67b7d",
+      "export_policy": "reviewed_projection_not_raw_copy",
+      "mapping_version": "1.0.0",
+      "source_fields": [],
+      "omissions": "Private references, historical review archives, incidental metadata and unrelated policies are omitted. No absent capability is inferred.",
+      "source_schema_version": null
+    }
+  ]
+}
