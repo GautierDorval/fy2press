@@ -13,7 +13,7 @@
           "minLength": 1
         },
         "publication_state": {
-          "const": "LOCAL_CANDIDATE"
+          "const": "PUBLICATION_CANDIDATE"
         },
         "published_at": {
           "type": "null"

@@ -4,4 +4,4 @@ Credit PAGUP, name the source document, link to the licence and identify your ch
 Original scripts and tests are covered by [the MIT licence](LICENSES/MIT.txt).
 Product and third-party code retain their own licences. This repository does not relicense or distribute the Fy2Press plugin. Facts, technical identifiers and observed parameter names are documented here; no plugin implementation is included.
 The Fy2Press/PAGUP names, F2 brand mark and brand artwork are excluded from the reusable-template grant. They identify the product and do not imply permission to brand another product as Fy2Press.
-See [third-party and provenance notices](THIRD-PARTY-NOTICES.md). This local candidate awaits the rights holder's publication decision; no public release date is claimed.
+See [third-party and provenance notices](THIRD-PARTY-NOTICES.md). This documentation candidate is prepared for the rights holder's authorized publication. The grants above take effect upon that authorization; no public release date is claimed here.

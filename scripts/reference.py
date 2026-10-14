@@ -213,7 +213,7 @@ def check(root):
     if step.get('uses','').startswith('actions/checkout'):require(step['with']['persist-credentials']=='false','persistent checkout credentials')
  require('ref: main' in (root/'.github/workflows/check-upstream.yml').read_text(encoding='utf-8'),'untrusted upstream checkout')
  jsonschema.validate(load(root,'CITATION.cff'),load(root,'schemas/cff-1.2.0.schema.json'))
- cff=load(root,'CITATION.cff');require(cff['cff-version']=='1.2.0' and 'reference' in cff['title'] and 'date-released' not in cff,'citation must describe unpublished documentation')
+ cff=load(root,'CITATION.cff');require(cff['cff-version']=='1.2.0' and 'reference' in cff['title'] and 'date-released' not in cff,'citation must describe this documentation candidate')
  require(len(load(root,'sources/seo-decisions.json')['decisions'])==12,'SEO decision coverage')
  generate(root,True);return export_manifest(root)
 

@@ -23,6 +23,6 @@ Install FREE from [WordPress.org](https://wordpress.org/plugins/fy2press/). Use 
 
 [Scope](scope.md) · [Terminology](terminology.md) · [Surface map](SURFACE_MAP.md) · [Compatibility and evidence](docs/compatibility-and-evidence.md) · [Morrowfield example](examples/morrowfield.md) · [Reusable decisions](reusable/architecture-decision.md)
 
-This local documentation candidate describes FREE 1.0.0 from the package collected on October 14, 2026. Product observations, test scope and document maturity are separate. See the [release reference](artefacts/release-reference.json) and [source precedence](artefacts/source-precedence.json).
+This documentation candidate describes FREE 1.0.0 from the package collected on October 14, 2026. Product observations, test scope and document maturity are separate. See the [release reference](artefacts/release-reference.json) and [source precedence](artefacts/source-precedence.json).
 
 New original text and templates are intended for CC BY 4.0, original tools for MIT, subject to the publication decision. [Licensing and brand exclusions](LICENSE.md). Prepared with AI assistance; no independent human or native-language review is claimed. Maintained by Gautier Dorval for PAGUP.
