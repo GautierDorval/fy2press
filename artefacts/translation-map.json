@@ -6,7 +6,7 @@
       "source": "developer/blocks.md",
       "source_sha256": "498709b731e9cbc76408f9729bc12712b1dfcb59f0cc903fe69db180fed49357",
       "translation": "fr-ca/developer/blocks.md",
-      "translation_sha256": "3e435e1cab406510693fd12268ccab1ef1a0424a18f4aae89c140292c046dce1",
+      "translation_sha256": "59e39f5a082b6635ffe0ccada901ebc5066683f2628da703104e7189b8a5bb9a",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
       "reviewed_on": "2026-10-15"
@@ -15,25 +15,25 @@
       "source": "developer/extension-points.md",
       "source_sha256": "26d999655bb319033a2827ac132a93c6009e421111ee6a8f7902a39832b7c10d",
       "translation": "fr-ca/developer/extension-points.md",
-      "translation_sha256": "75aa38d4b48a9fb9ead534ecdaf9e8fc3be8a9eabc281a0242fdd740fb55c80b",
+      "translation_sha256": "78dc05b68f1df639bc62a0a1569c305b1c8433b2985e4b412d040210110bae91",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
-      "reviewed_on": "2026-10-14"
+      "reviewed_on": "2026-10-15"
     },
     {
       "source": "developer/README.md",
       "source_sha256": "3b97ea6fc688248727d894038783d16a323892071058e6198f704fc2b25792e8",
       "translation": "fr-ca/developer/README.md",
-      "translation_sha256": "515886a7145b8626cba30ad53848ac9561b5019b9e2ff52b71b813a85b25cca7",
+      "translation_sha256": "ec6879d1b9f5d20c0642a0da9fd9eb73fc9725999eb750cc342f7418767efd24",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
-      "reviewed_on": "2026-10-14"
+      "reviewed_on": "2026-10-15"
     },
     {
       "source": "developer/shortcodes.md",
-      "source_sha256": "81d9da4622b3971f6e791b78d14fada4ba6f3597770b9059df03a62f83164f38",
+      "source_sha256": "b597e8c5f659cadc5b20e334c2ba6d6d317a2d6977459dc6f415c4750a52c2c1",
       "translation": "fr-ca/developer/shortcodes.md",
-      "translation_sha256": "807b0ff7699978df6332f6f39b8b120cacb1899445fc649a86d3c4487801dc9d",
+      "translation_sha256": "6ff927174479500784f6746f8f6947bdbd731bc0fe2053439aadb0dbab84b425",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
       "reviewed_on": "2026-10-15"
@@ -42,10 +42,10 @@
       "source": "docs/architecture.md",
       "source_sha256": "ab878fa65747d99f16be3690997ecac04a30a816cc11ce0e0ff974b549d1c663",
       "translation": "fr-ca/docs/architecture.md",
-      "translation_sha256": "8fda906907e29c257364a49c8f9225d40dd6e68ac46080b311d93762fb2046dd",
+      "translation_sha256": "23553ac567e8272c9389f4dc4158f79c2aeffa1cc1638b8451b2d917322dd255",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
-      "reviewed_on": "2026-10-14"
+      "reviewed_on": "2026-10-15"
     },
     {
       "source": "docs/compatibility-and-evidence.md",
@@ -60,34 +60,34 @@
       "source": "docs/data-ownership-and-freshness.md",
       "source_sha256": "62750b82db5fa01d7dd96bbdbb9f1ac04cce2c913c6fbf1c783440ed292eb848",
       "translation": "fr-ca/docs/data-ownership-and-freshness.md",
-      "translation_sha256": "1bbd8f88e2cd6fa68e127d3840d3edb4040e61af0b272dbb3383c1194e65cf93",
+      "translation_sha256": "df709981b6c528338919e0c48649bf01d00ac1baf052f996cf89a5fe3b629274",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
-      "reviewed_on": "2026-10-14"
+      "reviewed_on": "2026-10-15"
     },
     {
       "source": "docs/decision-scenarios.md",
       "source_sha256": "70dc6da21e0a18a35500f933732d1472e22f6b4b8de5c9b12ed6326ccd226e8e",
       "translation": "fr-ca/docs/decision-scenarios.md",
-      "translation_sha256": "b5dc2f5791f974f71f4bc5e5ea454707dcd6c80d9c443d879216428c0ed0973d",
+      "translation_sha256": "360b04c3aa5d2ac1d56615a59ba5330042c3428b0b4701c9b89e02170d92ab13",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
-      "reviewed_on": "2026-10-14"
+      "reviewed_on": "2026-10-15"
     },
     {
       "source": "docs/editions-and-integrations.md",
       "source_sha256": "f573afc1f83549d4b80beec276edf8d08617c0ed642973a7d84e3016c914914d",
       "translation": "fr-ca/docs/editions-and-integrations.md",
-      "translation_sha256": "b25210890c6ca84ed63b46dae03bc8cba1c320dcf549fdf563ce690585f80206",
+      "translation_sha256": "012efa54f4ea7fc1bd762911c628e6daabb527fa5e48a5da2c8b9f4b41029e7f",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
-      "reviewed_on": "2026-10-14"
+      "reviewed_on": "2026-10-15"
     },
     {
       "source": "docs/seo-decision-matrix.md",
       "source_sha256": "d90106207e4181e714aab445ea14af30bc5c89f5d355c19d94e227d3edc38b37",
       "translation": "fr-ca/docs/seo-decision-matrix.md",
-      "translation_sha256": "4554fc1530692d0005788fc50d7224a58f9c583e319e65aab3f98cd348f26a89",
+      "translation_sha256": "054aa05dcc059e0d02bb524c4899e57a1c9687bb75d62194a3983cef1524d4af",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
       "reviewed_on": "2026-10-15"
@@ -96,19 +96,19 @@
       "source": "ECOSYSTEM.md",
       "source_sha256": "ed999f4af885a8fcf44bdb7ee23f1a6a2d4c977cac4406376d0683283b106581",
       "translation": "fr-ca/ECOSYSTEM.md",
-      "translation_sha256": "1e535081ebe9c2010ed6be035eea7a25c029dfed6f22504f5be6be5cfc8cce37",
+      "translation_sha256": "7ff530f4b3203b8d65845758974227d496fb0f38faf10199d5fd770f89b901ae",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
-      "reviewed_on": "2026-10-14"
+      "reviewed_on": "2026-10-15"
     },
     {
       "source": "examples/morrowfield.md",
       "source_sha256": "4418eb03d0887bcb110da1632dbeff8602e0250019866ae8cfe2e594912109e7",
       "translation": "fr-ca/examples/morrowfield.md",
-      "translation_sha256": "bb0c35995aada4c28b28457aa38f17687be8cc56685b487d8d2e5c2c856f2d5d",
+      "translation_sha256": "62f4e84b14e2829e49a1c80f3e18e07ce4836be8c046c259512208506dec5223",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
-      "reviewed_on": "2026-10-14"
+      "reviewed_on": "2026-10-15"
     },
     {
       "source": "examples/README.md",
@@ -123,16 +123,16 @@
       "source": "non-goals.md",
       "source_sha256": "5d8a2c082b3c90be08abc7db28435fd0b63389b3f99a734701a53376d5a94fd8",
       "translation": "fr-ca/non-goals.md",
-      "translation_sha256": "32858e48bc2f274b72131f07ae5a3d1696b8ff3dd287ae3f74d89e8b5f63330e",
+      "translation_sha256": "55c106cd29b667e1537bec962d33abfdade6657760c56dcac9df68d9f638fcac",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
-      "reviewed_on": "2026-10-14"
+      "reviewed_on": "2026-10-15"
     },
     {
       "source": "README.md",
       "source_sha256": "ec007364a25a0c3338fbe1998ddfe825b55a3ab6fd3e0204abd2964b996dcaa0",
       "translation": "fr-ca/README.md",
-      "translation_sha256": "a51a3d738e91a6ed8c56d6ace35cb11e40ef0f314b194113c2fdd7bd9c72f7d2",
+      "translation_sha256": "1402840586297df96698bc4d2ed5600c91511997349d16dc42fc3306e58b89ef",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
       "reviewed_on": "2026-10-15"
@@ -141,19 +141,19 @@
       "source": "reusable/agency-handover.md",
       "source_sha256": "0bff7d2f93528b6509bfc801b523dcfdc9a37d5a7053e9d8dc1c663c03a0879c",
       "translation": "fr-ca/reusable/agency-handover.md",
-      "translation_sha256": "b987c5ab3144dbd267a77698e05ae078398df55fef24e34f86e01f7d23891b49",
+      "translation_sha256": "1557c9c4c05fa1df489eb440563173a4af40a2a83c264c6272a44d922d8c3d40",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
-      "reviewed_on": "2026-10-14"
+      "reviewed_on": "2026-10-15"
     },
     {
       "source": "reusable/architecture-decision.md",
       "source_sha256": "165f3dfa5f0d7e1dbb223bd6b2332d7942edfb74c9a48c1f3a33200b9d376e1b",
       "translation": "fr-ca/reusable/architecture-decision.md",
-      "translation_sha256": "4349016994bfa5c8ed5f035367f8aa6dc8d133162f485b506808af1a005253b8",
+      "translation_sha256": "38658bb6e767cbfdfa41117c7b772740805208ba6de4ef539656a29b42eeede2",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
-      "reviewed_on": "2026-10-14"
+      "reviewed_on": "2026-10-15"
     },
     {
       "source": "reusable/seo-decision-record.md",
@@ -168,28 +168,28 @@
       "source": "scope.md",
       "source_sha256": "527a1cec2afde730abe1286bf0452e44627241b86c2226e332c190ef19aa78aa",
       "translation": "fr-ca/scope.md",
-      "translation_sha256": "f56dbcb624b08c7b90ee42cd2a7c9db6f09b547b81f68b6396f504d03b5c9ad2",
+      "translation_sha256": "c286671761b3b5dfa3ef546ba46ad112fad293b654419e8aaedfcdb091fdde38",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
-      "reviewed_on": "2026-10-14"
+      "reviewed_on": "2026-10-15"
     },
     {
       "source": "SURFACE_MAP.md",
       "source_sha256": "af53ea9981cef760aaa1854eb23be4073609ddbd99d993d79c7f949c3ed6e979",
       "translation": "fr-ca/SURFACE_MAP.md",
-      "translation_sha256": "35e66d78b5f6fe81a2650f33fb75768b0348a7a69e1411c73010543799468b66",
+      "translation_sha256": "fd55dfa55fa376a54cc5f387cd226da76eb0a02c36b0aca531b1290edbef6c9f",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
-      "reviewed_on": "2026-10-14"
+      "reviewed_on": "2026-10-15"
     },
     {
       "source": "terminology.md",
       "source_sha256": "cfe8733dacf0ef5ef0a7a6ce4c1b32d8e0348817383baadc34a15f9781ffbcf3",
       "translation": "fr-ca/terminology.md",
-      "translation_sha256": "cc8787396a90a651320a528d62c3034982fd7ba2b1dc1e47946cfa3aa94b341c",
+      "translation_sha256": "aeb60e6de9e596557591d8fa50f35110d1cca7d04b72981e2ac781bae3964811",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
-      "reviewed_on": "2026-10-14"
+      "reviewed_on": "2026-10-15"
     }
   ]
 }

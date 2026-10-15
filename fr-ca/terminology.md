@@ -24,13 +24,13 @@ Une actualisation PRO déclenchée par cron dépend de la licence et de l’ordo
 
 ## Cache
 
-Une observation conservée pour une durée et un contexte; elle ne rend pas toutes les valeurs du catalogue actuelles.
+Une observation conservée pour une durée et un contexte ; elle ne rend pas toutes les valeurs du catalogue actuelles.
 
 ## URL canonique
 
 Une URL préférée pour des contenus équivalents ou très similaires. Ce sens SEO diffère de celui d’une source documentaire de référence.
 
-## Shortcode canonique et alias
+## Code court canonique et alias
 
 Dans le paquet public observé, fy2press_* est canonique et shopipress_* demeure un alias de compatibilité. Les identifiants de blocs emploient encore shopipress/. Ils ne désignent pas un autre produit.
 

@@ -2,7 +2,7 @@
 from __future__ import annotations
 import argparse, hashlib, json, os, re, shutil, subprocess, sys, urllib.request, urllib.error, zipfile
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 from html.parser import HTMLParser
 from urllib.parse import urlsplit, unquote
 ROOT = Path(__file__).resolve().parents[1]
@@ -112,6 +112,16 @@ def component_purpose(entry, kind, fr):
  require(key in COMPONENT_PURPOSES,"missing editorial component purpose")
  return COMPONENT_PURPOSES[key][int(fr)]
 
+def french_prose(text):
+ # Preserve fenced code, inline identifiers, link destinations and URLs.
+ tick=chr(96)
+ pattern=r"(?ms)(^"+tick*3+r".*?^"+tick*3+r"[^\n]*(?:\n|$)|"+tick+r"[^"+tick+r"\n]*"+tick+r"|\]\([^)]+\)|https?://[^\s<>]+|<[^>]+>)"
+ parts=re.split(pattern,text)
+ for i in range(0,len(parts),2):
+  parts[i]=re.sub(r"[ \u00a0\u202f]*([;:?]|!(?!\[))",lambda m:"\u00a0"+m[1],parts[i])
+  parts[i]=re.sub(r"\b[Ss]hortcodes?\b",lambda m:("Codes courts" if m[0][0].isupper() else "codes courts") if m[0].endswith("s") else ("Code court" if m[0][0].isupper() else "code court"),parts[i])
+ return "".join(parts)
+
 def dev_page(root,kind,fr):
  data=load(root,'sources/developer-observation.json');prefix='../../' if fr else '../'
  title=('Blocs Gutenberg' if kind=='blocks' else 'Shortcodes publics') if fr else ('Gutenberg blocks' if kind=='blocks' else 'Public shortcodes')
@@ -130,7 +140,10 @@ def dev_page(root,kind,fr):
   test=x['test'];n=test['output_bytes']
   result=('HTML retourné' if kind=='blocks' else {'HTML string':'chaîne HTML','URL by default; HTML with format=link':'URL par défaut; HTML avec format=link'}[x['result_kind']]) if fr else ('Returned HTML' if kind=='blocks' else x['result_kind'])
   s+='<details>\n<summary>'+('Détails de l’essai local' if fr else 'Local test details')+'</summary>\n\n'+('Trace de l’essai local' if fr else 'Local test trace')+f': {n} '+('octets retournés' if fr else 'returned bytes')+f', {test["echo_bytes"]} '+('octets imprimés hors retour' if fr else 'bytes echoed outside the return')+'. '+result+'.\n\n</details>\n\n'
-  if not n:s+=('**Affichage du type non démontré : le résultat local est vide.** [Limite connue](../docs/compatibility-and-evidence.md).\n\n' if fr else '**Product-type display not demonstrated: the local result is empty.** [Known limitation](../docs/compatibility-and-evidence.md).\n\n')
+  if not n:
+   s+=('**Sortie vide observée ; affichage rempli non démontré.**' if fr else '**Empty output observed; populated display is not demonstrated.**')
+   if x['name']=='fy2press_product_type':s+=(' [Limite connue]' if fr else ' [Known limitation]')+'(../docs/compatibility-and-evidence.md).'
+   s+='\n\n'
   if x['name']=='fy2press_product_url':s+=('`format="url"` retourne une URL scalaire; `format="link"` retourne un lien HTML. Les deux modes ont été exécutés. Sans produit, le code peut retourner une URL illustrative; toujours fournir un contexte valide.\n\n' if fr else '`format="url"` returns a scalar URL; `format="link"` returns an HTML link. Both modes were executed. Without a product the code can return an illustrative URL; always supply valid context.\n\n')
   if 'dynamic_defaults' in x:s+=('Défaut dynamique : le type du filtre d’étiquettes vient du design sauvegardé valide; sinon `tags`.\n\n' if fr else 'Dynamic default: tag-filter type follows a valid saved design setting; otherwise `tags`.\n\n')
   s+='| '+('Attribut | Type | Défaut / contrat' if fr else 'Attribute | Type | Default / contract')+' |\n| --- | --- | --- |\n'
@@ -143,7 +156,7 @@ def dev_page(root,kind,fr):
   if kind=='blocks':s+='\n'+('Supports inscrits' if fr else 'Registered supports')+':\n\n```json\n'+json.dumps(x['supports'],ensure_ascii=False,indent=2)+'\n```\n'
   s+='\n'+('Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé; une donnée absente peut produire un remplacement ou aucune sortie.\n' if fr else 'Limit: local returned HTML does not qualify browser interactions, theme compatibility or connected checkout. Verify the declared context; missing data can produce a fallback or empty output.\n')
  s+='\n[Observation]('+prefix+'sources/developer-observation.json) · [Package]('+prefix+'artefacts/release-reference.json).\n'
- return s.encode()
+ return (french_prose(s) if fr else s).encode()
 
 def generated(root):
  claims=make_claims(root);out={'artefacts/claims.json':encoded(claims)}
@@ -157,7 +170,8 @@ def generated(root):
   path=pre+'docs/editions-and-integrations.md';text=(root/path).read_text(encoding='utf-8')
   pattern=r'(?s)<!-- generated:claims -->.*?<!-- /generated:claims -->'
   require(len(re.findall(pattern,text))==1,'missing generated table marker')
-  out[path]=re.sub(pattern,'<!-- generated:claims -->\n'+table+'<!-- /generated:claims -->',text).encode()
+  page=re.sub(pattern,'<!-- generated:claims -->\n'+table+'<!-- /generated:claims -->',text)
+  out[path]=(french_prose(page) if fr else page).encode()
   for kind in ['blocks','shortcodes']:out[pre+'developer/'+kind+'.md']=dev_page(root,kind,fr)
  return out
 
@@ -240,8 +254,9 @@ def morrowfield_checks(root):
  require(example.get('state')=='PASS' and isinstance(example.get('visual_inspection'),dict) and example['visual_inspection'].get('state')=='PASS','incomplete Morrowfield observation')
  observed=example.get('observed_at')
  require(isinstance(observed,str) and re.fullmatch(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z',observed) is not None,'invalid Morrowfield observation timestamp')
- try:datetime.strptime(observed,'%Y-%m-%dT%H:%M:%S.%fZ' if '.' in observed else '%Y-%m-%dT%H:%M:%SZ')
+ try:observed_date=datetime.strptime(observed,'%Y-%m-%dT%H:%M:%S.%fZ' if '.' in observed else '%Y-%m-%dT%H:%M:%SZ')
  except ValueError as exc:raise ValueError('invalid Morrowfield observation timestamp') from exc
+ require(observed_date.replace(tzinfo=timezone.utc)<=datetime.now(timezone.utc),'future Morrowfield observation timestamp')
  source=safe_path(root,'examples/morrowfield.html')
  require(example.get('source_file')=='examples/morrowfield.html' and example.get('source_sha256')==digest(source.read_bytes()),'stale Morrowfield browser observation')
  expected={(page,lang,width,height) for page in ['collection','product','guide'] for lang in ['en','fr-CA'] for width,height in [(1365,1000),(390,844)]}
@@ -307,6 +322,7 @@ def check(root):
  for x in dev['blocks']+dev['shortcodes']:require(filemap[x['source']]==x['source_sha256'],'developer source hash mismatch')
  translation=load(root,'artefacts/translation-map.json')['translations'];seen=set()
  for t in translation:
+  require(datetime.strptime(t['reviewed_on'],'%Y-%m-%d').date()<=datetime.now(timezone.utc).date(),'future translation review date')
   require(t['translation'] not in seen,'duplicate translation');seen.add(t['translation'])
   for path,hashkey in [('source','source_sha256'),('translation','translation_sha256')]:
    require(digest(safe_path(root,t[path]).read_bytes())==t[hashkey],'stale translation: '+t['source'])

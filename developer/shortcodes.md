@@ -255,7 +255,7 @@ Local test trace: 0 returned bytes, 0 bytes echoed outside the return. HTML stri
 
 </details>
 
-**Product-type display not demonstrated: the local result is empty.** [Known limitation](../docs/compatibility-and-evidence.md).
+**Empty output observed; populated display is not demonstrated.** [Known limitation](../docs/compatibility-and-evidence.md).
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |

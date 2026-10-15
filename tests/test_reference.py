@@ -14,6 +14,32 @@ class BoundaryTests(unittest.TestCase):
   data=self.load(path);fn(data);self.save(path,data)
  def keep_translation_hash(self,source):
   self.mutate('artefacts/translation-map.json',lambda d:[t.update(source_sha256=p.digest((self.root/source).read_bytes())) for t in d['translations'] if t['source']==source])
+ def test_future_observation_and_review_rejected(self):
+  from datetime import datetime, timezone, timedelta
+  future=datetime.now(timezone.utc)+timedelta(days=2)
+  self.mutate('examples/morrowfield-observation.json',lambda d:d.update(observed_at=future.strftime('%Y-%m-%dT%H:%M:%SZ')))
+  with self.assertRaisesRegex(ValueError,'future Morrowfield'):p.check(self.root)
+  self.save('examples/morrowfield-observation.json',p.load(ROOT,'examples/morrowfield-observation.json'))
+  self.mutate('artefacts/translation-map.json',lambda d:d['translations'][0].update(reviewed_on=future.strftime('%Y-%m-%d')))
+  with self.assertRaisesRegex(ValueError,'future translation'):p.check(self.root)
+ def test_other_empty_component_is_not_mislabeled(self):
+  self.mutate('sources/developer-observation.json',lambda d:next(x for x in d['shortcodes'] if x['name']=='fy2press_product_vendor')['test'].update(output_bytes=0))
+  for fr in [False,True]:
+   text=p.dev_page(self.root,'shortcodes',fr).decode().split('## fy2press_product_vendor')[1].split('\n## ')[0]
+   self.assertIn('**Sortie vide observée' if fr else '**Empty output observed',text)
+   self.assertNotIn('compatibility-and-evidence.md',text)
+   self.assertNotIn('Product-type display',text)
+ def test_french_prose_preserves_identifiers_and_destinations(self):
+  tick=chr(96);code=tick+'id=123; type:x'+tick
+  source='Contexte: texte; [shortcodes](../developer/shortcodes.md) '+code+' https://example.invalid/a?x=1\n'+tick*3+'text\na:b; c?\n'+tick*3+'\n'
+  source+='<!-- generated:claims -->\n![Image](../assets/picture.png)'
+  result=p.french_prose(source)
+  self.assertIn('<!-- generated:claims -->',result)
+  self.assertIn('\n![Image](../assets/picture.png)',result)
+  self.assertIn('Contexte\u00a0: texte\u00a0; [codes courts](../developer/shortcodes.md)',result)
+  self.assertIn(code,result);self.assertIn('https://example.invalid/a?x=1',result)
+  self.assertIn(tick*3+'text\na:b; c?\n'+tick*3,result)
+
  def test_baseline(self):p.check(self.root)
  def test_source_modified_without_lock(self):
   self.mutate('sources/manifest-projection.json',lambda d:d['capability_observation']['capabilities'][0].update(implementation='absent'))

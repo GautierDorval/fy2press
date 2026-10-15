@@ -14,7 +14,7 @@ add_filter('shopipress_rate_limit_trusted_proxies', static function (array $prox
 });
 ```
 
-Résultat attendu : le tableau retourné intervient dans la résolution des en-têtes transmis de confiance. Cet exemple original illustre l’intégration; ce n’est pas un déploiement réseau testé. Ne pas faire confiance aux en-têtes arbitraires ou copier cette adresse en production. Aucun support de joker ou de CIDR n’est affirmé ici.
+Résultat attendu : le tableau retourné intervient dans la résolution des en-têtes transmis de confiance. Cet exemple original illustre l’intégration ; ce n’est pas un déploiement réseau testé. Ne pas faire confiance aux en-têtes arbitraires ou copier cette adresse en production. Aucun support de joker ou de CIDR n’est affirmé ici.
 
 Contrat observé : FREE 1.0.0, SVN 3744276. [Implémentation publique](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/services/PublicAjaxRateLimiter.php). Sa présence dans le readme établit un point documenté pour cette version, pas une promesse de compatibilité indéfinie.
 
