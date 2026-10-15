@@ -13,16 +13,40 @@
           "minLength": 1
         },
         "publication_state": {
-          "const": "PUBLICATION_CANDIDATE"
+          "const": "PUBLISHED_PRERELEASE"
         },
         "published_at": {
-          "type": "null"
+          "type": "string",
+          "format": "date-time"
+        },
+        "scope": {
+          "const": "latest_verified_tagged_release"
+        },
+        "release_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "repository_id": {
+          "const": 1419912178
+        },
+        "release_id": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "source_commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
         }
       },
       "required": [
         "version",
         "publication_state",
-        "published_at"
+        "published_at",
+        "scope",
+        "release_url",
+        "repository_id",
+        "release_id",
+        "source_commit"
       ],
       "additionalProperties": false
     },

@@ -2,6 +2,9 @@
 from __future__ import annotations
 import argparse, hashlib, json, os, re, shutil, subprocess, sys, urllib.request, urllib.error, zipfile
 from pathlib import Path
+from datetime import datetime, timezone
+from html.parser import HTMLParser
+from urllib.parse import urlsplit, unquote
 ROOT = Path(__file__).resolve().parents[1]
 URLS = {
  'manifest': 'https://fy2press.com/ai-manifest.json',
@@ -52,6 +55,73 @@ def make_claims(root):
  return {'schema_version':'1.0.0','claims':claims}
 
 def md_value(v):return json.dumps(v,ensure_ascii=False,separators=(',',':')).replace('|','&#124;').replace('`','&#96;')
+COMPONENT_PURPOSES = {'product': ('A complete product component for the supplied WordPress product ID.',
+             'Un composant produit complet pour l’ID de fiche WordPress fourni.'),
+ 'product_title': ('The product title.', 'Le titre du produit.'),
+ 'product_description': ('The product description in the current product context.',
+                         'La description du produit dans le contexte courant.'),
+ 'product_price': ('The formatted product price from the available product data.',
+                   'Le prix formaté selon les données produit disponibles.'),
+ 'product_image': ('The main product image.', 'L’image principale du produit.'),
+ 'product_url': ('A scalar product URL by default, or an HTML link with format="link".',
+                 'Une URL produit scalaire par défaut, ou un lien HTML avec format="link".'),
+ 'product_vendor': ('The product vendor label.', 'Le nom du fournisseur du produit.'),
+ 'product_type': ('The product type when available; the inspected FREE 1.0.0 data path has a field-name mismatch. See the compatibility notes.',
+                  'Le type de produit lorsqu’il est disponible ; le parcours FREE 1.0.0 examiné comporte une incohérence de nom de champ. Consultez les notes de compatibilité.'),
+ 'product_tags': ('The product’s tag list.', 'La liste des étiquettes du produit.'),
+ 'product_gallery': ('The product image gallery.', 'La galerie d’images du produit.'),
+ 'product_availability': ('The availability label from the available product data.',
+                          'L’indication de disponibilité selon les données produit disponibles.'),
+ 'product_variants': ('Variant-selection controls in a product context.',
+                      'Les contrôles de choix de variante dans un contexte produit.'),
+ 'product_collections': ('The collections associated with the product.',
+                         'Les collections associées au produit.'),
+ 'add_to_cart': ('An add-to-cart control; a returned control alone does not prove a cart request.',
+                 'Un contrôle d’ajout au panier; son rendu seul ne prouve pas une requête panier.'),
+ 'buy_now': ('A direct-purchase control; connected checkout is outside this local observation.',
+             'Un contrôle d’achat direct; le paiement connecté est hors de cette observation locale.'),
+ 'related_products': ('A list of related products when the context supplies them.',
+                      'Une liste de produits associés lorsque le contexte les fournit.'),
+ 'collection': ('A collection component for the supplied collection handle.',
+                'Un composant collection pour le handle fourni.'),
+ 'products_loop': ('A product grid with the configured limit, columns and collection.',
+                   'Une grille de produits selon la limite, les colonnes et la collection configurées.'),
+ 'collection_title': ('The current collection title.', 'Le titre de la collection courante.'),
+ 'collection_description': ('The current collection description.',
+                            'La description de la collection courante.'),
+ 'collection_sort': ('A sorting control for the collection’s product results.',
+                     'Un contrôle de tri des résultats produit de la collection.'),
+ 'product_search': ('A search field associated with a products loop.',
+                    'Un champ de recherche associé à une boucle de produits.'),
+ 'collection_filter': ('A collection-selection filter associated with a products loop.',
+                       'Un filtre de collection associé à une boucle de produits.'),
+ 'tag_filter': ('A tag filter using its declared defaults or saved design type.',
+                'Un filtre d’étiquettes selon ses valeurs déclarées ou le type du design enregistré.'),
+ 'filter_sidebar': ('A filter panel for a compatible products-loop context.',
+                    'Un panneau de filtres pour un contexte de boucle compatible.'),
+ 'price_filter': ('A price filter for the associated product results.',
+                  'Un filtre de prix pour les résultats produit associés.'),
+ 'availability_filter': ('An availability filter for the associated product results.',
+                         'Un filtre de disponibilité pour les résultats produit associés.'),
+ 'collection_products_per_page': ('A control for the number of products displayed per collection page.',
+                                  'Un contrôle du nombre de produits affichés par page de collection.')}
+
+def component_purpose(entry, kind, fr):
+ key=entry["name"].removeprefix("fy2press_") if kind=="shortcodes" else entry["name"].split("/",1)[1].replace("-","_")
+ if kind=="blocks" and key in {"title","price","description","image","variants","gallery","availability","vendor","collections","tags"}:key="product_"+key
+ require(key in COMPONENT_PURPOSES,"missing editorial component purpose")
+ return COMPONENT_PURPOSES[key][int(fr)]
+
+def french_prose(text):
+ # Preserve fenced code, inline identifiers, link destinations and URLs.
+ tick=chr(96)
+ pattern=r"(?ms)(^"+tick*3+r".*?^"+tick*3+r"[^\n]*(?:\n|$)|"+tick+r"[^"+tick+r"\n]*"+tick+r"|\]\([^)]+\)|https?://[^\s<>]+|<[^>]+>)"
+ parts=re.split(pattern,text)
+ for i in range(0,len(parts),2):
+  parts[i]=re.sub(r"[ \u00a0\u202f]*([;:?]|!(?!\[))",lambda m:"\u00a0"+m[1],parts[i])
+  parts[i]=re.sub(r"\b[Ss]hortcodes?\b",lambda m:("Codes courts" if m[0][0].isupper() else "codes courts") if m[0].endswith("s") else ("Code court" if m[0][0].isupper() else "code court"),parts[i])
+ return "".join(parts)
+
 def dev_page(root,kind,fr):
  data=load(root,'sources/developer-observation.json');prefix='../../' if fr else '../'
  title=('Blocs Gutenberg' if kind=='blocks' else 'Shortcodes publics') if fr else ('Gutenberg blocks' if kind=='blocks' else 'Public shortcodes')
@@ -62,14 +132,18 @@ def dev_page(root,kind,fr):
  s+=('\nLes exemples avec `id="123"` exigent l’ID WordPress réel. Les blocs produit exigent normalement une fiche produit; les blocs collection exigent une archive de collection. Une boucle peut être placée sur une page ordinaire.\n' if fr else '\nExamples with `id="123"` require the real WordPress post ID. Product blocks normally need a product page; collection blocks need a collection archive. A products loop can be placed on an ordinary page.\n')
  for x in data[kind]:
   s+='\n## '+x['name']+'\n\n'
+  s+=('Résultat attendu' if fr else 'Expected result')+': '+component_purpose(x,kind,fr)+'\n\n'
   s+=('Contexte' if fr else 'Context')+': `'+x['context']+'`. FREE '+x['version']+'. '
   if kind=='shortcodes':s+=('Alias de compatibilité' if fr else 'Compatibility alias')+': `'+x['alias']+'`. '
   url='https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/'+x['source']
   s+='[Source]('+url+').\n\n```'+('html' if kind=='blocks' else 'text')+'\n'+x['example']+'\n```\n\n'
   test=x['test'];n=test['output_bytes']
   result=('HTML retourné' if kind=='blocks' else {'HTML string':'chaîne HTML','URL by default; HTML with format=link':'URL par défaut; HTML avec format=link'}[x['result_kind']]) if fr else ('Returned HTML' if kind=='blocks' else x['result_kind'])
-  s+=('Résultat local observé' if fr else 'Observed local result')+f': {n} '+('octets retournés' if fr else 'returned bytes')+f', {test["echo_bytes"]} '+('octets imprimés hors retour' if fr else 'bytes echoed outside the return')+'. '+result+'.\n\n'
-  if not n:s+=('**Sortie vide observée avec cette fixture; affichage rempli non démontré.**\n\n' if fr else '**Empty output observed with this fixture; populated display is not demonstrated.**\n\n')
+  s+='<details>\n<summary>'+('Détails de l’essai local' if fr else 'Local test details')+'</summary>\n\n'+('Trace de l’essai local' if fr else 'Local test trace')+f': {n} '+('octets retournés' if fr else 'returned bytes')+f', {test["echo_bytes"]} '+('octets imprimés hors retour' if fr else 'bytes echoed outside the return')+'. '+result+'.\n\n</details>\n\n'
+  if not n:
+   s+=('**Sortie vide observée ; affichage rempli non démontré.**' if fr else '**Empty output observed; populated display is not demonstrated.**')
+   if x['name']=='fy2press_product_type':s+=(' [Limite connue]' if fr else ' [Known limitation]')+'(../docs/compatibility-and-evidence.md).'
+   s+='\n\n'
   if x['name']=='fy2press_product_url':s+=('`format="url"` retourne une URL scalaire; `format="link"` retourne un lien HTML. Les deux modes ont été exécutés. Sans produit, le code peut retourner une URL illustrative; toujours fournir un contexte valide.\n\n' if fr else '`format="url"` returns a scalar URL; `format="link"` returns an HTML link. Both modes were executed. Without a product the code can return an illustrative URL; always supply valid context.\n\n')
   if 'dynamic_defaults' in x:s+=('Défaut dynamique : le type du filtre d’étiquettes vient du design sauvegardé valide; sinon `tags`.\n\n' if fr else 'Dynamic default: tag-filter type follows a valid saved design setting; otherwise `tags`.\n\n')
   s+='| '+('Attribut | Type | Défaut / contrat' if fr else 'Attribute | Type | Default / contract')+' |\n| --- | --- | --- |\n'
@@ -82,7 +156,7 @@ def dev_page(root,kind,fr):
   if kind=='blocks':s+='\n'+('Supports inscrits' if fr else 'Registered supports')+':\n\n```json\n'+json.dumps(x['supports'],ensure_ascii=False,indent=2)+'\n```\n'
   s+='\n'+('Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé; une donnée absente peut produire un remplacement ou aucune sortie.\n' if fr else 'Limit: local returned HTML does not qualify browser interactions, theme compatibility or connected checkout. Verify the declared context; missing data can produce a fallback or empty output.\n')
  s+='\n[Observation]('+prefix+'sources/developer-observation.json) · [Package]('+prefix+'artefacts/release-reference.json).\n'
- return s.encode()
+ return (french_prose(s) if fr else s).encode()
 
 def generated(root):
  claims=make_claims(root);out={'artefacts/claims.json':encoded(claims)}
@@ -96,7 +170,8 @@ def generated(root):
   path=pre+'docs/editions-and-integrations.md';text=(root/path).read_text(encoding='utf-8')
   pattern=r'(?s)<!-- generated:claims -->.*?<!-- /generated:claims -->'
   require(len(re.findall(pattern,text))==1,'missing generated table marker')
-  out[path]=re.sub(pattern,'<!-- generated:claims -->\n'+table+'<!-- /generated:claims -->',text).encode()
+  page=re.sub(pattern,'<!-- generated:claims -->\n'+table+'<!-- /generated:claims -->',text)
+  out[path]=(french_prose(page) if fr else page).encode()
   for kind in ['blocks','shortcodes']:out[pre+'developer/'+kind+'.md']=dev_page(root,kind,fr)
  return out
 
@@ -163,11 +238,70 @@ def heading_ids(text):
   n=counts.get(h,0);counts[h]=n+1;ids.append(h+('-'+str(n) if n else ''))
  return set(ids)
 
+
+class ExampleHTML(HTMLParser):
+ def __init__(self):
+  super().__init__();self.robots=[];self.links=[];self.ids=set()
+ def handle_starttag(self,tag,attrs):
+  attrs=dict(attrs)
+  if tag=='meta' and attrs.get('name','').lower()=='robots':self.robots.extend(x.strip().lower() for x in attrs.get('content','').split(','))
+  if attrs.get('id'):self.ids.add(attrs['id'])
+  for key in ['href','src']:
+   if attrs.get(key):self.links.append(attrs[key])
+
+def morrowfield_checks(root):
+ example=load(root,'examples/morrowfield-observation.json')
+ require(example.get('state')=='PASS' and isinstance(example.get('visual_inspection'),dict) and example['visual_inspection'].get('state')=='PASS','incomplete Morrowfield observation')
+ observed=example.get('observed_at')
+ require(isinstance(observed,str) and re.fullmatch(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z',observed) is not None,'invalid Morrowfield observation timestamp')
+ try:observed_date=datetime.strptime(observed,'%Y-%m-%dT%H:%M:%S.%fZ' if '.' in observed else '%Y-%m-%dT%H:%M:%SZ')
+ except ValueError as exc:raise ValueError('invalid Morrowfield observation timestamp') from exc
+ require(observed_date.replace(tzinfo=timezone.utc)<=datetime.now(timezone.utc),'future Morrowfield observation timestamp')
+ source=safe_path(root,'examples/morrowfield.html')
+ require(example.get('source_file')=='examples/morrowfield.html' and example.get('source_sha256')==digest(source.read_bytes()),'stale Morrowfield browser observation')
+ expected={(page,lang,width,height) for page in ['collection','product','guide'] for lang in ['en','fr-CA'] for width,height in [(1365,1000),(390,844)]}
+ views=example.get('views');require(isinstance(views,list) and len(views)==len(expected),'Morrowfield view coverage')
+ seen=set();screens=set()
+ for view in views:
+  require(isinstance(view,dict) and isinstance(view.get('viewport'),dict),'Morrowfield view coverage')
+  viewport=view['viewport'];key=(view.get('page'),view.get('language'),viewport.get('width'),viewport.get('height'))
+  require(key in expected and key not in seen,'Morrowfield view coverage');seen.add(key)
+  require(view.get('horizontal_overflow') is False and all(view.get(k) is True for k in ['one_h1','primary_action_visible','language_preserves_page','history_return_pass']),'failed Morrowfield view')
+  require(view.get('purchase_disabled') is (True if key[0]=='product' else None),'Morrowfield purchase state')
+  screenshot=('assets/morrowfield-'+key[0]+'-'+('fr' if key[1]=='fr-CA' else 'en')+'.png') if key[2]==1365 else None
+  require('screenshot' in view and view['screenshot']==screenshot,'Morrowfield screenshot coverage')
+  require(isinstance(view.get('screenshot_sha256'),str) and re.fullmatch('[0-9a-f]{64}',view['screenshot_sha256']) is not None,'Morrowfield screenshot digest')
+  size=view.get('capture_dimensions')
+  require(isinstance(size,dict) and type(size.get('width')) is int and type(size.get('height')) is int and size['width']==key[2] and size['height']>=key[3],'Morrowfield capture dimensions')
+  if screenshot:
+   screens.add(screenshot);data=safe_path(root,screenshot).read_bytes()
+   require(view['screenshot_sha256']==digest(data),'stale Morrowfield screenshot')
+   require(len(data)>=24 and data[:8]==b'\x89PNG\r\n\x1a\n' and data[12:16]==b'IHDR','invalid Morrowfield PNG')
+   require((int.from_bytes(data[16:20],'big'),int.from_bytes(data[20:24],'big'))==(size['width'],size['height']),'Morrowfield capture dimensions')
+ require(screens=={p.relative_to(root).as_posix() for p in (root/'assets').glob('morrowfield-*.png')},'Morrowfield screenshot coverage')
+ journeys=example.get('journeys')
+ require(isinstance(journeys,list) and len(journeys)==2 and {x.get('language') for x in journeys if isinstance(x,dict)}=={'en','fr-CA'} and all(x.get('state')=='PASS' and x.get('route')==['collection','product','guide','collection'] for x in journeys),'Morrowfield journey coverage')
+ require(all(example.get(k) is True for k in ['invalid_query_falls_back','direct_file_navigation_pass']) and all(type(example.get(k)) is int and example[k]==0 for k in ['external_request_attempts','uncaught_javascript_errors']),'failed Morrowfield browser checks')
+ # Static guardrails complement the recorded browser run; they do not execute JavaScript.
+ html=source.read_text(encoding='utf-8');parser=ExampleHTML();parser.feed(html)
+ require({'noindex','nofollow'}<=set(parser.robots),'Morrowfield noindex/nofollow required')
+ require(not re.search(r'(?:https?:)?//[a-zA-Z0-9]',re.sub(r'<!--.*?-->','',html,flags=re.S)),'Morrowfield external URL')
+ # The footer chooses between two literal Markdown paths in JavaScript.
+ links=parser.links+[m.group(2) for m in re.finditer(r"""(['"])([^'"\s]*\.md(?:#[^'"\s]*)?)\1""",html)]
+ for target in links:
+  if '$'+'{' in target:continue # Template expressions need the browser observation.
+  url=urlsplit(target);require(not url.scheme and not url.netloc,'Morrowfield external link')
+  destination=(source.parent/unquote(url.path)).resolve() if url.path else source.resolve()
+  require(destination.is_relative_to(root.resolve()) and destination.is_file(),'broken Morrowfield HTML link: '+target)
+  if url.fragment:
+   ids=heading_ids(destination.read_text(encoding='utf-8')) if destination.suffix=='.md' else parser.ids
+   require(unquote(url.fragment) in ids,'broken Morrowfield HTML anchor: '+target)
+
 def check(root):
  import jsonschema, yaml
  source_checks(root)
  for name in ['claims','source-lock','translation-map','release-reference']:
-  schema=load(root,'schemas/'+name+'.schema.json');jsonschema.Draft202012Validator.check_schema(schema);jsonschema.validate(load(root,'artefacts/'+name+'.json'),schema)
+  schema=load(root,'schemas/'+name+'.schema.json');jsonschema.Draft202012Validator.check_schema(schema);jsonschema.validate(load(root,'artefacts/'+name+'.json'),schema,format_checker=jsonschema.FormatChecker())
  require(load(root,'artefacts/claims.json')==make_claims(root),'claim/source mismatch')
  ref=load(root,'artefacts/release-reference.json');wp=load(root,'sources/wordpress-projection.json');dev=load(root,'sources/developer-observation.json')
  require(ref['FREE']['zip_sha256']==wp['zip_sha256']==dev['package_sha256'],'edition/package mix')
@@ -188,6 +322,7 @@ def check(root):
  for x in dev['blocks']+dev['shortcodes']:require(filemap[x['source']]==x['source_sha256'],'developer source hash mismatch')
  translation=load(root,'artefacts/translation-map.json')['translations'];seen=set()
  for t in translation:
+  require(datetime.strptime(t['reviewed_on'],'%Y-%m-%d').date()<=datetime.now(timezone.utc).date(),'future translation review date')
   require(t['translation'] not in seen,'duplicate translation');seen.add(t['translation'])
   for path,hashkey in [('source','source_sha256'),('translation','translation_sha256')]:
    require(digest(safe_path(root,t[path]).read_bytes())==t[hashkey],'stale translation: '+t['source'])
@@ -199,7 +334,7 @@ def check(root):
   for target in re.findall(r'!?\[[^\]]*\]\(([^)]+)\)',stripped):
    if target.startswith(('https://','mailto:')):continue
    require(not target.startswith(('http://','file:')),'unsafe link protocol')
-   path,_,anchor=target.partition('#');dest=(p.parent/path).resolve() if path else p
+   path,_,anchor=target.partition('#');dest=(p.parent/path).resolve() if path else p.resolve()
    require(dest.is_relative_to(root.resolve()) and dest.exists(),'broken or escaped local link: '+target)
    if anchor and dest.suffix=='.md':require(anchor in heading_ids(dest.read_text(encoding='utf-8')),'broken anchor: '+target)
  for p in (root/'.github/workflows').glob('*.yml'):
@@ -213,7 +348,21 @@ def check(root):
     if step.get('uses','').startswith('actions/checkout'):require(step['with']['persist-credentials']=='false','persistent checkout credentials')
  require('ref: main' in (root/'.github/workflows/check-upstream.yml').read_text(encoding='utf-8'),'untrusted upstream checkout')
  jsonschema.validate(load(root,'CITATION.cff'),load(root,'schemas/cff-1.2.0.schema.json'))
- cff=load(root,'CITATION.cff');require(cff['cff-version']=='1.2.0' and 'reference' in cff['title'] and 'date-released' not in cff,'citation must describe this documentation candidate')
+ cff=load(root,'CITATION.cff');doc=ref['documentation'];entity=load(root,'artefacts/repository-entity.jsonld')
+ require(re.fullmatch(r'[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z',doc['published_at']) is not None,'invalid publication timestamp')
+ try:datetime.strptime(doc['published_at'],'%Y-%m-%dT%H:%M:%SZ')
+ except ValueError as exc:raise ValueError('invalid publication timestamp') from exc
+ require(doc['release_url']=='https://github.com/GautierDorval/fy2press/releases/tag/'+doc['version'],'publication URL/version disagreement')
+ require(entity.get('creativeWorkStatus')=='Published documentary prerelease' and entity.get('datePublished')==doc['published_at'] and entity.get('version')==doc['version'],'publication entity disagreement')
+ citation=cff.get('preferred-citation',{})
+ require(cff['cff-version']=='1.2.0' and 'reference' in cff['title'] and citation.get('type')=='manual','citation must describe the documentary manual')
+ for record in [cff,citation]:
+  require(record.get('version')==doc['version'] and record.get('url')==doc['release_url'] and record.get('date-released')==doc['published_at'][:10],'citation/publication disagreement')
+ require(cff.get('license')==['CC-BY-4.0','MIT'] and entity.get('license')==['https://creativecommons.org/licenses/by/4.0/','https://opensource.org/license/mit'],'documentation licence inventory')
+ require(entity.get('usageInfo')=='https://github.com/GautierDorval/fy2press/blob/main/LICENSE.md','file-specific licence scope')
+ changelog=(root/'CHANGELOG.md').read_text(encoding='utf-8')
+ require('## '+doc['version']+' (published '+doc['published_at'][:10]+')' in changelog and doc['published_at'] in changelog and doc['source_commit'] in changelog,'changelog/publication disagreement')
+ morrowfield_checks(root)
  require(len(load(root,'sources/seo-decisions.json')['decisions'])==12,'SEO decision coverage')
  generate(root,True);return export_manifest(root)
 

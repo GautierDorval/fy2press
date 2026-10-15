@@ -14,5 +14,12 @@
     "@id": "https://pagup.com/#organization"
   },
   "version": "docs-v1.0.0-rc.1",
-  "creativeWorkStatus": "Local publication candidate"
+  "creativeWorkStatus": "Published documentary prerelease",
+  "datePublished": "2026-10-14T22:28:51Z",
+  "url": "https://github.com/GautierDorval/fy2press",
+  "license": [
+    "https://creativecommons.org/licenses/by/4.0/",
+    "https://opensource.org/license/mit"
+  ],
+  "usageInfo": "https://github.com/GautierDorval/fy2press/blob/main/LICENSE.md"
 }

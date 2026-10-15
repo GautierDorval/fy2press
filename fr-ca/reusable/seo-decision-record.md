@@ -2,6 +2,8 @@
 
 [English](../../reusable/seo-decision-record.md) · [Accueil](../README.md)
 
+Consultez l’[exemple Morrowfield rempli](../examples/morrowfield.md) avant d’adapter ce registre.
+
 Utiliser une fiche par famille. Commencer par la [matrice](../docs/seo-decision-matrix.md), puis consigner l’implémentation réelle.
 
 | Champ de décision | Votre relevé |

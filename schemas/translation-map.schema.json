@@ -36,7 +36,8 @@
             "const": "Codex"
           },
           "reviewed_on": {
-            "const": "2026-10-14"
+            "type": "string",
+            "format": "date"
           }
         },
         "required": [

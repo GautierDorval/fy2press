@@ -2,19 +2,26 @@
 
 [English](../../developer/blocks.md) · [Index](README.md)
 
-Généré depuis le registre WordPress natif du paquet FREE 1.0.0, SVN 3744276. Les résultats ci-dessous proviennent de données fictives locales, sans requête Shopify. Les valeurs par défaut sont celles du laboratoire en anglais; les textes traduisibles peuvent différer selon la langue.
+Généré depuis le registre WordPress natif du paquet FREE 1.0.0, SVN 3744276. Les résultats ci-dessous proviennent de données fictives locales, sans requête Shopify. Les valeurs par défaut sont celles du laboratoire en anglais ; les textes traduisibles peuvent différer selon la langue.
 
-Les exemples avec `id="123"` exigent l’ID WordPress réel. Les blocs produit exigent normalement une fiche produit; les blocs collection exigent une archive de collection. Une boucle peut être placée sur une page ordinaire.
+Les exemples avec `id="123"` exigent l’ID WordPress réel. Les blocs produit exigent normalement une fiche produit ; les blocs collection exigent une archive de collection. Une boucle peut être placée sur une page ordinaire.
 
 ## shopipress/title
 
-Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductTitle.php).
+Résultat attendu : Le titre du produit.
+
+Contexte : `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductTitle.php).
 
 ```html
 <!-- wp:shopipress/title /-->
 ```
 
-Résultat local observé: 160 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+<details>
+<summary>Détails de l’essai local</summary>
+
+Trace de l’essai local : 160 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -34,7 +41,7 @@ Résultat local observé: 160 octets retournés, 0 octets imprimés hors retour.
 | `fontFamily` | string | `{"default_not_declared":true}` |
 | `borderColor` | string | `{"default_not_declared":true}` |
 
-Supports inscrits:
+Supports inscrits :
 
 ```json
 {
@@ -80,17 +87,24 @@ Supports inscrits:
 }
 ```
 
-Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé; une donnée absente peut produire un remplacement ou aucune sortie.
+Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé ; une donnée absente peut produire un remplacement ou aucune sortie.
 
 ## shopipress/price
 
-Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductPrice.php).
+Résultat attendu : Le prix formaté selon les données produit disponibles.
+
+Contexte : `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductPrice.php).
 
 ```html
 <!-- wp:shopipress/price /-->
 ```
 
-Résultat local observé: 101 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+<details>
+<summary>Détails de l’essai local</summary>
+
+Trace de l’essai local : 101 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -113,7 +127,7 @@ Résultat local observé: 101 octets retournés, 0 octets imprimés hors retour.
 | `fontFamily` | string | `{"default_not_declared":true}` |
 | `borderColor` | string | `{"default_not_declared":true}` |
 
-Supports inscrits:
+Supports inscrits :
 
 ```json
 {
@@ -159,17 +173,24 @@ Supports inscrits:
 }
 ```
 
-Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé; une donnée absente peut produire un remplacement ou aucune sortie.
+Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé ; une donnée absente peut produire un remplacement ou aucune sortie.
 
 ## shopipress/description
 
-Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductDescription.php).
+Résultat attendu : La description du produit dans le contexte courant.
+
+Contexte : `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductDescription.php).
 
 ```html
 <!-- wp:shopipress/description /-->
 ```
 
-Résultat local observé: 248 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+<details>
+<summary>Détails de l’essai local</summary>
+
+Trace de l’essai local : 248 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -192,7 +213,7 @@ Résultat local observé: 248 octets retournés, 0 octets imprimés hors retour.
 | `fontFamily` | string | `{"default_not_declared":true}` |
 | `borderColor` | string | `{"default_not_declared":true}` |
 
-Supports inscrits:
+Supports inscrits :
 
 ```json
 {
@@ -238,17 +259,24 @@ Supports inscrits:
 }
 ```
 
-Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé; une donnée absente peut produire un remplacement ou aucune sortie.
+Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé ; une donnée absente peut produire un remplacement ou aucune sortie.
 
 ## shopipress/image
 
-Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductImage.php).
+Résultat attendu : L’image principale du produit.
+
+Contexte : `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductImage.php).
 
 ```html
 <!-- wp:shopipress/image /-->
 ```
 
-Résultat local observé: 313 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+<details>
+<summary>Détails de l’essai local</summary>
+
+Trace de l’essai local : 313 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -266,7 +294,7 @@ Résultat local observé: 313 octets retournés, 0 octets imprimés hors retour.
 | `style` | object | `{"default_not_declared":true}` |
 | `borderColor` | string | `{"default_not_declared":true}` |
 
-Supports inscrits:
+Supports inscrits :
 
 ```json
 {
@@ -294,17 +322,24 @@ Supports inscrits:
 }
 ```
 
-Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé; une donnée absente peut produire un remplacement ou aucune sortie.
+Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé ; une donnée absente peut produire un remplacement ou aucune sortie.
 
 ## shopipress/variants
 
-Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductVariants.php).
+Résultat attendu : Les contrôles de choix de variante dans un contexte produit.
+
+Contexte : `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductVariants.php).
 
 ```html
 <!-- wp:shopipress/variants /-->
 ```
 
-Résultat local observé: 814 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+<details>
+<summary>Détails de l’essai local</summary>
+
+Trace de l’essai local : 814 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -332,7 +367,7 @@ Résultat local observé: 814 octets retournés, 0 octets imprimés hors retour.
 | `align` | string | `{"default_not_declared":true}` |
 | `style` | object | `{"default_not_declared":true}` |
 
-Supports inscrits:
+Supports inscrits :
 
 ```json
 {
@@ -358,17 +393,24 @@ Supports inscrits:
 }
 ```
 
-Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé; une donnée absente peut produire un remplacement ou aucune sortie.
+Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé ; une donnée absente peut produire un remplacement ou aucune sortie.
 
 ## shopipress/gallery
 
-Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductGallery.php).
+Résultat attendu : La galerie d’images du produit.
+
+Contexte : `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductGallery.php).
 
 ```html
 <!-- wp:shopipress/gallery /-->
 ```
 
-Résultat local observé: 309 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+<details>
+<summary>Détails de l’essai local</summary>
+
+Trace de l’essai local : 309 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -400,7 +442,7 @@ Résultat local observé: 309 octets retournés, 0 octets imprimés hors retour.
 | `align` | string | `{"default_not_declared":true}` |
 | `style` | object | `{"default_not_declared":true}` |
 
-Supports inscrits:
+Supports inscrits :
 
 ```json
 {
@@ -422,17 +464,24 @@ Supports inscrits:
 }
 ```
 
-Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé; une donnée absente peut produire un remplacement ou aucune sortie.
+Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé ; une donnée absente peut produire un remplacement ou aucune sortie.
 
 ## shopipress/add-to-cart
 
-Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/AddToCart.php).
+Résultat attendu : Un contrôle d’ajout au panier ; son rendu seul ne prouve pas une requête panier.
+
+Contexte : `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/AddToCart.php).
 
 ```html
 <!-- wp:shopipress/add-to-cart /-->
 ```
 
-Résultat local observé: 916 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+<details>
+<summary>Détails de l’essai local</summary>
+
+Trace de l’essai local : 916 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -469,7 +518,7 @@ Résultat local observé: 916 octets retournés, 0 octets imprimés hors retour.
 | `fontFamily` | string | `{"default_not_declared":true}` |
 | `borderColor` | string | `{"default_not_declared":true}` |
 
-Supports inscrits:
+Supports inscrits :
 
 ```json
 {
@@ -515,17 +564,24 @@ Supports inscrits:
 }
 ```
 
-Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé; une donnée absente peut produire un remplacement ou aucune sortie.
+Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé ; une donnée absente peut produire un remplacement ou aucune sortie.
 
 ## shopipress/availability
 
-Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductAvailability.php).
+Résultat attendu : L’indication de disponibilité selon les données produit disponibles.
+
+Contexte : `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductAvailability.php).
 
 ```html
 <!-- wp:shopipress/availability /-->
 ```
 
-Résultat local observé: 478 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+<details>
+<summary>Détails de l’essai local</summary>
+
+Trace de l’essai local : 478 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -559,7 +615,7 @@ Résultat local observé: 478 octets retournés, 0 octets imprimés hors retour.
 | `fontFamily` | string | `{"default_not_declared":true}` |
 | `borderColor` | string | `{"default_not_declared":true}` |
 
-Supports inscrits:
+Supports inscrits :
 
 ```json
 {
@@ -598,17 +654,24 @@ Supports inscrits:
 }
 ```
 
-Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé; une donnée absente peut produire un remplacement ou aucune sortie.
+Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé ; une donnée absente peut produire un remplacement ou aucune sortie.
 
 ## shopipress/vendor
 
-Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductVendor.php).
+Résultat attendu : Le nom du fournisseur du produit.
+
+Contexte : `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductVendor.php).
 
 ```html
 <!-- wp:shopipress/vendor /-->
 ```
 
-Résultat local observé: 202 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+<details>
+<summary>Détails de l’essai local</summary>
+
+Trace de l’essai local : 202 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -634,7 +697,7 @@ Résultat local observé: 202 octets retournés, 0 octets imprimés hors retour.
 | `fontFamily` | string | `{"default_not_declared":true}` |
 | `borderColor` | string | `{"default_not_declared":true}` |
 
-Supports inscrits:
+Supports inscrits :
 
 ```json
 {
@@ -676,17 +739,24 @@ Supports inscrits:
 }
 ```
 
-Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé; une donnée absente peut produire un remplacement ou aucune sortie.
+Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé ; une donnée absente peut produire un remplacement ou aucune sortie.
 
 ## shopipress/collections
 
-Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductCollections.php).
+Résultat attendu : Les collections associées au produit.
+
+Contexte : `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductCollections.php).
 
 ```html
 <!-- wp:shopipress/collections /-->
 ```
 
-Résultat local observé: 465 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+<details>
+<summary>Détails de l’essai local</summary>
+
+Trace de l’essai local : 465 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -718,7 +788,7 @@ Résultat local observé: 465 octets retournés, 0 octets imprimés hors retour.
 | `textColor` | string | `{"default_not_declared":true}` |
 | `fontFamily` | string | `{"default_not_declared":true}` |
 
-Supports inscrits:
+Supports inscrits :
 
 ```json
 {
@@ -752,17 +822,24 @@ Supports inscrits:
 }
 ```
 
-Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé; une donnée absente peut produire un remplacement ou aucune sortie.
+Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé ; une donnée absente peut produire un remplacement ou aucune sortie.
 
 ## shopipress/tags
 
-Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductTags.php).
+Résultat attendu : La liste des étiquettes du produit.
+
+Contexte : `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductTags.php).
 
 ```html
 <!-- wp:shopipress/tags /-->
 ```
 
-Résultat local observé: 378 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+<details>
+<summary>Détails de l’essai local</summary>
+
+Trace de l’essai local : 378 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -801,7 +878,7 @@ Résultat local observé: 378 octets retournés, 0 octets imprimés hors retour.
 | `fontFamily` | string | `{"default_not_declared":true}` |
 | `borderColor` | string | `{"default_not_declared":true}` |
 
-Supports inscrits:
+Supports inscrits :
 
 ```json
 {
@@ -841,17 +918,24 @@ Supports inscrits:
 }
 ```
 
-Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé; une donnée absente peut produire un remplacement ou aucune sortie.
+Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé ; une donnée absente peut produire un remplacement ou aucune sortie.
 
 ## shopipress/buy-now
 
-Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductBuyNow.php).
+Résultat attendu : Un contrôle d’achat direct ; le paiement connecté est hors de cette observation locale.
+
+Contexte : `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductBuyNow.php).
 
 ```html
 <!-- wp:shopipress/buy-now /-->
 ```
 
-Résultat local observé: 655 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+<details>
+<summary>Détails de l’essai local</summary>
+
+Trace de l’essai local : 655 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -886,7 +970,7 @@ Résultat local observé: 655 octets retournés, 0 octets imprimés hors retour.
 | `fontFamily` | string | `{"default_not_declared":true}` |
 | `borderColor` | string | `{"default_not_declared":true}` |
 
-Supports inscrits:
+Supports inscrits :
 
 ```json
 {
@@ -932,17 +1016,24 @@ Supports inscrits:
 }
 ```
 
-Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé; une donnée absente peut produire un remplacement ou aucune sortie.
+Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé ; une donnée absente peut produire un remplacement ou aucune sortie.
 
 ## shopipress/collection-title
 
-Contexte: `collection`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/CollectionTitle.php).
+Résultat attendu : Le titre de la collection courante.
+
+Contexte : `collection`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/CollectionTitle.php).
 
 ```html
 <!-- wp:shopipress/collection-title /-->
 ```
 
-Résultat local observé: 178 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+<details>
+<summary>Détails de l’essai local</summary>
+
+Trace de l’essai local : 178 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -964,7 +1055,7 @@ Résultat local observé: 178 octets retournés, 0 octets imprimés hors retour.
 | `fontFamily` | string | `{"default_not_declared":true}` |
 | `borderColor` | string | `{"default_not_declared":true}` |
 
-Supports inscrits:
+Supports inscrits :
 
 ```json
 {
@@ -1010,17 +1101,24 @@ Supports inscrits:
 }
 ```
 
-Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé; une donnée absente peut produire un remplacement ou aucune sortie.
+Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé ; une donnée absente peut produire un remplacement ou aucune sortie.
 
 ## shopipress/collection-description
 
-Contexte: `collection`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/CollectionDescription.php).
+Résultat attendu : La description de la collection courante.
+
+Contexte : `collection`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/CollectionDescription.php).
 
 ```html
 <!-- wp:shopipress/collection-description /-->
 ```
 
-Résultat local observé: 274 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+<details>
+<summary>Détails de l’essai local</summary>
+
+Trace de l’essai local : 274 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -1041,7 +1139,7 @@ Résultat local observé: 274 octets retournés, 0 octets imprimés hors retour.
 | `fontFamily` | string | `{"default_not_declared":true}` |
 | `borderColor` | string | `{"default_not_declared":true}` |
 
-Supports inscrits:
+Supports inscrits :
 
 ```json
 {
@@ -1083,17 +1181,24 @@ Supports inscrits:
 }
 ```
 
-Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé; une donnée absente peut produire un remplacement ou aucune sortie.
+Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé ; une donnée absente peut produire un remplacement ou aucune sortie.
 
 ## shopipress/products-loop
 
-Contexte: `anywhere`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductsLoop.php).
+Résultat attendu : Une grille de produits selon la limite, les colonnes et la collection configurées.
+
+Contexte : `anywhere`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductsLoop.php).
 
 ```html
 <!-- wp:shopipress/products-loop /-->
 ```
 
-Résultat local observé: 3234 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+<details>
+<summary>Détails de l’essai local</summary>
+
+Trace de l’essai local : 3234 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -1152,7 +1257,7 @@ Résultat local observé: 3234 octets retournés, 0 octets imprimés hors retour
 | `gradient` | string | `{"default_not_declared":true}` |
 | `borderColor` | string | `{"default_not_declared":true}` |
 
-Supports inscrits:
+Supports inscrits :
 
 ```json
 {
@@ -1185,17 +1290,24 @@ Supports inscrits:
 }
 ```
 
-Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé; une donnée absente peut produire un remplacement ou aucune sortie.
+Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé ; une donnée absente peut produire un remplacement ou aucune sortie.
 
 ## shopipress/collection-sort
 
-Contexte: `collection`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/CollectionSort.php).
+Résultat attendu : Un contrôle de tri des résultats produit de la collection.
+
+Contexte : `collection`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/CollectionSort.php).
 
 ```html
 <!-- wp:shopipress/collection-sort /-->
 ```
 
-Résultat local observé: 668 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+<details>
+<summary>Détails de l’essai local</summary>
+
+Trace de l’essai local : 668 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -1217,7 +1329,7 @@ Résultat local observé: 668 octets retournés, 0 octets imprimés hors retour.
 | `fontFamily` | string | `{"default_not_declared":true}` |
 | `borderColor` | string | `{"default_not_declared":true}` |
 
-Supports inscrits:
+Supports inscrits :
 
 ```json
 {
@@ -1257,17 +1369,24 @@ Supports inscrits:
 }
 ```
 
-Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé; une donnée absente peut produire un remplacement ou aucune sortie.
+Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé ; une donnée absente peut produire un remplacement ou aucune sortie.
 
 ## shopipress/collection-products-per-page
 
-Contexte: `collection`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/CollectionProductsPerPage.php).
+Résultat attendu : Un contrôle du nombre de produits affichés par page de collection.
+
+Contexte : `collection`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/CollectionProductsPerPage.php).
 
 ```html
 <!-- wp:shopipress/collection-products-per-page /-->
 ```
 
-Résultat local observé: 493 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+<details>
+<summary>Détails de l’essai local</summary>
+
+Trace de l’essai local : 493 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -1290,7 +1409,7 @@ Résultat local observé: 493 octets retournés, 0 octets imprimés hors retour.
 | `fontFamily` | string | `{"default_not_declared":true}` |
 | `borderColor` | string | `{"default_not_declared":true}` |
 
-Supports inscrits:
+Supports inscrits :
 
 ```json
 {
@@ -1330,6 +1449,6 @@ Supports inscrits:
 }
 ```
 
-Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé; une donnée absente peut produire un remplacement ou aucune sortie.
+Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème, ni paiement connecté. Vérifier le rendu dans le contexte annoncé ; une donnée absente peut produire un remplacement ou aucune sortie.
 
 [Observation](../../sources/developer-observation.json) · [Package](../../artefacts/release-reference.json).

@@ -2,7 +2,9 @@
 
 [English](../../reusable/architecture-decision.md) · [Accueil](../README.md)
 
-Copier cette fiche pour un projet. Remplacer les champs par des décisions et des preuves; un élément non vérifié n’est pas accepté par défaut.
+Consultez l’[exemple Morrowfield rempli](../examples/morrowfield.md) avant d’adapter ce registre.
+
+Copier cette fiche pour un projet. Remplacer les champs par des décisions et des preuves ; un élément non vérifié n’est pas accepté par défaut.
 
 | Champ du projet | Valeur à consigner |
 | --- | --- |
@@ -20,7 +22,7 @@ Copier cette fiche pour un projet. Remplacer les champs par des décisions et de
 | Option | Intérêt | Motif de sélection ou de rejet | Preuve |
 | --- | --- | --- | --- |
 | Liens ou contrôle d’achat intégré | Modification minimale | … | … |
-| Catalogue natif FREE | Blocs, shortcodes, actualisation manuelle | … | … |
+| Catalogue natif FREE | Blocs, codes courts, actualisation manuelle | … | … |
 | Catalogue natif PRO | Besoin premium de design/constructeur nommé | … | … |
 | Autre architecture | Besoin non satisfait, comme la traduction du catalogue | … | … |
 
@@ -35,8 +37,8 @@ Copier cette fiche pour un projet. Remplacer les champs par des décisions et de
 
 ## Acceptation
 
-Consigner : paquet/version; sauvegarde et préproduction; produit/variante représentatif; collection et guide; décision d’URL/SEO; contrôle mobile; fraîcheur mesurée; essai panier/paiement autorisé; retour à FREE si nécessaire; contact incident; responsable de maintenance. Relier chaque critère à un résultat réel ou indiquer NOT_RUN.
+Consigner : paquet/version ; sauvegarde et préproduction ; produit/variante représentatif ; collection et guide ; décision d’URL/SEO ; contrôle mobile ; fraîcheur mesurée ; essai panier/paiement autorisé ; retour à FREE si nécessaire ; contact incident ; responsable de maintenance. Relier chaque critère à un résultat réel ou indiquer NOT_RUN.
 
 **Décision :** …  **Besoins non satisfaits :** …  **Déclencheur/date de révision :** …  **Acceptation propriétaire :** …
 
-[Licence et attribution](../../LICENSE.md). Crédit suggéré : « Adapté du modèle de décision d’architecture Fy2Press de PAGUP, CC BY 4.0; modifications par [votre organisation]. » Aucun lien promotionnel n’est exigé au-delà des conditions de licence.
+[Licence et attribution](../../LICENSE.md). Crédit suggéré : « Adapté du modèle de décision d’architecture Fy2Press de PAGUP, CC BY 4.0 ; modifications par [votre organisation]. » Aucun lien promotionnel n’est exigé au-delà des conditions de licence.

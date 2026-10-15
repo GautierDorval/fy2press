@@ -2,6 +2,8 @@
 
 [Français canadien](../fr-ca/reusable/architecture-decision.md) · [Start here](../README.md)
 
+See the [filled Morrowfield example](../examples/morrowfield.md) before adapting this record.
+
 Copy this record for one project. Replace the blanks with decisions and evidence; an unchecked item is not accepted by default.
 
 | Project field | Value to record |
