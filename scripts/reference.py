@@ -360,7 +360,6 @@ def check(root):
  require(cff.get('license')==['CC-BY-4.0','MIT'] and entity.get('license')==['https://creativecommons.org/licenses/by/4.0/','https://opensource.org/license/mit'],'documentation licence inventory')
  require(entity.get('usageInfo')=='https://github.com/GautierDorval/fy2press/blob/main/LICENSE.md','file-specific licence scope')
  changelog=(root/'CHANGELOG.md').read_text(encoding='utf-8')
- require('## '+doc['version']+'\n' in changelog,'changelog/edition disagreement')
  seen_releases=set();current_receipt=None
  for publication in ref['documentary_publications']:
   require(publication['version'] not in seen_releases,'duplicate publication receipt')
@@ -372,6 +371,9 @@ def check(root):
   require(publication['release_url']=='https://github.com/GautierDorval/fy2press/releases/tag/'+publication['version'],'publication URL/version disagreement')
   require('## '+publication['version']+' (published '+publication['published_at'][:10]+')' in changelog and publication['published_at'] in changelog and publication['source_commit'] in changelog,'changelog/publication disagreement')
   if publication['version']==doc['version']:current_receipt=publication
+ edition_heading='## '+doc['version']
+ if current_receipt:edition_heading+=' (published '+current_receipt['published_at'][:10]+')'
+ require(edition_heading+'\n' in changelog,'changelog/edition disagreement')
  for record in [cff,citation]:
   if 'date-released' in record:
    require(current_receipt is not None and record['date-released']==current_receipt['published_at'][:10],'citation date requires a matching publication receipt')

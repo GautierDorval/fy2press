@@ -200,6 +200,19 @@ class BoundaryTests(unittest.TestCase):
  def test_future_publication_receipt_refused(self):
   self.mutate('artefacts/release-reference.json',lambda d:d['documentary_publications'][0].update(published_at='2099-01-01T00:00:00Z'))
   with self.assertRaisesRegex(ValueError,'future publication'):p.check(self.root)
+ def test_matching_current_edition_receipt_is_supported(self):
+  # Synthetic receipt in the disposable fixture only; not a publication assertion.
+  ref=self.load('artefacts/release-reference.json');receipt=copy.deepcopy(ref['documentary_publications'][0])
+  receipt.update(version=ref['documentation']['version'],release_url=ref['documentation']['release_url'])
+  ref['documentary_publications'].append(receipt);self.save('artefacts/release-reference.json',ref)
+  path=self.root/'CHANGELOG.md';text=path.read_text(encoding='utf-8')
+  text=text.replace('## '+receipt['version']+'\n','## '+receipt['version']+' (published '+receipt['published_at'][:10]+')\n')
+  path.write_text(text,encoding='utf-8')
+  cff=self.load('CITATION.cff')
+  for record in [cff,cff['preferred-citation']]:record['date-released']=receipt['published_at'][:10]
+  self.save('CITATION.cff',cff);p.check(self.root)
+  cff['preferred-citation']['date-released']='2026-10-13';self.save('CITATION.cff',cff)
+  with self.assertRaisesRegex(ValueError,'citation date requires'):p.check(self.root)
  def test_changed_example_requires_new_browser_observation(self):
   with (self.root/'examples/morrowfield.html').open('a',encoding='utf-8') as f:f.write('<!-- changed -->')
   with self.assertRaisesRegex(ValueError,'stale Morrowfield browser'):p.check(self.root)
