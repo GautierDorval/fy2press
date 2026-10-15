@@ -2,8 +2,13 @@
   "schema_version": "1.0.0",
   "documentation": {
     "version": "docs-v1.0.0-rc.1",
-    "publication_state": "PUBLICATION_CANDIDATE",
-    "published_at": null
+    "publication_state": "PUBLISHED_PRERELEASE",
+    "published_at": "2026-10-14T22:28:51Z",
+    "scope": "latest_verified_tagged_release",
+    "release_url": "https://github.com/GautierDorval/fy2press/releases/tag/docs-v1.0.0-rc.1",
+    "repository_id": 1419912178,
+    "release_id": 413239315,
+    "source_commit": "5a8565edf621364aaac70cb1ff3e1872210d9953"
   },
   "FREE": {
     "version": "1.0.0",

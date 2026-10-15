@@ -58,6 +58,8 @@ class BoundaryTests(unittest.TestCase):
   with (self.root/'README.md').open('a',encoding='utf-8') as f:f.write('\n[Missing](missing-document.md)\n')
   self.keep_translation_hash('README.md')
   with self.assertRaisesRegex(ValueError,'broken or escaped local link'):p.check(self.root)
+ def test_fragment_only_links_work_with_noncanonical_root(self):
+  p.check(self.root/'..'/'candidate')
  def test_broken_anchor(self):
   with (self.root/'README.md').open('a',encoding='utf-8') as f:f.write('\n[Missing](scope.md#nonexistent-heading)\n')
   self.keep_translation_hash('README.md')
@@ -135,6 +137,27 @@ class BoundaryTests(unittest.TestCase):
   self.init_history();(self.root/'private-fixture.txt').write_text('synthetic',encoding='utf-8')
   self.git('add','private-fixture.txt');self.git('-c','user.name=Synthetic Test','-c','user.email=test@example.invalid','commit','-m','Synthetic forbidden object')
   with self.assertRaisesRegex(ValueError,'unapproved historical'):p.check_history(self.root)
+ def test_published_release_requires_date(self):
+  self.mutate('artefacts/release-reference.json',lambda d:d['documentation'].update(published_at=None))
+  with self.assertRaises(Exception):p.check(self.root)
+ def test_publication_timestamp_must_be_valid(self):
+  self.mutate('artefacts/release-reference.json',lambda d:d['documentation'].update(published_at='2026-99-99T22:28:51Z'))
+  with self.assertRaisesRegex(Exception,'date-time|invalid publication timestamp'):p.check(self.root)
+ def test_release_link_must_match_tag(self):
+  self.mutate('artefacts/release-reference.json',lambda d:d['documentation'].update(release_url='https://github.com/GautierDorval/fy2press/releases/tag/nonexistent'))
+  with self.assertRaisesRegex(ValueError,'publication URL/version'):p.check(self.root)
+ def test_local_entity_cannot_describe_published_reference(self):
+  self.mutate('artefacts/repository-entity.jsonld',lambda d:d.update(creativeWorkStatus='Local publication candidate'))
+  with self.assertRaisesRegex(ValueError,'publication entity'):p.check(self.root)
+ def test_citation_must_identify_verified_edition(self):
+  self.mutate('CITATION.cff',lambda d:d['preferred-citation'].update(version='docs-v1.0.0-rc.2'))
+  with self.assertRaisesRegex(ValueError,'citation/publication'):p.check(self.root)
+ def test_changed_example_requires_new_browser_observation(self):
+  with (self.root/'examples/morrowfield.html').open('a',encoding='utf-8') as f:f.write('<!-- changed -->')
+  with self.assertRaisesRegex(ValueError,'stale Morrowfield browser'):p.check(self.root)
+ def test_changed_screenshot_requires_new_observation(self):
+  (self.root/'assets/morrowfield-collection-en.png').write_bytes(b'changed screenshot')
+  with self.assertRaisesRegex(ValueError,'stale Morrowfield screenshot'):p.check(self.root)
  def test_malformed_citation(self):
   self.mutate('CITATION.cff',lambda d:d.update(authors=27))
   with self.assertRaises(Exception):p.check(self.root)

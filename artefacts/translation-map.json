@@ -4,9 +4,9 @@
   "translations": [
     {
       "source": "developer/blocks.md",
-      "source_sha256": "9304ce8ce08ee8524724d3c925e4230280471fa64795da71649c60a3c4881306",
+      "source_sha256": "906eb33bd979db2d176e835b02f2239bd31d921f918656d135ea3c75eb4f17d2",
       "translation": "fr-ca/developer/blocks.md",
-      "translation_sha256": "3e78ab847e6319f0ae0ec73fe7912116c1dc525f6aef594b14bcff4a7c79ea06",
+      "translation_sha256": "25a896c441d145804c63d2db3078583ad174cb70e2531493ab31384959609c66",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
       "reviewed_on": "2026-10-14"
@@ -31,9 +31,9 @@
     },
     {
       "source": "developer/shortcodes.md",
-      "source_sha256": "6855e7be38c0ccd91979b006195d255d2fe55bc7fb87936c7e58df65a9a05f7d",
+      "source_sha256": "20bd4b2918825585a541c87789fb98a578403ac13a4ac3489eb1250ff4f5ef1d",
       "translation": "fr-ca/developer/shortcodes.md",
-      "translation_sha256": "57868ef3c5b69cc95a7f75781ba16f75ec381fc9ecf8697bef06cbd21d98c060",
+      "translation_sha256": "e4228df0ab56f97ed8bd15afdbea64dc22f50757909fadde2c4a4f48eb621553",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
       "reviewed_on": "2026-10-14"
@@ -85,9 +85,9 @@
     },
     {
       "source": "docs/seo-decision-matrix.md",
-      "source_sha256": "4de61bc0b2aede6458de0afba319e64569b916ef86b61322d005b6d73ed27d37",
+      "source_sha256": "04aaf3f9b9cd6318d8039b0ce13603db8817ef030fdc23b12a2153e6d0e3ca63",
       "translation": "fr-ca/docs/seo-decision-matrix.md",
-      "translation_sha256": "557cf7bba6811d9ae09220389ca8104195555cfad7e1633966f83338746e10bb",
+      "translation_sha256": "8cf5b1e0045cad7a7cd9a5daebb23c10bf6abdea2741e18fed76d4bcdb090ef2",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
       "reviewed_on": "2026-10-14"
@@ -103,18 +103,18 @@
     },
     {
       "source": "examples/morrowfield.md",
-      "source_sha256": "f251bd1c586b8a05d538a25ce60960540d55a10395343b6989ea834489ead629",
+      "source_sha256": "4418eb03d0887bcb110da1632dbeff8602e0250019866ae8cfe2e594912109e7",
       "translation": "fr-ca/examples/morrowfield.md",
-      "translation_sha256": "af74bafe2fbe89fd92df30fdb93d5ad903b2d0a5720d9fc37b2a81e0cc9e3aec",
+      "translation_sha256": "bb0c35995aada4c28b28457aa38f17687be8cc56685b487d8d2e5c2c856f2d5d",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
       "reviewed_on": "2026-10-14"
     },
     {
       "source": "examples/README.md",
-      "source_sha256": "b62a6691625d9d17172f02fe173f66067c8644e21cc4a02db54672411748b3e1",
+      "source_sha256": "162171af198e2fbcb7bed2ff126af37f6d32bb3090b7e879c572d56ea57a9a04",
       "translation": "fr-ca/examples/README.md",
-      "translation_sha256": "7aae9ea7602e5f0bd354e4067bee233de9062df8223d1bd1f13ef3bc6834bb4d",
+      "translation_sha256": "4ca5cfa6a68c3a2f7b702ec978eafd834e57e6fc347d6bc0208c5ae8f6e23dab",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
       "reviewed_on": "2026-10-14"
@@ -130,36 +130,36 @@
     },
     {
       "source": "README.md",
-      "source_sha256": "a42c85c1047168cf24e96ffb13ef1a02db2a2ead283a4f5cc0fdf63f8c860d0b",
+      "source_sha256": "f4c5270aca23c466c3b0e0f1965269524c7f86ad2fce31f9e5e764c7c202beed",
       "translation": "fr-ca/README.md",
-      "translation_sha256": "e1be3404729a1a9c08a6a9cbb73c925ecbfab3a057f626d5c8e671c7e035706d",
+      "translation_sha256": "befa3d4b048ed3f0ecae7bf040e715aff4934fe718745eff040766dce3ed2b51",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
       "reviewed_on": "2026-10-14"
     },
     {
       "source": "reusable/agency-handover.md",
-      "source_sha256": "32b827dbb9f9b4a7084781bc99ac44244af37615fd5b7c058b349dd304f36faa",
+      "source_sha256": "0bff7d2f93528b6509bfc801b523dcfdc9a37d5a7053e9d8dc1c663c03a0879c",
       "translation": "fr-ca/reusable/agency-handover.md",
-      "translation_sha256": "5df00850e495a0d05d23d5e86e006db827321c650ba8fb5ebff71767f6e8170f",
+      "translation_sha256": "b987c5ab3144dbd267a77698e05ae078398df55fef24e34f86e01f7d23891b49",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
       "reviewed_on": "2026-10-14"
     },
     {
       "source": "reusable/architecture-decision.md",
-      "source_sha256": "ee26cee4015cd4317463fbad1f3697ae29a0e79170273c44f392007c33e58f82",
+      "source_sha256": "165f3dfa5f0d7e1dbb223bd6b2332d7942edfb74c9a48c1f3a33200b9d376e1b",
       "translation": "fr-ca/reusable/architecture-decision.md",
-      "translation_sha256": "3bc4430234b755658258770dc7412cd61934cf55f2d48587740ff8658a547ccd",
+      "translation_sha256": "4349016994bfa5c8ed5f035367f8aa6dc8d133162f485b506808af1a005253b8",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
       "reviewed_on": "2026-10-14"
     },
     {
       "source": "reusable/seo-decision-record.md",
-      "source_sha256": "bb69ef97e6760d13a85c725ce5c99fdf6eb7be44c4cf37e79aa49808fc15a8ab",
+      "source_sha256": "2f9c56a5d6fce58887f7348f081cf170286de48118c0ccc6c695ec7e2e91f264",
       "translation": "fr-ca/reusable/seo-decision-record.md",
-      "translation_sha256": "f9685d451c69a7961ce4c4ee2c7ad2802b99e0225fd2a053a8b222946e8db1dd",
+      "translation_sha256": "e9ecb79554310aca11b8672b88b97a0ee5d58d3423bb5892212a0768b51aac7d",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
       "reviewed_on": "2026-10-14"

@@ -1,0 +1,291 @@
+{
+  "schema_version": "1.0.0",
+  "observed_at": "2026-10-15T01:03:57.899Z",
+  "state": "PASS",
+  "scope": "Standalone fictional editorial composition; not a WordPress runtime or connected Shopify test",
+  "source_file": "examples/morrowfield.html",
+  "source_sha256": "df92ae9f0f023ac21c683b07f80f0b7c16a54d470e30c976f543c98aa8519205",
+  "browser": "Chromium 151.0.7922.34",
+  "views": [
+    {
+      "page": "collection",
+      "language": "en",
+      "viewport": {
+        "width": 1365,
+        "height": 1000
+      },
+      "horizontal_overflow": false,
+      "one_h1": true,
+      "primary_action_visible": true,
+      "language_preserves_page": true,
+      "history_return_pass": true,
+      "purchase_disabled": null,
+      "screenshot": "assets/morrowfield-collection-en.png",
+      "screenshot_sha256": "cab3ca5a10fb745f15ae9d890d514f55a43be161775ed807bbfbec4dc6559af2",
+      "capture_dimensions": {
+        "width": 1365,
+        "height": 1447
+      }
+    },
+    {
+      "page": "collection",
+      "language": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "horizontal_overflow": false,
+      "one_h1": true,
+      "primary_action_visible": true,
+      "language_preserves_page": true,
+      "history_return_pass": true,
+      "purchase_disabled": null,
+      "screenshot": null,
+      "screenshot_sha256": "63aecf8d2d0ad028365e238042da08fbb8b4c5abc936e92b88c121047588d3f2",
+      "capture_dimensions": {
+        "width": 390,
+        "height": 2074
+      }
+    },
+    {
+      "page": "product",
+      "language": "en",
+      "viewport": {
+        "width": 1365,
+        "height": 1000
+      },
+      "horizontal_overflow": false,
+      "one_h1": true,
+      "primary_action_visible": true,
+      "language_preserves_page": true,
+      "history_return_pass": true,
+      "purchase_disabled": true,
+      "screenshot": "assets/morrowfield-product-en.png",
+      "screenshot_sha256": "6d67ce7ee1516110c8a28d5ee648655898bc943fb0fa7360ed3d72d566518736",
+      "capture_dimensions": {
+        "width": 1365,
+        "height": 1380
+      }
+    },
+    {
+      "page": "product",
+      "language": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "horizontal_overflow": false,
+      "one_h1": true,
+      "primary_action_visible": true,
+      "language_preserves_page": true,
+      "history_return_pass": true,
+      "purchase_disabled": true,
+      "screenshot": null,
+      "screenshot_sha256": "d24c9fde748a8323de7f97b3ce4f1e72f3c832c5499637fef65da02449142507",
+      "capture_dimensions": {
+        "width": 390,
+        "height": 1773
+      }
+    },
+    {
+      "page": "guide",
+      "language": "en",
+      "viewport": {
+        "width": 1365,
+        "height": 1000
+      },
+      "horizontal_overflow": false,
+      "one_h1": true,
+      "primary_action_visible": true,
+      "language_preserves_page": true,
+      "history_return_pass": true,
+      "purchase_disabled": null,
+      "screenshot": "assets/morrowfield-guide-en.png",
+      "screenshot_sha256": "115ea37c9561e97568865da9bfc23a458ff919fff3fda5e6f97c6b8accfadb5c",
+      "capture_dimensions": {
+        "width": 1365,
+        "height": 1665
+      }
+    },
+    {
+      "page": "guide",
+      "language": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "horizontal_overflow": false,
+      "one_h1": true,
+      "primary_action_visible": true,
+      "language_preserves_page": true,
+      "history_return_pass": true,
+      "purchase_disabled": null,
+      "screenshot": null,
+      "screenshot_sha256": "419d0ec2e57c856be1c1247a144d5c615f258bbac2b520cd9d17b9c7cb24ec0a",
+      "capture_dimensions": {
+        "width": 390,
+        "height": 2186
+      }
+    },
+    {
+      "page": "collection",
+      "language": "fr-CA",
+      "viewport": {
+        "width": 1365,
+        "height": 1000
+      },
+      "horizontal_overflow": false,
+      "one_h1": true,
+      "primary_action_visible": true,
+      "language_preserves_page": true,
+      "history_return_pass": true,
+      "purchase_disabled": null,
+      "screenshot": "assets/morrowfield-collection-fr.png",
+      "screenshot_sha256": "a005f156d77ee12131471bb5ed1af99d6bee99463242b2fed47d3ea9d0d91a4c",
+      "capture_dimensions": {
+        "width": 1365,
+        "height": 1447
+      }
+    },
+    {
+      "page": "collection",
+      "language": "fr-CA",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "horizontal_overflow": false,
+      "one_h1": true,
+      "primary_action_visible": true,
+      "language_preserves_page": true,
+      "history_return_pass": true,
+      "purchase_disabled": null,
+      "screenshot": null,
+      "screenshot_sha256": "5e5aae3553cc122818c11fbff3d64cdae8e8879c0756f11d3c2acf511215dfc1",
+      "capture_dimensions": {
+        "width": 390,
+        "height": 2183
+      }
+    },
+    {
+      "page": "product",
+      "language": "fr-CA",
+      "viewport": {
+        "width": 1365,
+        "height": 1000
+      },
+      "horizontal_overflow": false,
+      "one_h1": true,
+      "primary_action_visible": true,
+      "language_preserves_page": true,
+      "history_return_pass": true,
+      "purchase_disabled": true,
+      "screenshot": "assets/morrowfield-product-fr.png",
+      "screenshot_sha256": "a0f72ef23997a7d4de1cc368fdc9a3f436cfe947396f591c1cb30abcd00b3a61",
+      "capture_dimensions": {
+        "width": 1365,
+        "height": 1380
+      }
+    },
+    {
+      "page": "product",
+      "language": "fr-CA",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "horizontal_overflow": false,
+      "one_h1": true,
+      "primary_action_visible": true,
+      "language_preserves_page": true,
+      "history_return_pass": true,
+      "purchase_disabled": true,
+      "screenshot": null,
+      "screenshot_sha256": "435626ee88330c6e4d505755d7690ad34db09b4a5b2e91fe5383fae867787e3d",
+      "capture_dimensions": {
+        "width": 390,
+        "height": 1773
+      }
+    },
+    {
+      "page": "guide",
+      "language": "fr-CA",
+      "viewport": {
+        "width": 1365,
+        "height": 1000
+      },
+      "horizontal_overflow": false,
+      "one_h1": true,
+      "primary_action_visible": true,
+      "language_preserves_page": true,
+      "history_return_pass": true,
+      "purchase_disabled": null,
+      "screenshot": "assets/morrowfield-guide-fr.png",
+      "screenshot_sha256": "83514b92fa45784167c4981f9d2c1a11f14334ae17e07f7af94ee64d8c06529d",
+      "capture_dimensions": {
+        "width": 1365,
+        "height": 1693
+      }
+    },
+    {
+      "page": "guide",
+      "language": "fr-CA",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "horizontal_overflow": false,
+      "one_h1": true,
+      "primary_action_visible": true,
+      "language_preserves_page": true,
+      "history_return_pass": true,
+      "purchase_disabled": null,
+      "screenshot": null,
+      "screenshot_sha256": "a0c7a466dfa3c488a94ef2a0ef8f0d1a5fea435b238d284ff00513ceb642a3a2",
+      "capture_dimensions": {
+        "width": 390,
+        "height": 2247
+      }
+    }
+  ],
+  "journeys": [
+    {
+      "language": "en",
+      "route": [
+        "collection",
+        "product",
+        "guide",
+        "collection"
+      ],
+      "state": "PASS"
+    },
+    {
+      "language": "fr-CA",
+      "route": [
+        "collection",
+        "product",
+        "guide",
+        "collection"
+      ],
+      "state": "PASS"
+    }
+  ],
+  "invalid_query_falls_back": true,
+  "direct_file_navigation_pass": true,
+  "external_request_attempts": 0,
+  "uncaught_javascript_errors": 0,
+  "visual_inspection": {
+    "state": "PASS",
+    "reviewer": "Codex",
+    "scope": "All six page/language views on desktop and mobile; screenshots inspected for clipping, wrapping, overlaps, readable controls and visible navigation. Not a human review.",
+    "source_notice_followup": "All twelve captures are byte-identical after adding the non-rendered licence notice; browser checks rerun."
+  },
+  "not_run": [
+    "WordPress installation or theme compatibility",
+    "Native Fy2Press rendering in this composition",
+    "Shopify synchronization and stock freshness",
+    "Variant, cart and checkout requests",
+    "Production canonical, robots, sitemap and hreflang",
+    "Search-engine results"
+  ]
+}

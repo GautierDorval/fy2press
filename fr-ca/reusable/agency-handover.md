@@ -2,6 +2,8 @@
 
 [English](../../reusable/agency-handover.md) · [Accueil](../README.md)
 
+Consultez l’[exemple Morrowfield rempli](../examples/morrowfield.md) avant d’adapter ce registre.
+
 ## Identité du projet
 
 Client/projet : …  Date : …  Contact agence : …  Contact marchand : …

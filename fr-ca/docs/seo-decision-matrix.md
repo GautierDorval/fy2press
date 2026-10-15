@@ -6,6 +6,23 @@ Distinguer le lieu de gestion des données commerciales de l’URL qui devrait r
 
 Une canonique exprime une préférence pour des contenus identiques ou très similaires; elle ne garantit pas le choix du moteur. Ne pas utiliser robots.txt pour l’imposer ou combiner noindex et canonique comme recette automatique. [Consignes Google](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls). Un guide d’achat original conserve généralement sa propre URL.
 
+## Choisir un cas
+
+| Cas | Situation |
+| --- | --- |
+| [SEO-01](#seo-01--produit-similaire-shopify-prioritaire) | Produit similaire, Shopify prioritaire |
+| [SEO-02](#seo-02--produit-wordpress-enrichi) | Produit WordPress enrichi |
+| [SEO-03](#seo-03--guide-dachat-original) | Guide d’achat original |
+| [SEO-04](#seo-04--collection-wordpress-utile) | Collection WordPress utile |
+| [SEO-05](#seo-05--collections-concurrentes) | Collections concurrentes |
+| [SEO-06](#seo-06--sélection-saisonnière) | Sélection saisonnière |
+| [SEO-07](#seo-07--étiquettes-pauvres) | Étiquettes pauvres |
+| [SEO-08](#seo-08--étiquettes-éditorialisées) | Étiquettes éditorialisées |
+| [SEO-09](#seo-09--filtres-et-tri) | Filtres et tri |
+| [SEO-10](#seo-10--variantes-sélectionnées) | Variantes sélectionnées |
+| [SEO-11](#seo-11--indisponible-retiré-ou-renommé) | Indisponible, retiré ou renommé |
+| [SEO-12](#seo-12--plusieurs-langues) | Plusieurs langues |
+
 ## SEO-01 · Produit similaire, Shopify prioritaire
 
 | Critère | Décision |

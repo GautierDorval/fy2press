@@ -8,13 +8,15 @@ Les exemples avec `id="123"` exigent l’ID WordPress réel. Les blocs produit e
 
 ## fy2press_product
 
+Résultat attendu: Un composant produit complet pour l’ID de fiche WordPress fourni.
+
 Contexte: `anywhere`. FREE 1.0.0. Alias de compatibilité: `shopipress_product`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/product/Product.php).
 
 ```text
 [fy2press_product id="123"]
 ```
 
-Résultat local observé: 4041 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 4041 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -29,13 +31,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_product_title
 
+Résultat attendu: Le titre du produit.
+
 Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_title`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/product/ProductTitle.php).
 
 ```text
 [fy2press_product_title]
 ```
 
-Résultat local observé: 89 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 89 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -55,13 +59,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_product_description
 
+Résultat attendu: La description du produit dans le contexte courant.
+
 Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_description`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/product/ProductDescription.php).
 
 ```text
 [fy2press_product_description content_type="excerpt"]
 ```
 
-Résultat local observé: 173 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 173 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -86,13 +92,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_product_price
 
+Résultat attendu: Le prix formaté selon les données produit disponibles.
+
 Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_price`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/product/ProductPrice.php).
 
 ```text
 [fy2press_product_price type="range"]
 ```
 
-Résultat local observé: 67 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 67 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -119,13 +127,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_product_image
 
+Résultat attendu: L’image principale du produit.
+
 Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_image`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/product/ProductImage.php).
 
 ```text
 [fy2press_product_image link_to="product"]
 ```
 
-Résultat local observé: 272 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 272 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -150,13 +160,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_product_url
 
+Résultat attendu: Une URL produit scalaire par défaut, ou un lien HTML avec format="link".
+
 Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_url`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/product/ProductUrl.php).
 
 ```text
 [fy2press_product_url]
 ```
 
-Résultat local observé: 63 octets retournés, 0 octets imprimés hors retour. URL par défaut; HTML avec format=link.
+Trace de l’essai local: 63 octets retournés, 0 octets imprimés hors retour. URL par défaut; HTML avec format=link.
 
 `format="url"` retourne une URL scalaire; `format="link"` retourne un lien HTML. Les deux modes ont été exécutés. Sans produit, le code peut retourner une URL illustrative; toujours fournir un contexte valide.
 
@@ -172,13 +184,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_product_vendor
 
+Résultat attendu: Le nom du fournisseur du produit.
+
 Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_vendor`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/product/ProductVendor.php).
 
 ```text
 [fy2press_product_vendor]
 ```
 
-Résultat local observé: 86 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 86 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -191,13 +205,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_product_type
 
+Résultat attendu: Le type de produit lorsqu’il est disponible; cette fixture n’a retourné aucun contenu.
+
 Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_type`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/product/ProductType.php).
 
 ```text
 [fy2press_product_type]
 ```
 
-Résultat local observé: 0 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 0 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 **Sortie vide observée avec cette fixture; affichage rempli non démontré.**
 
@@ -212,13 +228,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_product_tags
 
+Résultat attendu: La liste des étiquettes du produit.
+
 Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_tags`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/product/ProductTags.php).
 
 ```text
 [fy2press_product_tags]
 ```
 
-Résultat local observé: 285 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 285 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -239,13 +257,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_product_gallery
 
+Résultat attendu: La galerie d’images du produit.
+
 Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_gallery`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/product/ProductGallery.php).
 
 ```text
 [fy2press_product_gallery]
 ```
 
-Résultat local observé: 263 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 263 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -263,13 +283,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_product_availability
 
+Résultat attendu: L’indication de disponibilité selon les données produit disponibles.
+
 Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_availability`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/product/ProductAvailability.php).
 
 ```text
 [fy2press_product_availability]
 ```
 
-Résultat local observé: 156 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 156 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -287,13 +309,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_product_variants
 
+Résultat attendu: Les contrôles de choix de variante dans un contexte produit.
+
 Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_variants`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/product/ProductVariants.php).
 
 ```text
 [fy2press_product_variants]
 ```
 
-Résultat local observé: 602 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 602 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -310,13 +334,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_product_collections
 
+Résultat attendu: Les collections associées au produit.
+
 Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_collections`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/product/ProductCollections.php).
 
 ```text
 [fy2press_product_collections]
 ```
 
-Résultat local observé: 353 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 353 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -337,13 +363,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_add_to_cart
 
+Résultat attendu: Un contrôle d’ajout au panier; son rendu seul ne prouve pas une requête panier.
+
 Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_add_to_cart`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/product/AddToCart.php).
 
 ```text
 [fy2press_add_to_cart]
 ```
 
-Résultat local observé: 1077 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 1077 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -353,13 +381,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_buy_now
 
+Résultat attendu: Un contrôle d’achat direct; le paiement connecté est hors de cette observation locale.
+
 Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_buy_now`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/product/BuyNow.php).
 
 ```text
 [fy2press_buy_now]
 ```
 
-Résultat local observé: 475 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 475 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -372,13 +402,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_related_products
 
+Résultat attendu: Une liste de produits associés lorsque le contexte les fournit.
+
 Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_related_products`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/product/RelatedProducts.php).
 
 ```text
 [fy2press_related_products limit="4"]
 ```
 
-Résultat local observé: 4305 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 4305 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -392,13 +424,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_collection
 
+Résultat attendu: Un composant collection pour le handle fourni.
+
 Contexte: `anywhere`. FREE 1.0.0. Alias de compatibilité: `shopipress_collection`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/collection/Collection.php).
 
 ```text
 [fy2press_collection handle="morrowfield"]
 ```
 
-Résultat local observé: 6155 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 6155 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -415,13 +449,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_products_loop
 
+Résultat attendu: Une grille de produits selon la limite, les colonnes et la collection configurées.
+
 Contexte: `anywhere`. FREE 1.0.0. Alias de compatibilité: `shopipress_products_loop`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/collection/ProductsLoop.php).
 
 ```text
 [fy2press_products_loop collection="morrowfield" limit="12"]
 ```
 
-Résultat local observé: 3207 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 3207 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -437,13 +473,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_collection_title
 
+Résultat attendu: Le titre de la collection courante.
+
 Contexte: `collection`. FREE 1.0.0. Alias de compatibilité: `shopipress_collection_title`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/collection/CollectionTitle.php).
 
 ```text
 [fy2press_collection_title]
 ```
 
-Résultat local observé: 90 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 90 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -456,13 +494,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_collection_description
 
+Résultat attendu: La description de la collection courante.
+
 Contexte: `collection`. FREE 1.0.0. Alias de compatibilité: `shopipress_collection_description`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/collection/CollectionDescription.php).
 
 ```text
 [fy2press_collection_description]
 ```
 
-Résultat local observé: 161 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 161 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -474,13 +514,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_collection_sort
 
+Résultat attendu: Un contrôle de tri des résultats produit de la collection.
+
 Contexte: `loop`. FREE 1.0.0. Alias de compatibilité: `shopipress_collection_sort`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/collection/CollectionSort.php).
 
 ```text
 [fy2press_collection_sort]
 ```
 
-Résultat local observé: 822 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 822 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -495,13 +537,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_product_search
 
+Résultat attendu: Un champ de recherche associé à une boucle de produits.
+
 Contexte: `loop`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_search`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/filters/ProductSearch.php).
 
 ```text
 [fy2press_product_search]
 ```
 
-Résultat local observé: 482 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 482 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -518,13 +562,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_collection_filter
 
+Résultat attendu: Un filtre de collection associé à une boucle de produits.
+
 Contexte: `loop`. FREE 1.0.0. Alias de compatibilité: `shopipress_collection_filter`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/filters/CollectionFilter.php).
 
 ```text
 [fy2press_collection_filter type="dropdown"]
 ```
 
-Résultat local observé: 425 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 425 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -547,13 +593,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_tag_filter
 
+Résultat attendu: Un filtre d’étiquettes selon ses valeurs déclarées ou le type du design enregistré.
+
 Contexte: `loop`. FREE 1.0.0. Alias de compatibilité: `shopipress_tag_filter`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/filters/TagFilter.php).
 
 ```text
 [fy2press_tag_filter type="tags"]
 ```
 
-Résultat local observé: 226 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 226 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 Défaut dynamique : le type du filtre d’étiquettes vient du design sauvegardé valide; sinon `tags`.
 
@@ -579,13 +627,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_filter_sidebar
 
+Résultat attendu: Un panneau de filtres pour un contexte de boucle compatible.
+
 Contexte: `loop`. FREE 1.0.0. Alias de compatibilité: `shopipress_filter_sidebar`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/filters/FilterSidebar.php).
 
 ```text
 [fy2press_filter_sidebar][fy2press_product_search][fy2press_collection_filter][/fy2press_filter_sidebar]
 ```
 
-Résultat local observé: 1234 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 1234 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -603,13 +653,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_price_filter
 
+Résultat attendu: Un filtre de prix pour les résultats produit associés.
+
 Contexte: `loop`. FREE 1.0.0. Alias de compatibilité: `shopipress_price_filter`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/filters/PriceFilter.php).
 
 ```text
 [fy2press_price_filter min="0" max="250"]
 ```
 
-Résultat local observé: 3186 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 3186 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -625,13 +677,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_availability_filter
 
+Résultat attendu: Un filtre de disponibilité pour les résultats produit associés.
+
 Contexte: `loop`. FREE 1.0.0. Alias de compatibilité: `shopipress_availability_filter`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/filters/AvailabilityFilter.php).
 
 ```text
 [fy2press_availability_filter type="checkbox"]
 ```
 
-Résultat local observé: 511 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+Trace de l’essai local: 511 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |

@@ -2,6 +2,8 @@
 
 [Français canadien](../fr-ca/reusable/seo-decision-record.md) · [Start here](../README.md)
 
+See the [filled Morrowfield example](../examples/morrowfield.md) before adapting this record.
+
 Use one copy per page family. Start with the [matrix](../docs/seo-decision-matrix.md), then record the actual implementation.
 
 | Decision field | Your record |

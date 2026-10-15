@@ -6,6 +6,23 @@ Separate where commercial data is managed from which URL should represent a page
 
 A canonical is a preference for duplicate or very similar content, not a guarantee. Do not use robots.txt to impose it or combine noindex and canonical as an automatic consolidation recipe. [Google’s guidance](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls). An original buying guide generally keeps its own URL.
 
+## Choose a case
+
+| Case | Situation |
+| --- | --- |
+| [SEO-01](#seo-01--similar-product-shopify-preferred) | Similar product, Shopify preferred |
+| [SEO-02](#seo-02--enriched-wordpress-product) | Enriched WordPress product |
+| [SEO-03](#seo-03--original-buying-guide) | Original buying guide |
+| [SEO-04](#seo-04--useful-wordpress-collection) | Useful WordPress collection |
+| [SEO-05](#seo-05--competing-collection-pages) | Competing collection pages |
+| [SEO-06](#seo-06--seasonal-selection) | Seasonal selection |
+| [SEO-07](#seo-07--thin-tags) | Thin tags |
+| [SEO-08](#seo-08--editorialized-tags) | Editorialized tags |
+| [SEO-09](#seo-09--filters-and-sorting) | Filters and sorting |
+| [SEO-10](#seo-10--selected-variants) | Selected variants |
+| [SEO-11](#seo-11--unavailable-removed-or-renamed) | Unavailable, removed or renamed |
+| [SEO-12](#seo-12--several-languages) | Several languages |
+
 ## SEO-01 · Similar product, Shopify preferred
 
 | Criterion | Decision |

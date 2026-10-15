@@ -8,13 +8,15 @@ Les exemples avec `id="123"` exigent l’ID WordPress réel. Les blocs produit e
 
 ## shopipress/title
 
+Résultat attendu: Le titre du produit.
+
 Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductTitle.php).
 
 ```html
 <!-- wp:shopipress/title /-->
 ```
 
-Résultat local observé: 160 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+Trace de l’essai local: 160 octets retournés, 0 octets imprimés hors retour. HTML retourné.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -84,13 +86,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## shopipress/price
 
+Résultat attendu: Le prix formaté selon les données produit disponibles.
+
 Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductPrice.php).
 
 ```html
 <!-- wp:shopipress/price /-->
 ```
 
-Résultat local observé: 101 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+Trace de l’essai local: 101 octets retournés, 0 octets imprimés hors retour. HTML retourné.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -163,13 +167,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## shopipress/description
 
+Résultat attendu: La description du produit dans le contexte courant.
+
 Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductDescription.php).
 
 ```html
 <!-- wp:shopipress/description /-->
 ```
 
-Résultat local observé: 248 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+Trace de l’essai local: 248 octets retournés, 0 octets imprimés hors retour. HTML retourné.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -242,13 +248,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## shopipress/image
 
+Résultat attendu: L’image principale du produit.
+
 Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductImage.php).
 
 ```html
 <!-- wp:shopipress/image /-->
 ```
 
-Résultat local observé: 313 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+Trace de l’essai local: 313 octets retournés, 0 octets imprimés hors retour. HTML retourné.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -298,13 +306,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## shopipress/variants
 
+Résultat attendu: Les contrôles de choix de variante dans un contexte produit.
+
 Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductVariants.php).
 
 ```html
 <!-- wp:shopipress/variants /-->
 ```
 
-Résultat local observé: 814 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+Trace de l’essai local: 814 octets retournés, 0 octets imprimés hors retour. HTML retourné.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -362,13 +372,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## shopipress/gallery
 
+Résultat attendu: La galerie d’images du produit.
+
 Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductGallery.php).
 
 ```html
 <!-- wp:shopipress/gallery /-->
 ```
 
-Résultat local observé: 309 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+Trace de l’essai local: 309 octets retournés, 0 octets imprimés hors retour. HTML retourné.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -426,13 +438,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## shopipress/add-to-cart
 
+Résultat attendu: Un contrôle d’ajout au panier; son rendu seul ne prouve pas une requête panier.
+
 Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/AddToCart.php).
 
 ```html
 <!-- wp:shopipress/add-to-cart /-->
 ```
 
-Résultat local observé: 916 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+Trace de l’essai local: 916 octets retournés, 0 octets imprimés hors retour. HTML retourné.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -519,13 +533,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## shopipress/availability
 
+Résultat attendu: L’indication de disponibilité selon les données produit disponibles.
+
 Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductAvailability.php).
 
 ```html
 <!-- wp:shopipress/availability /-->
 ```
 
-Résultat local observé: 478 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+Trace de l’essai local: 478 octets retournés, 0 octets imprimés hors retour. HTML retourné.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -602,13 +618,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## shopipress/vendor
 
+Résultat attendu: Le nom du fournisseur du produit.
+
 Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductVendor.php).
 
 ```html
 <!-- wp:shopipress/vendor /-->
 ```
 
-Résultat local observé: 202 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+Trace de l’essai local: 202 octets retournés, 0 octets imprimés hors retour. HTML retourné.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -680,13 +698,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## shopipress/collections
 
+Résultat attendu: Les collections associées au produit.
+
 Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductCollections.php).
 
 ```html
 <!-- wp:shopipress/collections /-->
 ```
 
-Résultat local observé: 465 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+Trace de l’essai local: 465 octets retournés, 0 octets imprimés hors retour. HTML retourné.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -756,13 +776,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## shopipress/tags
 
+Résultat attendu: La liste des étiquettes du produit.
+
 Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductTags.php).
 
 ```html
 <!-- wp:shopipress/tags /-->
 ```
 
-Résultat local observé: 378 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+Trace de l’essai local: 378 octets retournés, 0 octets imprimés hors retour. HTML retourné.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -845,13 +867,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## shopipress/buy-now
 
+Résultat attendu: Un contrôle d’achat direct; le paiement connecté est hors de cette observation locale.
+
 Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductBuyNow.php).
 
 ```html
 <!-- wp:shopipress/buy-now /-->
 ```
 
-Résultat local observé: 655 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+Trace de l’essai local: 655 octets retournés, 0 octets imprimés hors retour. HTML retourné.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -936,13 +960,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## shopipress/collection-title
 
+Résultat attendu: Le titre de la collection courante.
+
 Contexte: `collection`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/CollectionTitle.php).
 
 ```html
 <!-- wp:shopipress/collection-title /-->
 ```
 
-Résultat local observé: 178 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+Trace de l’essai local: 178 octets retournés, 0 octets imprimés hors retour. HTML retourné.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -1014,13 +1040,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## shopipress/collection-description
 
+Résultat attendu: La description de la collection courante.
+
 Contexte: `collection`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/CollectionDescription.php).
 
 ```html
 <!-- wp:shopipress/collection-description /-->
 ```
 
-Résultat local observé: 274 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+Trace de l’essai local: 274 octets retournés, 0 octets imprimés hors retour. HTML retourné.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -1087,13 +1115,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## shopipress/products-loop
 
+Résultat attendu: Une grille de produits selon la limite, les colonnes et la collection configurées.
+
 Contexte: `anywhere`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductsLoop.php).
 
 ```html
 <!-- wp:shopipress/products-loop /-->
 ```
 
-Résultat local observé: 3234 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+Trace de l’essai local: 3234 octets retournés, 0 octets imprimés hors retour. HTML retourné.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -1189,13 +1219,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## shopipress/collection-sort
 
+Résultat attendu: Un contrôle de tri des résultats produit de la collection.
+
 Contexte: `collection`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/CollectionSort.php).
 
 ```html
 <!-- wp:shopipress/collection-sort /-->
 ```
 
-Résultat local observé: 668 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+Trace de l’essai local: 668 octets retournés, 0 octets imprimés hors retour. HTML retourné.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -1261,13 +1293,15 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## shopipress/collection-products-per-page
 
+Résultat attendu: Un contrôle du nombre de produits affichés par page de collection.
+
 Contexte: `collection`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/CollectionProductsPerPage.php).
 
 ```html
 <!-- wp:shopipress/collection-products-per-page /-->
 ```
 
-Résultat local observé: 493 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+Trace de l’essai local: 493 octets retournés, 0 octets imprimés hors retour. HTML retourné.
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |

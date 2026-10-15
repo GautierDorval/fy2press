@@ -2,6 +2,8 @@
 
 [Français canadien](../fr-ca/reusable/agency-handover.md) · [Start here](../README.md)
 
+See the [filled Morrowfield example](../examples/morrowfield.md) before adapting this record.
+
 ## Project identity
 
 Client/project: …  Date: …  Agency contact: …  Merchant contact: …

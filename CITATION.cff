@@ -1,6 +1,6 @@
 {
   "cff-version": "1.2.0",
-  "message": "Cite this documentation candidate, not an installable plugin package.",
+  "message": "Cite the latest verified tagged documentary edition below. Untagged changes are listed in CHANGELOG.md.",
   "title": "Fy2Press: architecture and integration reference",
   "type": "software",
   "authors": [
@@ -10,6 +10,19 @@
   ],
   "version": "docs-v1.0.0-rc.1",
   "license": "CC-BY-4.0",
-  "url": "https://fy2press.com/",
-  "abstract": "Architecture decisions, integration reference and reusable documentation for Fy2Press. Local candidate; no publication date asserted."
+  "url": "https://github.com/GautierDorval/fy2press/releases/tag/docs-v1.0.0-rc.1",
+  "abstract": "Public architecture decisions, integration reference and reusable documentation for Fy2Press. The citation identifies the verified tagged edition; it does not describe an installable plugin.",
+  "date-released": "2026-10-14",
+  "preferred-citation": {
+    "type": "manual",
+    "authors": [
+      {
+        "name": "PAGUP"
+      }
+    ],
+    "title": "Fy2Press: architecture and integration reference",
+    "version": "docs-v1.0.0-rc.1",
+    "date-released": "2026-10-14",
+    "url": "https://github.com/GautierDorval/fy2press/releases/tag/docs-v1.0.0-rc.1"
+  }
 }

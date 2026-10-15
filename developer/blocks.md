@@ -8,13 +8,15 @@ Examples with `id="123"` require the real WordPress post ID. Product blocks norm
 
 ## shopipress/title
 
+Expected result: The product title.
+
 Context: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductTitle.php).
 
 ```html
 <!-- wp:shopipress/title /-->
 ```
 
-Observed local result: 160 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+Local test trace: 160 returned bytes, 0 bytes echoed outside the return. Returned HTML.
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -84,13 +86,15 @@ Limit: local returned HTML does not qualify browser interactions, theme compatib
 
 ## shopipress/price
 
+Expected result: The formatted product price from the available product data.
+
 Context: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductPrice.php).
 
 ```html
 <!-- wp:shopipress/price /-->
 ```
 
-Observed local result: 101 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+Local test trace: 101 returned bytes, 0 bytes echoed outside the return. Returned HTML.
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -163,13 +167,15 @@ Limit: local returned HTML does not qualify browser interactions, theme compatib
 
 ## shopipress/description
 
+Expected result: The product description in the current product context.
+
 Context: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductDescription.php).
 
 ```html
 <!-- wp:shopipress/description /-->
 ```
 
-Observed local result: 248 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+Local test trace: 248 returned bytes, 0 bytes echoed outside the return. Returned HTML.
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -242,13 +248,15 @@ Limit: local returned HTML does not qualify browser interactions, theme compatib
 
 ## shopipress/image
 
+Expected result: The main product image.
+
 Context: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductImage.php).
 
 ```html
 <!-- wp:shopipress/image /-->
 ```
 
-Observed local result: 313 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+Local test trace: 313 returned bytes, 0 bytes echoed outside the return. Returned HTML.
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -298,13 +306,15 @@ Limit: local returned HTML does not qualify browser interactions, theme compatib
 
 ## shopipress/variants
 
+Expected result: Variant-selection controls in a product context.
+
 Context: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductVariants.php).
 
 ```html
 <!-- wp:shopipress/variants /-->
 ```
 
-Observed local result: 814 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+Local test trace: 814 returned bytes, 0 bytes echoed outside the return. Returned HTML.
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -362,13 +372,15 @@ Limit: local returned HTML does not qualify browser interactions, theme compatib
 
 ## shopipress/gallery
 
+Expected result: The product image gallery.
+
 Context: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductGallery.php).
 
 ```html
 <!-- wp:shopipress/gallery /-->
 ```
 
-Observed local result: 309 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+Local test trace: 309 returned bytes, 0 bytes echoed outside the return. Returned HTML.
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -426,13 +438,15 @@ Limit: local returned HTML does not qualify browser interactions, theme compatib
 
 ## shopipress/add-to-cart
 
+Expected result: An add-to-cart control; a returned control alone does not prove a cart request.
+
 Context: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/AddToCart.php).
 
 ```html
 <!-- wp:shopipress/add-to-cart /-->
 ```
 
-Observed local result: 916 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+Local test trace: 916 returned bytes, 0 bytes echoed outside the return. Returned HTML.
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -519,13 +533,15 @@ Limit: local returned HTML does not qualify browser interactions, theme compatib
 
 ## shopipress/availability
 
+Expected result: The availability label from the available product data.
+
 Context: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductAvailability.php).
 
 ```html
 <!-- wp:shopipress/availability /-->
 ```
 
-Observed local result: 478 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+Local test trace: 478 returned bytes, 0 bytes echoed outside the return. Returned HTML.
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -602,13 +618,15 @@ Limit: local returned HTML does not qualify browser interactions, theme compatib
 
 ## shopipress/vendor
 
+Expected result: The product vendor label.
+
 Context: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductVendor.php).
 
 ```html
 <!-- wp:shopipress/vendor /-->
 ```
 
-Observed local result: 202 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+Local test trace: 202 returned bytes, 0 bytes echoed outside the return. Returned HTML.
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -680,13 +698,15 @@ Limit: local returned HTML does not qualify browser interactions, theme compatib
 
 ## shopipress/collections
 
+Expected result: The collections associated with the product.
+
 Context: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductCollections.php).
 
 ```html
 <!-- wp:shopipress/collections /-->
 ```
 
-Observed local result: 465 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+Local test trace: 465 returned bytes, 0 bytes echoed outside the return. Returned HTML.
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -756,13 +776,15 @@ Limit: local returned HTML does not qualify browser interactions, theme compatib
 
 ## shopipress/tags
 
+Expected result: The product’s tag list.
+
 Context: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductTags.php).
 
 ```html
 <!-- wp:shopipress/tags /-->
 ```
 
-Observed local result: 378 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+Local test trace: 378 returned bytes, 0 bytes echoed outside the return. Returned HTML.
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -845,13 +867,15 @@ Limit: local returned HTML does not qualify browser interactions, theme compatib
 
 ## shopipress/buy-now
 
+Expected result: A direct-purchase control; connected checkout is outside this local observation.
+
 Context: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductBuyNow.php).
 
 ```html
 <!-- wp:shopipress/buy-now /-->
 ```
 
-Observed local result: 655 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+Local test trace: 655 returned bytes, 0 bytes echoed outside the return. Returned HTML.
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -936,13 +960,15 @@ Limit: local returned HTML does not qualify browser interactions, theme compatib
 
 ## shopipress/collection-title
 
+Expected result: The current collection title.
+
 Context: `collection`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/CollectionTitle.php).
 
 ```html
 <!-- wp:shopipress/collection-title /-->
 ```
 
-Observed local result: 178 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+Local test trace: 178 returned bytes, 0 bytes echoed outside the return. Returned HTML.
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -1014,13 +1040,15 @@ Limit: local returned HTML does not qualify browser interactions, theme compatib
 
 ## shopipress/collection-description
 
+Expected result: The current collection description.
+
 Context: `collection`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/CollectionDescription.php).
 
 ```html
 <!-- wp:shopipress/collection-description /-->
 ```
 
-Observed local result: 274 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+Local test trace: 274 returned bytes, 0 bytes echoed outside the return. Returned HTML.
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -1087,13 +1115,15 @@ Limit: local returned HTML does not qualify browser interactions, theme compatib
 
 ## shopipress/products-loop
 
+Expected result: A product grid with the configured limit, columns and collection.
+
 Context: `anywhere`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/ProductsLoop.php).
 
 ```html
 <!-- wp:shopipress/products-loop /-->
 ```
 
-Observed local result: 3234 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+Local test trace: 3234 returned bytes, 0 bytes echoed outside the return. Returned HTML.
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -1189,13 +1219,15 @@ Limit: local returned HTML does not qualify browser interactions, theme compatib
 
 ## shopipress/collection-sort
 
+Expected result: A sorting control for the collection’s product results.
+
 Context: `collection`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/CollectionSort.php).
 
 ```html
 <!-- wp:shopipress/collection-sort /-->
 ```
 
-Observed local result: 668 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+Local test trace: 668 returned bytes, 0 bytes echoed outside the return. Returned HTML.
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -1261,13 +1293,15 @@ Limit: local returned HTML does not qualify browser interactions, theme compatib
 
 ## shopipress/collection-products-per-page
 
+Expected result: A control for the number of products displayed per collection page.
+
 Context: `collection`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/gutenberg/blocks/CollectionProductsPerPage.php).
 
 ```html
 <!-- wp:shopipress/collection-products-per-page /-->
 ```
 
-Observed local result: 493 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+Local test trace: 493 returned bytes, 0 bytes echoed outside the return. Returned HTML.
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |

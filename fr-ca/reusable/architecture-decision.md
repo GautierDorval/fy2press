@@ -2,6 +2,8 @@
 
 [English](../../reusable/architecture-decision.md) · [Accueil](../README.md)
 
+Consultez l’[exemple Morrowfield rempli](../examples/morrowfield.md) avant d’adapter ce registre.
+
 Copier cette fiche pour un projet. Remplacer les champs par des décisions et des preuves; un élément non vérifié n’est pas accepté par défaut.
 
 | Champ du projet | Valeur à consigner |
