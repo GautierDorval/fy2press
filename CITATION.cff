@@ -9,7 +9,10 @@
     }
   ],
   "version": "docs-v1.0.0-rc.1",
-  "license": "CC-BY-4.0",
+  "license": [
+    "CC-BY-4.0",
+    "MIT"
+  ],
   "url": "https://github.com/GautierDorval/fy2press/releases/tag/docs-v1.0.0-rc.1",
   "abstract": "Public architecture decisions, integration reference and reusable documentation for Fy2Press. The citation identifies the verified tagged edition; it does not describe an installable plugin.",
   "date-released": "2026-10-14",

@@ -3,6 +3,8 @@ from __future__ import annotations
 import argparse, hashlib, json, os, re, shutil, subprocess, sys, urllib.request, urllib.error, zipfile
 from pathlib import Path
 from datetime import datetime
+from html.parser import HTMLParser
+from urllib.parse import urlsplit, unquote
 ROOT = Path(__file__).resolve().parents[1]
 URLS = {
  'manifest': 'https://fy2press.com/ai-manifest.json',
@@ -222,6 +224,64 @@ def heading_ids(text):
   n=counts.get(h,0);counts[h]=n+1;ids.append(h+('-'+str(n) if n else ''))
  return set(ids)
 
+
+class ExampleHTML(HTMLParser):
+ def __init__(self):
+  super().__init__();self.robots=[];self.links=[];self.ids=set()
+ def handle_starttag(self,tag,attrs):
+  attrs=dict(attrs)
+  if tag=='meta' and attrs.get('name','').lower()=='robots':self.robots.extend(x.strip().lower() for x in attrs.get('content','').split(','))
+  if attrs.get('id'):self.ids.add(attrs['id'])
+  for key in ['href','src']:
+   if attrs.get(key):self.links.append(attrs[key])
+
+def morrowfield_checks(root):
+ example=load(root,'examples/morrowfield-observation.json')
+ require(example.get('state')=='PASS' and isinstance(example.get('visual_inspection'),dict) and example['visual_inspection'].get('state')=='PASS','incomplete Morrowfield observation')
+ observed=example.get('observed_at')
+ require(isinstance(observed,str) and re.fullmatch(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z',observed) is not None,'invalid Morrowfield observation timestamp')
+ try:datetime.strptime(observed,'%Y-%m-%dT%H:%M:%S.%fZ' if '.' in observed else '%Y-%m-%dT%H:%M:%SZ')
+ except ValueError as exc:raise ValueError('invalid Morrowfield observation timestamp') from exc
+ source=safe_path(root,'examples/morrowfield.html')
+ require(example.get('source_file')=='examples/morrowfield.html' and example.get('source_sha256')==digest(source.read_bytes()),'stale Morrowfield browser observation')
+ expected={(page,lang,width,height) for page in ['collection','product','guide'] for lang in ['en','fr-CA'] for width,height in [(1365,1000),(390,844)]}
+ views=example.get('views');require(isinstance(views,list) and len(views)==len(expected),'Morrowfield view coverage')
+ seen=set();screens=set()
+ for view in views:
+  require(isinstance(view,dict) and isinstance(view.get('viewport'),dict),'Morrowfield view coverage')
+  viewport=view['viewport'];key=(view.get('page'),view.get('language'),viewport.get('width'),viewport.get('height'))
+  require(key in expected and key not in seen,'Morrowfield view coverage');seen.add(key)
+  require(view.get('horizontal_overflow') is False and all(view.get(k) is True for k in ['one_h1','primary_action_visible','language_preserves_page','history_return_pass']),'failed Morrowfield view')
+  require(view.get('purchase_disabled') is (True if key[0]=='product' else None),'Morrowfield purchase state')
+  screenshot=('assets/morrowfield-'+key[0]+'-'+('fr' if key[1]=='fr-CA' else 'en')+'.png') if key[2]==1365 else None
+  require('screenshot' in view and view['screenshot']==screenshot,'Morrowfield screenshot coverage')
+  require(isinstance(view.get('screenshot_sha256'),str) and re.fullmatch('[0-9a-f]{64}',view['screenshot_sha256']) is not None,'Morrowfield screenshot digest')
+  size=view.get('capture_dimensions')
+  require(isinstance(size,dict) and type(size.get('width')) is int and type(size.get('height')) is int and size['width']==key[2] and size['height']>=key[3],'Morrowfield capture dimensions')
+  if screenshot:
+   screens.add(screenshot);data=safe_path(root,screenshot).read_bytes()
+   require(view['screenshot_sha256']==digest(data),'stale Morrowfield screenshot')
+   require(len(data)>=24 and data[:8]==b'\x89PNG\r\n\x1a\n' and data[12:16]==b'IHDR','invalid Morrowfield PNG')
+   require((int.from_bytes(data[16:20],'big'),int.from_bytes(data[20:24],'big'))==(size['width'],size['height']),'Morrowfield capture dimensions')
+ require(screens=={p.relative_to(root).as_posix() for p in (root/'assets').glob('morrowfield-*.png')},'Morrowfield screenshot coverage')
+ journeys=example.get('journeys')
+ require(isinstance(journeys,list) and len(journeys)==2 and {x.get('language') for x in journeys if isinstance(x,dict)}=={'en','fr-CA'} and all(x.get('state')=='PASS' and x.get('route')==['collection','product','guide','collection'] for x in journeys),'Morrowfield journey coverage')
+ require(all(example.get(k) is True for k in ['invalid_query_falls_back','direct_file_navigation_pass']) and all(type(example.get(k)) is int and example[k]==0 for k in ['external_request_attempts','uncaught_javascript_errors']),'failed Morrowfield browser checks')
+ # Static guardrails complement the recorded browser run; they do not execute JavaScript.
+ html=source.read_text(encoding='utf-8');parser=ExampleHTML();parser.feed(html)
+ require({'noindex','nofollow'}<=set(parser.robots),'Morrowfield noindex/nofollow required')
+ require(not re.search(r'(?:https?:)?//[a-zA-Z0-9]',re.sub(r'<!--.*?-->','',html,flags=re.S)),'Morrowfield external URL')
+ # The footer chooses between two literal Markdown paths in JavaScript.
+ links=parser.links+[m.group(2) for m in re.finditer(r"""(['"])([^'"\s]*\.md(?:#[^'"\s]*)?)\1""",html)]
+ for target in links:
+  if '$'+'{' in target:continue # Template expressions need the browser observation.
+  url=urlsplit(target);require(not url.scheme and not url.netloc,'Morrowfield external link')
+  destination=(source.parent/unquote(url.path)).resolve() if url.path else source.resolve()
+  require(destination.is_relative_to(root.resolve()) and destination.is_file(),'broken Morrowfield HTML link: '+target)
+  if url.fragment:
+   ids=heading_ids(destination.read_text(encoding='utf-8')) if destination.suffix=='.md' else parser.ids
+   require(unquote(url.fragment) in ids,'broken Morrowfield HTML anchor: '+target)
+
 def check(root):
  import jsonschema, yaml
  source_checks(root)
@@ -282,10 +342,11 @@ def check(root):
  require(cff['cff-version']=='1.2.0' and 'reference' in cff['title'] and citation.get('type')=='manual','citation must describe the documentary manual')
  for record in [cff,citation]:
   require(record.get('version')==doc['version'] and record.get('url')==doc['release_url'] and record.get('date-released')==doc['published_at'][:10],'citation/publication disagreement')
- example=load(root,'examples/morrowfield-observation.json')
- require(example['source_file']=='examples/morrowfield.html' and example['source_sha256']==digest(safe_path(root,example['source_file']).read_bytes()),'stale Morrowfield browser observation')
- for view in example['views']:
-  if view['screenshot']:require(view['screenshot_sha256']==digest(safe_path(root,view['screenshot']).read_bytes()),'stale Morrowfield screenshot')
+ require(cff.get('license')==['CC-BY-4.0','MIT'] and entity.get('license')==['https://creativecommons.org/licenses/by/4.0/','https://opensource.org/license/mit'],'documentation licence inventory')
+ require(entity.get('usageInfo')=='https://github.com/GautierDorval/fy2press/blob/main/LICENSE.md','file-specific licence scope')
+ changelog=(root/'CHANGELOG.md').read_text(encoding='utf-8')
+ require('## '+doc['version']+' (published '+doc['published_at'][:10]+')' in changelog and doc['published_at'] in changelog and doc['source_commit'] in changelog,'changelog/publication disagreement')
+ morrowfield_checks(root)
  require(len(load(root,'sources/seo-decisions.json')['decisions'])==12,'SEO decision coverage')
  generate(root,True);return export_manifest(root)
 

@@ -1,6 +1,7 @@
 """Discriminating negative tests for the documentary publication boundary."""
 import copy, importlib.util, json, tempfile, shutil, unittest
 from pathlib import Path
+from jsonschema import ValidationError
 ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('reference',ROOT/'scripts/reference.py');p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
 class BoundaryTests(unittest.TestCase):
@@ -139,7 +140,7 @@ class BoundaryTests(unittest.TestCase):
   with self.assertRaisesRegex(ValueError,'unapproved historical'):p.check_history(self.root)
  def test_published_release_requires_date(self):
   self.mutate('artefacts/release-reference.json',lambda d:d['documentation'].update(published_at=None))
-  with self.assertRaises(Exception):p.check(self.root)
+  with self.assertRaisesRegex(ValidationError,"None is not of type 'string'"):p.check(self.root)
  def test_publication_timestamp_must_be_valid(self):
   self.mutate('artefacts/release-reference.json',lambda d:d['documentation'].update(published_at='2026-99-99T22:28:51Z'))
   with self.assertRaisesRegex(Exception,'date-time|invalid publication timestamp'):p.check(self.root)
@@ -171,4 +172,63 @@ class BoundaryTests(unittest.TestCase):
   try:
    with self.assertRaisesRegex(ValueError,'linked directory'):p.export_manifest(self.root)
   finally:link.rmdir()
+
+ def rehash_html(self):
+  self.mutate('examples/morrowfield-observation.json',lambda d:d.update(source_sha256=p.digest((self.root/'examples/morrowfield.html').read_bytes())))
+ def test_capture_cannot_be_unbound(self):
+  self.mutate('examples/morrowfield-observation.json',lambda d:d['views'][0].update(screenshot=None))
+  (self.root/'assets/morrowfield-collection-en.png').write_bytes(b'not a png')
+  with self.assertRaisesRegex(ValueError,'Morrowfield screenshot coverage'):p.check(self.root)
+ def test_empty_or_duplicate_views_refused(self):
+  original=self.load('examples/morrowfield-observation.json')
+  for views in [[],original['views'][:-1]+[original['views'][0]]]:
+   with self.subTest(views=len(views)):
+    changed=copy.deepcopy(original);changed['views']=views;self.save('examples/morrowfield-observation.json',changed)
+    with self.assertRaisesRegex(ValueError,'Morrowfield view coverage'):p.check(self.root)
+ def test_failed_observation_refused(self):
+  for field,value in [('state','FAIL'),('visual_inspection',{'state':'PENDING'}),('visual_inspection','PASS')]:
+   with self.subTest(field=field,value=value):
+    original=self.load('examples/morrowfield-observation.json');changed=copy.deepcopy(original);changed[field]=value;self.save('examples/morrowfield-observation.json',changed)
+    with self.assertRaisesRegex(ValueError,'incomplete Morrowfield observation'):p.check(self.root)
+    self.save('examples/morrowfield-observation.json',original)
+ def test_invalid_observation_dates_refused(self):
+  for value in [None,'not-a-date','2026-02-30T12:00:00Z','2026-10-15T24:00:00Z','2026-10-15']:
+   with self.subTest(value=value):
+    self.mutate('examples/morrowfield-observation.json',lambda d:d.update(observed_at=value))
+    with self.assertRaisesRegex(ValueError,'invalid Morrowfield observation timestamp'):p.check(self.root)
+ def test_failed_browser_or_view_refused(self):
+  original=self.load('examples/morrowfield-observation.json')
+  for field,value in [('external_request_attempts',1),('uncaught_javascript_errors',False),('direct_file_navigation_pass',False)]:
+   with self.subTest(field=field):
+    changed=copy.deepcopy(original);changed[field]=value;self.save('examples/morrowfield-observation.json',changed)
+    with self.assertRaisesRegex(ValueError,'failed Morrowfield browser checks'):p.check(self.root)
+  self.save('examples/morrowfield-observation.json',original)
+  self.mutate('examples/morrowfield-observation.json',lambda d:d['views'][0].update(horizontal_overflow=True))
+  with self.assertRaisesRegex(ValueError,'failed Morrowfield view'):p.check(self.root)
+ def test_missing_journey_refused(self):
+  self.mutate('examples/morrowfield-observation.json',lambda d:d.update(journeys=[]))
+  with self.assertRaisesRegex(ValueError,'Morrowfield journey coverage'):p.check(self.root)
+ def test_rehashed_corrupt_png_refused(self):
+  content=b'not a PNG';(self.root/'assets/morrowfield-collection-en.png').write_bytes(content)
+  self.mutate('examples/morrowfield-observation.json',lambda d:d['views'][0].update(screenshot_sha256=p.digest(content)))
+  with self.assertRaisesRegex(ValueError,'invalid Morrowfield PNG'):p.check(self.root)
+ def test_false_capture_dimensions_refused(self):
+  self.mutate('examples/morrowfield-observation.json',lambda d:d['views'][0]['capture_dimensions'].update(height=9999))
+  with self.assertRaisesRegex(ValueError,'Morrowfield capture dimensions'):p.check(self.root)
+ def test_rehashed_missing_html_link_refused(self):
+  path=self.root/'examples/morrowfield.html';path.write_text(path.read_text(encoding='utf-8').replace("'morrowfield.md'","'missing-case.md'"),encoding='utf-8');self.rehash_html()
+  with self.assertRaisesRegex(ValueError,'broken Morrowfield HTML link'):p.check(self.root)
+ def test_rehashed_noindex_removal_refused(self):
+  path=self.root/'examples/morrowfield.html';path.write_text(path.read_text(encoding='utf-8').replace('noindex,nofollow','index,follow'),encoding='utf-8');self.rehash_html()
+  with self.assertRaisesRegex(ValueError,'Morrowfield noindex/nofollow required'):p.check(self.root)
+ def test_external_html_resource_refused(self):
+  path=self.root/'examples/morrowfield.html';path.write_text(path.read_text(encoding='utf-8').replace('</body>','<img src="https://example.invalid/image.png"></body>'),encoding='utf-8');self.rehash_html()
+  with self.assertRaisesRegex(ValueError,'Morrowfield external URL'):p.check(self.root)
+ def test_licence_inventory_refused(self):
+  self.mutate('CITATION.cff',lambda d:d.update(license='CC-BY-4.0'))
+  with self.assertRaisesRegex(ValueError,'documentation licence inventory'):p.check(self.root)
+ def test_changelog_date_disagreement_refused(self):
+  path=self.root/'CHANGELOG.md';path.write_text(path.read_text(encoding='utf-8').replace('(published 2026-10-14)','(published 2026-10-15)'),encoding='utf-8')
+  with self.assertRaisesRegex(ValueError,'changelog/publication disagreement'):p.check(self.root)
+
 if __name__=='__main__':unittest.main()
