@@ -213,6 +213,25 @@ class BoundaryTests(unittest.TestCase):
   self.save('CITATION.cff',cff);p.check(self.root)
   cff['preferred-citation']['date-released']='2026-10-13';self.save('CITATION.cff',cff)
   with self.assertRaisesRegex(ValueError,'citation date requires'):p.check(self.root)
+ def test_readme_edition_disagreement_refused(self):
+  for name in ['README.md','fr-ca/README.md']:
+   with self.subTest(readme=name):
+    path=self.root/name;original=path.read_text(encoding='utf-8')
+    path.write_text(original.replace('docs-v1.0.0-rc.2','docs-v1.0.0-rc.1'),encoding='utf-8')
+    mapping=self.load('artefacts/translation-map.json')
+    for row in mapping['translations']:
+     if row['source']=='README.md':
+      row['source_sha256']=p.digest((self.root/row['source']).read_bytes())
+      row['translation_sha256']=p.digest((self.root/row['translation']).read_bytes())
+    self.save('artefacts/translation-map.json',mapping)
+    with self.assertRaisesRegex(ValueError,'README/edition disagreement'):p.check(self.root)
+    path.write_text(original,encoding='utf-8')
+    self.save('artefacts/translation-map.json',p.load(ROOT,'artefacts/translation-map.json'))
+ def test_readme_release_link_missing_refused(self):
+  path=self.root/'README.md';text=path.read_text(encoding='utf-8')
+  text=text.replace(self.load('artefacts/release-reference.json')['documentation']['release_url'],'https://github.com/GautierDorval/fy2press/releases')
+  path.write_text(text,encoding='utf-8');self.keep_translation_hash('README.md')
+  with self.assertRaisesRegex(ValueError,'README/edition disagreement'):p.check(self.root)
  def test_changed_example_requires_new_browser_observation(self):
   with (self.root/'examples/morrowfield.html').open('a',encoding='utf-8') as f:f.write('<!-- changed -->')
   with self.assertRaisesRegex(ValueError,'stale Morrowfield browser'):p.check(self.root)

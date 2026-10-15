@@ -357,6 +357,10 @@ def check(root):
  require(cff['cff-version']=='1.2.0' and 'reference' in cff['title'] and citation.get('type')=='manual','citation must describe the documentary manual')
  for record in [cff,citation]:
   require(record.get('version')==doc['version'] and record.get('url')==doc['release_url'],'citation/edition disagreement')
+ for readme in ['README.md','fr-ca/README.md']:
+  text=(root/readme).read_text(encoding='utf-8')
+  versions=re.findall(r'\bdocs-v[0-9]+\.[0-9]+\.[0-9]+(?:-rc\.[0-9]+)?\b',text)
+  require(versions and set(versions)=={doc['version']} and ']('+doc['release_url']+')' in text,'README/edition disagreement: '+readme)
  require(cff.get('license')==['CC-BY-4.0','MIT'] and entity.get('license')==['https://creativecommons.org/licenses/by/4.0/','https://opensource.org/license/mit'],'documentation licence inventory')
  require(entity.get('usageInfo')=='https://github.com/GautierDorval/fy2press/blob/main/LICENSE.md','file-specific licence scope')
  changelog=(root/'CHANGELOG.md').read_text(encoding='utf-8')
