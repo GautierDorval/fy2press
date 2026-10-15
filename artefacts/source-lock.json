@@ -10,7 +10,7 @@
       "observed_at": "2026-10-11T00:00:00Z",
       "raw_sha256": "ef12fcad119bf7e747a602553f17894d376510f9968caf01669f76e3212e8bb4",
       "retained_path": "sources/manifest-projection.json",
-      "retained_sha256": "25dc92941108a7419c38c1511a6fb610fe4d607ab990297f164f2013637fdf9b",
+      "retained_sha256": "0248958e34fe511d46ebcd07946d8a57e3dfb875f2fe51dea09a3e4c356b33bc",
       "export_policy": "reviewed_projection_not_raw_copy",
       "mapping_version": "1.0.0",
       "source_fields": [
@@ -33,7 +33,7 @@
       "observed_at": null,
       "raw_sha256": "bcbf2733164ad42dfc4e81b34aa5755184049b96b7cba218b3c1874ea1ccf1db",
       "retained_path": "sources/release-projection.json",
-      "retained_sha256": "e4ef4aad22841ad44b6fe78fc5842cce22148a4bbdd7f840c495f45034d71f86",
+      "retained_sha256": "c65cc039916ad190f5d8c680bfeadb72bde1134555b35c05578323b392ae880e",
       "export_policy": "reviewed_projection_not_raw_copy",
       "mapping_version": "1.0.0",
       "source_fields": [
