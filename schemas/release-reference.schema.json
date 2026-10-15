@@ -103,6 +103,12 @@
         },
         "connected_qualification": {
           "const": "NOT_RUN"
+        },
+        "connected_qualification_scope": {
+          "const": "Independent connected PRO execution in this documentation work only; publisher-confirmed launch operation is recorded separately."
+        },
+        "publisher_confirmation_ref": {
+          "const": "sources/manifest-projection.json#/capability_observation/current_validation"
         }
       },
       "required": [
@@ -111,7 +117,9 @@
         "distribution_state",
         "current_package_verified",
         "zip_sha256",
-        "connected_qualification"
+        "connected_qualification",
+        "connected_qualification_scope",
+        "publisher_confirmation_ref"
       ],
       "additionalProperties": false
     },

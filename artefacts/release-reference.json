@@ -22,7 +22,9 @@
     "distribution_state": "observed_published",
     "current_package_verified": false,
     "zip_sha256": null,
-    "connected_qualification": "NOT_RUN"
+    "connected_qualification": "NOT_RUN",
+    "connected_qualification_scope": "Independent connected PRO execution in this documentation work only; publisher-confirmed launch operation is recorded separately.",
+    "publisher_confirmation_ref": "sources/manifest-projection.json#/capability_observation/current_validation"
   },
   "policy_status": "proposed",
   "divergences": [

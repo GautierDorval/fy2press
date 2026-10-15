@@ -14,6 +14,15 @@ class BoundaryTests(unittest.TestCase):
   data=self.load(path);fn(data);self.save(path,data)
  def keep_translation_hash(self,source):
   self.mutate('artefacts/translation-map.json',lambda d:[t.update(source_sha256=p.digest((self.root/source).read_bytes())) for t in d['translations'] if t['source']==source])
+ def test_pro_not_run_requires_documentation_scope(self):
+  path=self.root/'artefacts/release-reference.json'
+  document=json.loads(path.read_text(encoding='utf-8'))
+  self.assertEqual(document['PRO']['connected_qualification'],'NOT_RUN')
+  self.assertIn('Independent connected PRO execution',document['PRO']['connected_qualification_scope'])
+  del document['PRO']['connected_qualification_scope']
+  path.write_text(json.dumps(document),encoding='utf-8')
+  with self.assertRaises(ValidationError): p.check(self.root)
+
  def test_future_observation_and_review_rejected(self):
   from datetime import datetime, timezone, timedelta
   future=datetime.now(timezone.utc)+timedelta(days=2)
