@@ -13,9 +13,8 @@
   "publisher": {
     "@id": "https://pagup.com/#organization"
   },
-  "version": "docs-v1.0.0-rc.1",
-  "creativeWorkStatus": "Published documentary prerelease",
-  "datePublished": "2026-10-14T22:28:51Z",
+  "version": "docs-v1.0.0-rc.2",
+  "creativeWorkStatus": "Documentary prerelease",
   "url": "https://github.com/GautierDorval/fy2press",
   "license": [
     "https://creativecommons.org/licenses/by/4.0/",

@@ -165,20 +165,41 @@ class BoundaryTests(unittest.TestCase):
   self.git('add','private-fixture.txt');self.git('-c','user.name=Synthetic Test','-c','user.email=test@example.invalid','commit','-m','Synthetic forbidden object')
   with self.assertRaisesRegex(ValueError,'unapproved historical'):p.check_history(self.root)
  def test_published_release_requires_date(self):
-  self.mutate('artefacts/release-reference.json',lambda d:d['documentation'].update(published_at=None))
+  self.mutate('artefacts/release-reference.json',lambda d:d['documentary_publications'][0].update(published_at=None))
   with self.assertRaisesRegex(ValidationError,"None is not of type 'string'"):p.check(self.root)
  def test_publication_timestamp_must_be_valid(self):
-  self.mutate('artefacts/release-reference.json',lambda d:d['documentation'].update(published_at='2026-99-99T22:28:51Z'))
+  self.mutate('artefacts/release-reference.json',lambda d:d['documentary_publications'][0].update(published_at='2026-99-99T22:28:51Z'))
   with self.assertRaisesRegex(Exception,'date-time|invalid publication timestamp'):p.check(self.root)
  def test_release_link_must_match_tag(self):
-  self.mutate('artefacts/release-reference.json',lambda d:d['documentation'].update(release_url='https://github.com/GautierDorval/fy2press/releases/tag/nonexistent'))
+  self.mutate('artefacts/release-reference.json',lambda d:d['documentary_publications'][0].update(release_url='https://github.com/GautierDorval/fy2press/releases/tag/nonexistent'))
   with self.assertRaisesRegex(ValueError,'publication URL/version'):p.check(self.root)
  def test_local_entity_cannot_describe_published_reference(self):
   self.mutate('artefacts/repository-entity.jsonld',lambda d:d.update(creativeWorkStatus='Local publication candidate'))
-  with self.assertRaisesRegex(ValueError,'publication entity'):p.check(self.root)
- def test_citation_must_identify_verified_edition(self):
-  self.mutate('CITATION.cff',lambda d:d['preferred-citation'].update(version='docs-v1.0.0-rc.2'))
-  with self.assertRaisesRegex(ValueError,'citation/publication'):p.check(self.root)
+  with self.assertRaisesRegex(ValueError,'edition entity'):p.check(self.root)
+ def test_citation_must_identify_current_edition(self):
+  self.mutate('CITATION.cff',lambda d:d['preferred-citation'].update(version='docs-v1.0.0-rc.1'))
+  with self.assertRaisesRegex(ValueError,'citation/edition'):p.check(self.root)
+ def test_edition_cannot_claim_provider_receipt_fields(self):
+  self.mutate('artefacts/release-reference.json',lambda d:d['documentation'].update(published_at='2026-10-14T22:28:51Z'))
+  with self.assertRaisesRegex(ValidationError,'Additional properties'):p.check(self.root)
+ def test_edition_link_must_match_version(self):
+  self.mutate('artefacts/release-reference.json',lambda d:d['documentation'].update(release_url='https://github.com/GautierDorval/fy2press/releases/tag/docs-v1.0.0-rc.1'))
+  with self.assertRaisesRegex(ValueError,'edition URL/version'):p.check(self.root)
+ def test_source_lock_must_name_current_edition(self):
+  self.mutate('artefacts/source-lock.json',lambda d:d.update(documentation_version='docs-v1.0.0-rc.1'))
+  with self.assertRaisesRegex(ValueError,'source-lock/edition'):p.check(self.root)
+ def test_unverified_citation_date_refused(self):
+  self.mutate('CITATION.cff',lambda d:d.update(**{'date-released':'2026-10-14'}))
+  with self.assertRaisesRegex(ValueError,'citation date requires'):p.check(self.root)
+ def test_unverified_entity_date_refused(self):
+  self.mutate('artefacts/repository-entity.jsonld',lambda d:d.update(datePublished='2026-10-14T22:28:51Z'))
+  with self.assertRaisesRegex(ValueError,'publication date belongs'):p.check(self.root)
+ def test_duplicate_publication_receipt_refused(self):
+  self.mutate('artefacts/release-reference.json',lambda d:d['documentary_publications'].append(copy.deepcopy(d['documentary_publications'][0])))
+  with self.assertRaisesRegex(ValueError,'duplicate publication'):p.check(self.root)
+ def test_future_publication_receipt_refused(self):
+  self.mutate('artefacts/release-reference.json',lambda d:d['documentary_publications'][0].update(published_at='2099-01-01T00:00:00Z'))
+  with self.assertRaisesRegex(ValueError,'future publication'):p.check(self.root)
  def test_changed_example_requires_new_browser_observation(self):
   with (self.root/'examples/morrowfield.html').open('a',encoding='utf-8') as f:f.write('<!-- changed -->')
   with self.assertRaisesRegex(ValueError,'stale Morrowfield browser'):p.check(self.root)

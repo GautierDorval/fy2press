@@ -349,19 +349,32 @@ def check(root):
  require('ref: main' in (root/'.github/workflows/check-upstream.yml').read_text(encoding='utf-8'),'untrusted upstream checkout')
  jsonschema.validate(load(root,'CITATION.cff'),load(root,'schemas/cff-1.2.0.schema.json'))
  cff=load(root,'CITATION.cff');doc=ref['documentation'];entity=load(root,'artefacts/repository-entity.jsonld')
- require(re.fullmatch(r'[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z',doc['published_at']) is not None,'invalid publication timestamp')
- try:datetime.strptime(doc['published_at'],'%Y-%m-%dT%H:%M:%SZ')
- except ValueError as exc:raise ValueError('invalid publication timestamp') from exc
- require(doc['release_url']=='https://github.com/GautierDorval/fy2press/releases/tag/'+doc['version'],'publication URL/version disagreement')
- require(entity.get('creativeWorkStatus')=='Published documentary prerelease' and entity.get('datePublished')==doc['published_at'] and entity.get('version')==doc['version'],'publication entity disagreement')
+ require(doc['release_url']=='https://github.com/GautierDorval/fy2press/releases/tag/'+doc['version'],'edition URL/version disagreement')
+ require(load(root,'artefacts/source-lock.json')['documentation_version']==doc['version'],'source-lock/edition disagreement')
+ require(entity.get('creativeWorkStatus')=='Documentary prerelease' and entity.get('version')==doc['version'],'edition entity disagreement')
+ require('datePublished' not in entity,'publication date belongs in a verified receipt')
  citation=cff.get('preferred-citation',{})
  require(cff['cff-version']=='1.2.0' and 'reference' in cff['title'] and citation.get('type')=='manual','citation must describe the documentary manual')
  for record in [cff,citation]:
-  require(record.get('version')==doc['version'] and record.get('url')==doc['release_url'] and record.get('date-released')==doc['published_at'][:10],'citation/publication disagreement')
+  require(record.get('version')==doc['version'] and record.get('url')==doc['release_url'],'citation/edition disagreement')
  require(cff.get('license')==['CC-BY-4.0','MIT'] and entity.get('license')==['https://creativecommons.org/licenses/by/4.0/','https://opensource.org/license/mit'],'documentation licence inventory')
  require(entity.get('usageInfo')=='https://github.com/GautierDorval/fy2press/blob/main/LICENSE.md','file-specific licence scope')
  changelog=(root/'CHANGELOG.md').read_text(encoding='utf-8')
- require('## '+doc['version']+' (published '+doc['published_at'][:10]+')' in changelog and doc['published_at'] in changelog and doc['source_commit'] in changelog,'changelog/publication disagreement')
+ require('## '+doc['version']+'\n' in changelog,'changelog/edition disagreement')
+ seen_releases=set();current_receipt=None
+ for publication in ref['documentary_publications']:
+  require(publication['version'] not in seen_releases,'duplicate publication receipt')
+  seen_releases.add(publication['version'])
+  require(re.fullmatch(r'[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z',publication['published_at']) is not None,'invalid publication timestamp')
+  try:published=datetime.strptime(publication['published_at'],'%Y-%m-%dT%H:%M:%SZ').replace(tzinfo=timezone.utc)
+  except ValueError as exc:raise ValueError('invalid publication timestamp') from exc
+  require(published<=datetime.now(timezone.utc),'future publication timestamp')
+  require(publication['release_url']=='https://github.com/GautierDorval/fy2press/releases/tag/'+publication['version'],'publication URL/version disagreement')
+  require('## '+publication['version']+' (published '+publication['published_at'][:10]+')' in changelog and publication['published_at'] in changelog and publication['source_commit'] in changelog,'changelog/publication disagreement')
+  if publication['version']==doc['version']:current_receipt=publication
+ for record in [cff,citation]:
+  if 'date-released' in record:
+   require(current_receipt is not None and record['date-released']==current_receipt['published_at'][:10],'citation date requires a matching publication receipt')
  morrowfield_checks(root)
  require(len(load(root,'sources/seo-decisions.json')['decisions'])==12,'SEO decision coverage')
  generate(root,True);return export_manifest(root)

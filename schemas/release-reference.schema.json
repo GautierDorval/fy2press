@@ -3,24 +3,20 @@
   "type": "object",
   "properties": {
     "schema_version": {
-      "const": "1.0.0"
+      "const": "1.1.0"
     },
     "documentation": {
       "type": "object",
       "properties": {
         "version": {
           "type": "string",
-          "minLength": 1
-        },
-        "publication_state": {
-          "const": "PUBLISHED_PRERELEASE"
-        },
-        "published_at": {
-          "type": "string",
-          "format": "date-time"
+          "pattern": "^docs-v[0-9]+\\.[0-9]+\\.[0-9]+-rc\\.[1-9][0-9]*$"
         },
         "scope": {
-          "const": "latest_verified_tagged_release"
+          "const": "edition_in_this_tree"
+        },
+        "maturity": {
+          "const": "prerelease"
         },
         "release_url": {
           "type": "string",
@@ -28,25 +24,14 @@
         },
         "repository_id": {
           "const": 1419912178
-        },
-        "release_id": {
-          "type": "integer",
-          "minimum": 1
-        },
-        "source_commit": {
-          "type": "string",
-          "pattern": "^[0-9a-f]{40}$"
         }
       },
       "required": [
         "version",
-        "publication_state",
-        "published_at",
         "scope",
+        "maturity",
         "release_url",
-        "repository_id",
-        "release_id",
-        "source_commit"
+        "repository_id"
       ],
       "additionalProperties": false
     },
@@ -140,6 +125,13 @@
       "items": {
         "type": "object"
       }
+    },
+    "documentary_publications": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/published_documentary_release"
+      }
     }
   },
   "required": [
@@ -148,7 +140,55 @@
     "FREE",
     "PRO",
     "policy_status",
-    "divergences"
+    "divergences",
+    "documentary_publications"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "$defs": {
+    "published_documentary_release": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "publication_state": {
+          "const": "PUBLISHED_PRERELEASE"
+        },
+        "published_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "scope": {
+          "const": "historical_verified_tagged_release"
+        },
+        "release_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "repository_id": {
+          "const": 1419912178
+        },
+        "release_id": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "source_commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        }
+      },
+      "required": [
+        "version",
+        "publication_state",
+        "published_at",
+        "scope",
+        "release_url",
+        "repository_id",
+        "release_id",
+        "source_commit"
+      ],
+      "additionalProperties": false
+    }
+  }
 }

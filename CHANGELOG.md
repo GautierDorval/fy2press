@@ -1,10 +1,14 @@
 # Documentation changes
 
-## Unreleased / Non publié
+## docs-v1.0.0-rc.2
+
+Align the edition identifier across the citation, README and document entity. Publication receipts remain separate from edition metadata; GitHub releases provide publication dates and archives. Remove obsolete publication-candidate wording in the ecosystem pages.
+
+Identifiant d’édition harmonisé dans la citation, le README et l’entité documentaire. Les reçus de publication restent distincts des métadonnées d’édition ; les versions GitHub donnent les dates de publication et les archives. Formulations périmées de préparation retirées des pages sur l’écosystème.
 
 Publication follow-up: clarify the already-effective licences and public prerelease state; cite the tagged reference as a manual; add a twelve-case SEO index; put component purpose before diagnostic byte counts; complete the fictional Morrowfield editorial walkthrough and filled decision/handover.
 
-Suivi de publication : droits déjà accordés et préversion publique clarifiés ; citation documentaire ; index SEO ; résultats fonctionnels avant les mesures techniques ; parcours Morrowfield fictif avec décision et passation remplies. Ces changements ne constituent pas une nouvelle version publiée.
+Suivi de publication : droits déjà accordés et préversion publique clarifiés ; citation documentaire ; index SEO ; résultats fonctionnels avant les mesures techniques ; parcours Morrowfield fictif avec décision et passation remplies.
 
 Additional follow-up: identify PAGUP as publisher and move editorial provenance to the notices; list both content and tool licences in citation metadata; group the shared SEO checks; make local test details collapsible; explain the inspected product-type field mismatch. Validators now reject incomplete observations and future observation/review dates. French prose uses consistent terminology and non-breaking punctuation spacing.
 

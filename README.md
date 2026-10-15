@@ -27,4 +27,4 @@ This public reference describes FREE 1.0.0 from the package collected on October
 
 Original text and templates are offered under CC BY 4.0, original tools under MIT. These grants were authorized for the October 14, 2026 publication. [Licensing and brand exclusions](LICENSE.md). Published and maintained by PAGUP, coordinated by Gautier Dorval. [Editorial provenance](THIRD-PARTY-NOTICES.md).
 
-The latest verified documentary edition is [docs-v1.0.0-rc.1](https://github.com/GautierDorval/fy2press/releases/tag/docs-v1.0.0-rc.1), published October 14, 2026. Changes prepared after that tag are listed in the [changelog](CHANGELOG.md); they do not move the published version.
+Documentary edition: **docs-v1.0.0-rc.2**. See the [changes](CHANGELOG.md), [citation](CITATION.cff) and [matching GitHub release](https://github.com/GautierDorval/fy2press/releases/tag/docs-v1.0.0-rc.2) for its publication date and archive. Earlier tagged editions remain unchanged.

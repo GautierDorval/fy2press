@@ -130,9 +130,9 @@
     },
     {
       "source": "README.md",
-      "source_sha256": "ec007364a25a0c3338fbe1998ddfe825b55a3ab6fd3e0204abd2964b996dcaa0",
+      "source_sha256": "cb323376341390977a2bc9aa76aa443215b72c4c54b020dc6ca808b7e0ab6a7c",
       "translation": "fr-ca/README.md",
-      "translation_sha256": "1402840586297df96698bc4d2ed5600c91511997349d16dc42fc3306e58b89ef",
+      "translation_sha256": "17d233b30b4581b497f90f3314eeada999efc55a852d68e47570d50e47f6a437",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
       "reviewed_on": "2026-10-15"

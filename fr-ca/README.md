@@ -27,4 +27,4 @@ Cette référence publique décrit FREE 1.0.0 à partir du paquet collecté le 1
 
 Les textes et modèles originaux sont offerts sous CC BY 4.0, les outils originaux sous MIT. Ces droits ont été autorisés lors de la publication du 14 octobre 2026. [Licences et exclusions de marque](../LICENSE.md). Publication et maintenance : PAGUP, sous la coordination de Gautier Dorval. [Provenance éditoriale](../THIRD-PARTY-NOTICES.md).
 
-La dernière édition documentaire vérifiée est [docs-v1.0.0-rc.1](https://github.com/GautierDorval/fy2press/releases/tag/docs-v1.0.0-rc.1), publiée le 14 octobre 2026. Les changements préparés après ce tag figurent dans le [journal](../CHANGELOG.md) ; ils ne déplacent pas la version publiée.
+Édition documentaire : **docs-v1.0.0-rc.2**. Consultez les [changements](../CHANGELOG.md), la [citation](../CITATION.cff) et la [version GitHub correspondante](https://github.com/GautierDorval/fy2press/releases/tag/docs-v1.0.0-rc.2) pour sa date de publication et son archive. Les éditions antérieures restent inchangées.
