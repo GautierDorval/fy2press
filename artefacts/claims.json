@@ -21,8 +21,8 @@
         }
       ],
       "validation": {
-        "state": "NOT_RUN",
-        "scope": "Publisher description; not a new runtime qualification"
+        "state": "PUBLISHER_CONFIRMED",
+        "scope": "Real-store launch operation confirmed by Gautier Dorval on 2026-10-15; historical component observations remain separately scoped."
       },
       "policy_status": null
     },
@@ -46,8 +46,8 @@
         }
       ],
       "validation": {
-        "state": "NOT_RUN",
-        "scope": "Publisher description; not a new runtime qualification"
+        "state": "PUBLISHER_CONFIRMED",
+        "scope": "Real-store launch operation confirmed by Gautier Dorval on 2026-10-15; historical component observations remain separately scoped."
       },
       "policy_status": null
     },
@@ -61,8 +61,8 @@
       "implementation_status": "partial",
       "behaviour": "Manually synchronize the catalog",
       "limitations": [
-        "Publisher partial status; discovery, writing and interruption recovery need separate checks. No connected resumption test here.",
-        "Statut partiel de l’éditeur; découverte, écriture et reprise exigent des vérifications distinctes. Aucun essai connecté de reprise ici."
+        "Start synchronization manually in FREE. Discovery resumes in batches; interrupted writes do not automatically resume.",
+        "Lancez la synchronisation manuellement dans FREE. La découverte reprend par lots; les écritures interrompues ne reprennent pas automatiquement."
       ],
       "source_refs": [
         {
@@ -71,8 +71,8 @@
         }
       ],
       "validation": {
-        "state": "NOT_RUN",
-        "scope": "Publisher description; not a new runtime qualification"
+        "state": "PUBLISHER_CONFIRMED",
+        "scope": "Real-store launch operation confirmed by Gautier Dorval on 2026-10-15; historical component observations remain separately scoped."
       },
       "policy_status": null
     },
@@ -96,8 +96,8 @@
         }
       ],
       "validation": {
-        "state": "NOT_RUN",
-        "scope": "Publisher description; not a new runtime qualification"
+        "state": "PUBLISHER_CONFIRMED",
+        "scope": "Real-store launch operation confirmed by Gautier Dorval on 2026-10-15; historical component observations remain separately scoped."
       },
       "policy_status": null
     },
@@ -121,8 +121,8 @@
         }
       ],
       "validation": {
-        "state": "LOCAL_COMPONENT_OBSERVATION",
-        "scope": "Native FREE registry and local callback examples only"
+        "state": "PUBLISHER_CONFIRMED",
+        "scope": "Real-store launch operation confirmed by Gautier Dorval on 2026-10-15; historical component observations remain separately scoped."
       },
       "policy_status": null
     },
@@ -146,8 +146,8 @@
         }
       ],
       "validation": {
-        "state": "LOCAL_COMPONENT_OBSERVATION",
-        "scope": "Native FREE registry and local callback examples only"
+        "state": "PUBLISHER_CONFIRMED",
+        "scope": "Real-store launch operation confirmed by Gautier Dorval on 2026-10-15; historical component observations remain separately scoped."
       },
       "policy_status": null
     },
@@ -171,8 +171,8 @@
         }
       ],
       "validation": {
-        "state": "NOT_RUN",
-        "scope": "Publisher description; not a new runtime qualification"
+        "state": "PUBLISHER_CONFIRMED",
+        "scope": "Real-store launch operation confirmed by Gautier Dorval on 2026-10-15; historical component observations remain separately scoped."
       },
       "policy_status": null
     },
@@ -196,8 +196,8 @@
         }
       ],
       "validation": {
-        "state": "NOT_RUN",
-        "scope": "Publisher description; not a new runtime qualification"
+        "state": "PUBLISHER_CONFIRMED",
+        "scope": "Real-store launch operation confirmed by Gautier Dorval on 2026-10-15; historical component observations remain separately scoped."
       },
       "policy_status": null
     },
@@ -221,8 +221,8 @@
         }
       ],
       "validation": {
-        "state": "NOT_RUN",
-        "scope": "Publisher description; not a new runtime qualification"
+        "state": "PUBLISHER_CONFIRMED",
+        "scope": "Real-store launch operation confirmed by Gautier Dorval on 2026-10-15; historical component observations remain separately scoped."
       },
       "policy_status": null
     },
@@ -246,8 +246,8 @@
         }
       ],
       "validation": {
-        "state": "NOT_RUN",
-        "scope": "Publisher description; not a new runtime qualification"
+        "state": "PUBLISHER_CONFIRMED",
+        "scope": "Real-store launch operation confirmed by Gautier Dorval on 2026-10-15; historical component observations remain separately scoped."
       },
       "policy_status": null
     },
@@ -271,8 +271,8 @@
         }
       ],
       "validation": {
-        "state": "NOT_RUN",
-        "scope": "Publisher description; not a new runtime qualification"
+        "state": "PUBLISHER_CONFIRMED",
+        "scope": "Real-store launch operation confirmed by Gautier Dorval on 2026-10-15; historical component observations remain separately scoped."
       },
       "policy_status": null
     },
@@ -296,8 +296,8 @@
         }
       ],
       "validation": {
-        "state": "NOT_RUN",
-        "scope": "Publisher description; not a new runtime qualification"
+        "state": "PUBLISHER_CONFIRMED",
+        "scope": "Real-store launch operation confirmed by Gautier Dorval on 2026-10-15; historical component observations remain separately scoped."
       },
       "policy_status": null
     },
@@ -311,8 +311,8 @@
       "implementation_status": "delivered",
       "behaviour": "Use native Elementor components",
       "limitations": [
-        "PRO and a separately licensed builder; exact connected/licensed combination not tested here.",
-        "PRO et constructeur sous licence distincte; combinaison exacte sous licence non testée ici."
+        "PRO and a separately licensed Elementor builder; use the native components included in the edition.",
+        "PRO et constructeur Elementor sous licence distincte; utilisez les composants natifs de cette édition."
       ],
       "source_refs": [
         {
@@ -321,8 +321,8 @@
         }
       ],
       "validation": {
-        "state": "NOT_RUN",
-        "scope": "Publisher description; not a new runtime qualification"
+        "state": "PUBLISHER_CONFIRMED",
+        "scope": "Real-store launch operation confirmed by Gautier Dorval on 2026-10-15; historical component observations remain separately scoped."
       },
       "policy_status": null
     },
@@ -336,8 +336,8 @@
       "implementation_status": "delivered",
       "behaviour": "Use native WPBakery components",
       "limitations": [
-        "PRO and a separately licensed builder; exact connected/licensed combination not tested here.",
-        "PRO et constructeur sous licence distincte; combinaison exacte sous licence non testée ici."
+        "PRO and a separately licensed WPBakery builder; use the native components included in the edition.",
+        "PRO et constructeur WPBakery sous licence distincte; utilisez les composants natifs de cette édition."
       ],
       "source_refs": [
         {
@@ -346,8 +346,8 @@
         }
       ],
       "validation": {
-        "state": "NOT_RUN",
-        "scope": "Publisher description; not a new runtime qualification"
+        "state": "PUBLISHER_CONFIRMED",
+        "scope": "Real-store launch operation confirmed by Gautier Dorval on 2026-10-15; historical component observations remain separately scoped."
       },
       "policy_status": null
     },
@@ -371,8 +371,8 @@
         }
       ],
       "validation": {
-        "state": "NOT_RUN",
-        "scope": "Publisher description; not a new runtime qualification"
+        "state": "PUBLISHER_CONFIRMED",
+        "scope": "Real-store launch operation confirmed by Gautier Dorval on 2026-10-15; historical component observations remain separately scoped."
       },
       "policy_status": null
     },
@@ -396,8 +396,8 @@
         }
       ],
       "validation": {
-        "state": "NOT_RUN",
-        "scope": "Publisher description; not a new runtime qualification"
+        "state": "PUBLISHER_CONFIRMED",
+        "scope": "Real-store launch operation confirmed by Gautier Dorval on 2026-10-15; historical component observations remain separately scoped."
       },
       "policy_status": null
     },
@@ -421,8 +421,8 @@
         }
       ],
       "validation": {
-        "state": "NOT_RUN",
-        "scope": "Publisher description; not a new runtime qualification"
+        "state": "PUBLISHER_CONFIRMED",
+        "scope": "Real-store launch operation confirmed by Gautier Dorval on 2026-10-15; historical component observations remain separately scoped."
       },
       "policy_status": null
     },
@@ -446,8 +446,8 @@
         }
       ],
       "validation": {
-        "state": "NOT_RUN",
-        "scope": "Publisher description; not a new runtime qualification"
+        "state": "PUBLISHER_CONFIRMED",
+        "scope": "Real-store launch operation confirmed by Gautier Dorval on 2026-10-15; historical component observations remain separately scoped."
       },
       "policy_status": null
     },
@@ -471,8 +471,8 @@
         }
       ],
       "validation": {
-        "state": "NOT_RUN",
-        "scope": "Publisher description; not a new runtime qualification"
+        "state": "PUBLISHER_CONFIRMED",
+        "scope": "Real-store launch operation confirmed by Gautier Dorval on 2026-10-15; historical component observations remain separately scoped."
       },
       "policy_status": null
     },
@@ -483,11 +483,11 @@
       "version": "1.0.0",
       "statement_en": "Schedule catalog synchronization",
       "statement_fr_ca": "Planifier la synchronisation du catalogue",
-      "implementation_status": "partial",
+      "implementation_status": "delivered",
       "behaviour": "Schedule catalog synchronization",
       "limitations": [
-        "Active PRO licence and WordPress cron; not instant. Live-store qualification is not established by this reference.",
-        "Licence PRO active et cron WordPress; non instantané. La qualification en boutique réelle n’est pas établie par cette référence."
+        "Active PRO licence; hourly, twice daily or daily through WP-Cron. WordPress must execute scheduled events; no real-time webhook service.",
+        "Licence PRO active; chaque heure, deux fois par jour ou chaque jour avec WP-Cron. WordPress doit exécuter les événements planifiés; ce n’est pas un service de webhooks en temps réel."
       ],
       "source_refs": [
         {
@@ -496,8 +496,8 @@
         }
       ],
       "validation": {
-        "state": "NOT_RUN",
-        "scope": "Publisher description; not a new runtime qualification"
+        "state": "PUBLISHER_CONFIRMED",
+        "scope": "Real-store launch operation confirmed by Gautier Dorval on 2026-10-15; historical component observations remain separately scoped."
       },
       "policy_status": null
     }

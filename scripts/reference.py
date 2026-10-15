@@ -33,6 +33,8 @@ def source_checks(root):
  for s in lock['sources']:
   require(s['id'] not in ids,'duplicate source');ids.add(s['id'])
   require(s['url']==URLS[s['id']],'unapproved source URL')
+  require(s.get('acquisition_kind','http') in ['http','local_candidate'],'unknown source acquisition')
+  if s.get('acquisition_kind')=='local_candidate':require(s['id'] in ['manifest','release'],'unexpected candidate source')
   require(re.fullmatch('[0-9a-f]{64}',s['raw_sha256']) is not None,'incomplete raw digest')
   p=safe_path(root,s['retained_path']);require(digest(p.read_bytes())==s['retained_sha256'],'retained source hash drift: '+s['id'])
  manifest=load(root,'sources/manifest-projection.json')
@@ -45,13 +47,27 @@ def source_checks(root):
  require(manifest['capability_observation']['source_matches_distributed_package'] is None,'unproven package match')
  return lock
 
+def current_validation(manifest, capability):
+ confirmation=manifest['capability_observation'].get('current_validation')
+ if confirmation:
+  require(confirmation.get('kind')=='publisher_confirmation','unknown confirmation kind')
+  require(re.fullmatch(r'\d{4}-\d{2}-\d{2}',confirmation.get('confirmed_on','')) is not None,'confirmation date required')
+  require(datetime.strptime(confirmation['confirmed_on'],'%Y-%m-%d').date()<=datetime.now(timezone.utc).date(),'future publisher confirmation')
+  require(confirmation.get('test_execution_date') is None and confirmation.get('tested_environment') is None and confirmation.get('independent_audit') is False,'confirmation must not invent execution details')
+  require(bool(confirmation.get('confirmed_by')) and bool(confirmation.get('scope')),'confirmation attribution and scope required')
+  if capability['implementation'] in ['delivered','partial']:
+   return {'state':'PUBLISHER_CONFIRMED','scope':f"Real-store launch operation confirmed by {confirmation['confirmed_by']} on {confirmation['confirmed_on']}; historical component observations remain separately scoped."}
+ if capability['id'] in ['builders.gutenberg','builders.prefixed_shortcodes'] and capability['implementation'] in ['delivered','partial']:
+  return {'state':'LOCAL_COMPONENT_OBSERVATION','scope':'Native FREE registry and local callback examples only'}
+ return {'state':'NOT_RUN','scope':'No functional validation claimed for an absent or unknown capability; historical observations remain separately scoped.'}
+
 def make_claims(root):
  manifest=load(root,'sources/manifest-projection.json');ed=load(root,'sources/capability-editorial.json')['entries'];claims=[]
  caps=manifest['capability_observation']['capabilities']
  require(set(ed)=={x['id'] for x in caps},'editorial mapping coverage')
  for i,cap in enumerate(caps):
   t=ed[cap['id']]
-  claims.append({'id':cap['id'],'subject':'Fy2Press','edition':cap['edition'],'version':manifest['capability_observation']['documented_version'],'statement_en':t['statement_en'],'statement_fr_ca':t['statement_fr_ca'],'implementation_status':cap['implementation'],'behaviour':t['statement_en'],'limitations':[t['limit_en'],t['limit_fr_ca']],'source_refs':[{'source_id':'manifest','pointer':f'/capability_observation/capabilities/{i}'}],'validation':{'state':'LOCAL_COMPONENT_OBSERVATION' if cap['id'] in ['builders.gutenberg','builders.prefixed_shortcodes'] else 'NOT_RUN','scope':'Native FREE registry and local callback examples only' if cap['id'] in ['builders.gutenberg','builders.prefixed_shortcodes'] else 'Publisher description; not a new runtime qualification'},'policy_status':None})
+  claims.append({'id':cap['id'],'subject':'Fy2Press','edition':cap['edition'],'version':manifest['capability_observation']['documented_version'],'statement_en':t['statement_en'],'statement_fr_ca':t['statement_fr_ca'],'implementation_status':cap['implementation'],'behaviour':t['statement_en'],'limitations':[t['limit_en'],t['limit_fr_ca']],'source_refs':[{'source_id':'manifest','pointer':f'/capability_observation/capabilities/{i}'}],'validation':current_validation(manifest,cap),'policy_status':None})
  return {'schema_version':'1.0.0','claims':claims}
 
 def md_value(v):return json.dumps(v,ensure_ascii=False,separators=(',',':')).replace('|','&#124;').replace('`','&#96;')

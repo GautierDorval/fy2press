@@ -5,12 +5,12 @@
     {
       "id": "manifest",
       "url": "https://fy2press.com/ai-manifest.json",
-      "role": "Publisher capability descriptions",
-      "retrieved_at": "2026-10-14T16:59:28.6485801Z",
+      "role": "Publisher capability descriptions; reviewed local site candidate, not a new observation of the served URL",
+      "retrieved_at": "2026-10-15T20:30:23.282266+00:00",
       "observed_at": "2026-10-11T00:00:00Z",
-      "raw_sha256": "5beae3bcb67171c377aa24ba5f066218ac8f89abd6314a0c3ab29d8826c90a58",
+      "raw_sha256": "ef12fcad119bf7e747a602553f17894d376510f9968caf01669f76e3212e8bb4",
       "retained_path": "sources/manifest-projection.json",
-      "retained_sha256": "7e9ac55dcd2d97a38c6e2c420aa3adca8c4d962ff28764928fbad3dc5166471e",
+      "retained_sha256": "25dc92941108a7419c38c1511a6fb610fe4d607ab990297f164f2013637fdf9b",
       "export_policy": "reviewed_projection_not_raw_copy",
       "mapping_version": "1.0.0",
       "source_fields": [
@@ -22,17 +22,18 @@
         "canonical_surfaces"
       ],
       "omissions": "Private references, historical review archives, incidental metadata and unrelated policies are omitted. No absent capability is inferred.",
-      "source_schema_version": "2.0.0"
+      "source_schema_version": "2.0.0",
+      "acquisition_kind": "local_candidate"
     },
     {
       "id": "release",
       "url": "https://fy2press.com/governance/release-state.json",
-      "role": "Dated distribution and commercial observations",
-      "retrieved_at": "2026-10-14T16:59:28.9826969Z",
+      "role": "Dated distribution and commercial observations; reviewed local site candidate, not a new observation of the served URL",
+      "retrieved_at": "2026-10-15T20:30:23.284210+00:00",
       "observed_at": null,
-      "raw_sha256": "6b350ccbebf73407928204c54bc0bdbe91f3d0cbda02c3d2b7cedfb7ce215877",
+      "raw_sha256": "bcbf2733164ad42dfc4e81b34aa5755184049b96b7cba218b3c1874ea1ccf1db",
       "retained_path": "sources/release-projection.json",
-      "retained_sha256": "f6a1e1804123b0c187bae2db1330c35de0b7850a54b3dade3b1503416e04e0f7",
+      "retained_sha256": "e4ef4aad22841ad44b6fe78fc5842cce22148a4bbdd7f840c495f45034d71f86",
       "export_policy": "reviewed_projection_not_raw_copy",
       "mapping_version": "1.0.0",
       "source_fields": [
@@ -42,7 +43,8 @@
         "commercial"
       ],
       "omissions": "Private references, historical review archives, incidental metadata and unrelated policies are omitted. No absent capability is inferred.",
-      "source_schema_version": "2.0.0"
+      "source_schema_version": "2.0.0",
+      "acquisition_kind": "local_candidate"
     },
     {
       "id": "policy",

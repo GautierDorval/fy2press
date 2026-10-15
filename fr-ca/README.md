@@ -11,13 +11,15 @@ Présentez votre catalogue Shopify dans les articles, guides et pages que vous p
 - Vous composez une page ? Consultez la [référence des blocs et codes courts](developer/README.md).
 - Vous remettez un site à un client ? Adaptez le [modèle de passation](reusable/agency-handover.md).
 
-Fy2Press publie des fiches natives dans WordPress ; Shopify conserve le catalogue commercial et le paiement. FREE comprend des blocs et des codes courts. PRO ajoute des composants natifs pour les constructeurs et des réglages de présentation supplémentaires. Consultez les [éditions et intégrations](docs/editions-and-integrations.md), puis vérifiez l’[actualisation des données](docs/data-ownership-and-freshness.md) pour votre page.
+Fy2Press publie des fiches natives dans WordPress ; Shopify conserve le catalogue commercial et le paiement. FREE comprend des blocs et des codes courts. PRO ajoute la synchronisation planifiée, des composants natifs pour les constructeurs, plusieurs modèles et des réglages de présentation avancés. Consultez les [éditions et intégrations](docs/editions-and-integrations.md), puis vérifiez l’[actualisation des données](docs/data-ownership-and-freshness.md) pour votre page.
 
 ## Installer le produit
 
 Installez FREE depuis [WordPress.org](https://wordpress.org/plugins/fy2press/). Les [guides d’installation et de connexion](https://fy2press.com/fr-ca/docs/) décrivent la configuration. La [page produit](https://fy2press.com/fr-ca/product/) présente PRO et les conditions commerciales actuelles.
 
 **Ce dépôt GitHub et ses archives ZIP contiennent de la documentation. Ils ne s’installent pas comme extension WordPress.** Les sources FREE et les instructions de construction restent accessibles dans [SVN WordPress](https://plugins.svn.wordpress.org/fy2press/trunk/BUILDING.md).
+
+La branche `main` contient les dernières mises à jour documentaires; les releases identifient les éditions archivées.
 
 ## Utiliser la référence
 

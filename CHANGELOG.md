@@ -2,6 +2,9 @@
 
 ## docs-v1.0.0-rc.2
 
+- Recognize the publisher’s October 15 real-store launch confirmation; preserve the separate historical component observations.
+- Clarify PRO scheduling, data refresh, support routing and main versus archived documentation.
+
 Align the edition identifier across the citation, README and document entity. Publication receipts remain separate from edition metadata; GitHub releases provide publication dates and archives. Remove obsolete publication-candidate wording in the ecosystem pages.
 
 Identifiant d’édition harmonisé dans la citation, le README et l’entité documentaire. Les reçus de publication restent distincts des métadonnées d’édition ; les versions GitHub donnent les dates de publication et les archives. Formulations périmées de préparation retirées des pages sur l’écosystème.

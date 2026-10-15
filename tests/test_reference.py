@@ -40,6 +40,27 @@ class BoundaryTests(unittest.TestCase):
   self.assertIn(code,result);self.assertIn('https://example.invalid/a?x=1',result)
   self.assertIn(tick*3+'text\na:b; c?\n'+tick*3,result)
 
+ def test_current_confirmation_supersedes_local_not_run(self):
+  manifest=self.load('sources/manifest-projection.json')
+  confirmation=manifest['capability_observation']['current_validation']
+  cap={'id':'sync.scheduled','implementation':'delivered'}
+  self.assertEqual(p.current_validation(manifest,cap)['state'],'PUBLISHER_CONFIRMED')
+  self.assertIn(confirmation['confirmed_by'],p.current_validation(manifest,cap)['scope'])
+  manifest['capability_observation'].pop('current_validation')
+  self.assertEqual(p.current_validation(manifest,cap)['state'],'NOT_RUN')
+ def test_confirmation_cannot_invent_execution_or_independence(self):
+  for key,value in [('test_execution_date','2026-10-15'),('tested_environment','all themes'),('independent_audit',True)]:
+   with self.subTest(key=key):
+    manifest=self.load('sources/manifest-projection.json')
+    manifest['capability_observation']['current_validation'][key]=value
+    with self.assertRaisesRegex(ValueError,'invent execution'):p.current_validation(manifest,{'id':'sync.scheduled','implementation':'delivered'})
+ def test_confirmation_does_not_make_absent_or_unknown_features_available(self):
+  manifest=self.load('sources/manifest-projection.json')
+  original=copy.deepcopy(manifest)
+  for state in ['absent','unknown',None]:
+   self.assertEqual(p.current_validation(manifest,{'id':'builders.gutenberg','implementation':state})['state'],'NOT_RUN')
+  self.assertEqual(manifest,original)
+
  def test_baseline(self):p.check(self.root)
  def test_source_modified_without_lock(self):
   self.mutate('sources/manifest-projection.json',lambda d:d['capability_observation']['capabilities'][0].update(implementation='absent'))

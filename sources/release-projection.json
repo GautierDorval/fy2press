@@ -30,23 +30,116 @@
     "currency": "USD, EUR or GBP, chosen at checkout",
     "download_enabled": true,
     "pricing": {
+      "amounts": [
+        {
+          "annual": 89,
+          "currency": "EUR",
+          "licenses": 1,
+          "monthly": 8.99,
+          "renewal": {
+            "annual": 84.55,
+            "monthly": null
+          }
+        },
+        {
+          "annual": 149,
+          "currency": "EUR",
+          "licenses": 3,
+          "monthly": 14.99,
+          "renewal": {
+            "annual": 141.55,
+            "monthly": 14.99
+          }
+        },
+        {
+          "annual": 219,
+          "currency": "EUR",
+          "licenses": 5,
+          "monthly": 21.99,
+          "renewal": {
+            "annual": 208.05,
+            "monthly": 21.99
+          }
+        },
+        {
+          "annual": 79,
+          "currency": "GBP",
+          "licenses": 1,
+          "monthly": 7.99,
+          "renewal": {
+            "annual": 75.05,
+            "monthly": null
+          }
+        },
+        {
+          "annual": 129,
+          "currency": "GBP",
+          "licenses": 3,
+          "monthly": 12.99,
+          "renewal": {
+            "annual": 122.55,
+            "monthly": 12.99
+          }
+        },
+        {
+          "annual": 189,
+          "currency": "GBP",
+          "licenses": 5,
+          "monthly": 18.99,
+          "renewal": {
+            "annual": 179.55,
+            "monthly": 18.99
+          }
+        },
+        {
+          "annual": 99,
+          "currency": "USD",
+          "licenses": 1,
+          "monthly": 9.99,
+          "renewal": {
+            "annual": 94.05,
+            "monthly": null
+          }
+        },
+        {
+          "annual": 169,
+          "currency": "USD",
+          "licenses": 3,
+          "monthly": 16.99,
+          "renewal": {
+            "annual": 160.55,
+            "monthly": 16.99
+          }
+        },
+        {
+          "annual": 249,
+          "currency": "USD",
+          "licenses": 5,
+          "monthly": 24.99,
+          "renewal": {
+            "annual": 236.55,
+            "monthly": 24.99
+          }
+        }
+      ],
       "billing_cycles": [
         "monthly",
         "annual"
       ],
+      "checkout_parameter_documentation": "https://freemius.com/help/documentation/checkout/integration/freemius-checkout-buy-button/",
       "currencies": [
         "USD",
         "EUR",
         "GBP"
       ],
-      "displayed_on_site": false,
+      "displayed_on_site": true,
       "licence_sites": [
         1,
         3,
         5
       ],
-      "note": "Amounts are not copied here: the checkout shows the authoritative price, currency and taxes before payment. The dated read-only observation is kept in the private evidence register.",
-      "observed_on": "2026-10-12",
+      "note": "Published monthly and annual plan prices, read from the provider API and checked in the public checkout. Renewal values are retained only where displayed. Taxes and the final total are confirmed at checkout.",
+      "observed_on": "2026-10-15",
       "plan": "PRO",
       "source": "freemius_checkout"
     },

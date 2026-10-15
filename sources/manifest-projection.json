@@ -122,9 +122,19 @@
       {
         "edition": "PRO",
         "id": "sync.scheduled",
-        "implementation": "partial"
+        "implementation": "delivered"
       }
     ],
+    "current_validation": {
+      "confirmed_by": "Gautier Dorval",
+      "confirmed_on": "2026-10-15",
+      "independent_audit": false,
+      "kind": "publisher_confirmation",
+      "publisher": "PAGUP",
+      "scope": "Necessary launch tests with a real Shopify store were completed; the publisher confirms operation.",
+      "test_execution_date": null,
+      "tested_environment": null
+    },
     "documented_version": "1.0.0",
     "not_available": [
       "Saved advanced facets and merchandising rules",
@@ -152,6 +162,7 @@
   },
   "canonical_surfaces": {
     "ai_governance": "https://fy2press.com/ai-governance/",
+    "architecture_reference": "https://github.com/GautierDorval/fy2press",
     "changelog": "https://fy2press.com/changelog/",
     "documentation": "https://fy2press.com/docs/",
     "privacy": "https://fy2press.com/privacy/",

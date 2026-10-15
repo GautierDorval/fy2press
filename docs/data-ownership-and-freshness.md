@@ -2,12 +2,12 @@
 
 [Français canadien](../fr-ca/docs/data-ownership-and-freshness.md) · [Start here](../README.md)
 
-A synchronized record, an API cache and a rendered page are different observations. The table below states the source and reader for each datum; it does not promise that all readers refresh together.
+Manage commercial product information in Shopify and write guides and editorial content in WordPress. After a Shopify change, synchronize the stored catalog and refresh the relevant page cache when needed. The table identifies who manages each value and how it reaches the page; stored records, component requests and HTML caches can refresh separately.
 
 | Datum | Management source and storage | Render reader | Refresh and synchronization effect |
 | --- | --- | --- | --- |
 | Title | Shopify; saved as post title and product observation. | WordPress lists can read the saved title; product components can read cached product data. | Synchronization can reapply the title. A product fetch is not proof that every title changed. |
-| Slug / handle | Shopify handle; WordPress post_name and product metadata. | WordPress routing and product URL generation. | Synchronization can reapply it. Review old links; an automatic redirect is not established. |
+| Slug / handle | Shopify handle; WordPress post_name and product metadata. | WordPress routing and product URL generation. | Synchronization can reapply it. WordPress can retain old slugs; redirect behavior depends on the page type and site configuration. Review important existing links. |
 | Source description | Shopify description; product cache/meta. | TemplateDataProvider and the selected description component. | A product fetch may refresh its observation. Do not confuse this with preserved WordPress editorial content. |
 | WordPress editorial content | WordPress editor; post_content, pages and articles. | The selected template must actually render that content. | Existing post_content is preserved by inspected synchronization updates; theme and component selection still determine visibility. |
 | Images | Shopify URLs retained in product observations; optional WordPress fallback. | Browser requests the image URL emitted by the component. | No local media mirroring is established. Cached HTML and the remote image service have separate lifetimes. |
@@ -23,17 +23,17 @@ A synchronized record, an API cache and a rendered page are different observatio
 
 These rules complete every row above:
 
-- **Cache:** `CacheService` uses acquisition age and context. The observed default configured duration is 1,800 seconds; HTML or external caches may retain other values. Restoring an evicted cache does not renew the observation’s age.
+- **Cache:** `CacheService` uses acquisition age and context. The observed default configured duration is 1,800 seconds; this is not a fixed 30-minute delay for every page. HTML or external caches may retain other values. Restoring an evicted cache does not renew the observation’s age.
 - **Trigger:** synchronized fields change during synchronization; some product components can request Shopify between synchronizations. WordPress prose changes when an editor saves it; the cart follows its own requests.
 - **Interruption:** incomplete discovery, interrupted writing and a failed render-time request are different cases. Components may retain old display data without accepting it as evidence of a purchasable variant. Do not infer write-phase resumption merely from “batches.”
-- **Available test:** native registry and local component examples were executed against the identified package. Connected reconciliation, real refresh delays and remote cart behavior were not retested here. The source assignments above are static observations of public services.
+- **Observations:** the publisher confirmed real-store launch tests on October 15, 2026. The native registry and local component examples remain dated observations of the identified package. The source assignments above describe the inspected public services; no universal refresh latency follows from either record.
 - **Limit:** for each row, record the value before change, Shopify change time, next synchronization, cache state and actual rendered value. One product-page measurement does not qualify a grid.
 
 ## Separate synchronization contracts
 
 Discovery traverses Shopify pages and prepares a catalog observation. Writing reconciles WordPress records, states and relationships. Resuming discovery does not establish resuming writes. The current package has batched processing paths; their static presence is not an interruption test.
 
-FREE requires manual initiation. PRO describes cron scheduling under an active licence; execution can wait for the next trigger. Scheduling is not a webhook. Webhook queues and multilingual catalog synchronization are not established as available in the publisher’s scope.
+FREE requires manual initiation. PRO offers hourly, twice-daily or daily synchronization through WP-Cron with an active licence. WordPress must execute scheduled events, through site traffic or a configured scheduler. Scheduling is not a real-time webhook service. Webhook queues and multilingual catalog synchronization are not established as available in the publisher’s scope.
 
 For a frequently changing catalog, define a maximum delay for each row and test each change separately. Include cache expiry and network failure in an authorized environment.
 

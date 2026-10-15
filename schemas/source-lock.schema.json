@@ -70,6 +70,12 @@
               "string",
               "null"
             ]
+          },
+          "acquisition_kind": {
+            "enum": [
+              "http",
+              "local_candidate"
+            ]
           }
         },
         "required": [

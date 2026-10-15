@@ -16,8 +16,8 @@
     "sync.manual_full_catalog": {
       "statement_en": "Manually synchronize the catalog",
       "statement_fr_ca": "Synchroniser manuellement le catalogue",
-      "limit_en": "Publisher partial status; discovery, writing and interruption recovery need separate checks. No connected resumption test here.",
-      "limit_fr_ca": "Statut partiel de l’éditeur; découverte, écriture et reprise exigent des vérifications distinctes. Aucun essai connecté de reprise ici."
+      "limit_en": "Start synchronization manually in FREE. Discovery resumes in batches; interrupted writes do not automatically resume.",
+      "limit_fr_ca": "Lancez la synchronisation manuellement dans FREE. La découverte reprend par lots; les écritures interrompues ne reprennent pas automatiquement."
     },
     "storefront.default_templates": {
       "statement_en": "Use included catalog templates",
@@ -76,14 +76,14 @@
     "builders.elementor_native": {
       "statement_en": "Use native Elementor components",
       "statement_fr_ca": "Utiliser les composants Elementor natifs",
-      "limit_en": "PRO and a separately licensed builder; exact connected/licensed combination not tested here.",
-      "limit_fr_ca": "PRO et constructeur sous licence distincte; combinaison exacte sous licence non testée ici."
+      "limit_en": "PRO and a separately licensed Elementor builder; use the native components included in the edition.",
+      "limit_fr_ca": "PRO et constructeur Elementor sous licence distincte; utilisez les composants natifs de cette édition."
     },
     "builders.wpbakery_native": {
       "statement_en": "Use native WPBakery components",
       "statement_fr_ca": "Utiliser les composants WPBakery natifs",
-      "limit_en": "PRO and a separately licensed builder; exact connected/licensed combination not tested here.",
-      "limit_fr_ca": "PRO et constructeur sous licence distincte; combinaison exacte sous licence non testée ici."
+      "limit_en": "PRO and a separately licensed WPBakery builder; use the native components included in the edition.",
+      "limit_fr_ca": "PRO et constructeur WPBakery sous licence distincte; utilisez les composants natifs de cette édition."
     },
     "design.visual_design_advanced": {
       "statement_en": "Use advanced design controls",
@@ -118,8 +118,8 @@
     "sync.scheduled": {
       "statement_en": "Schedule catalog synchronization",
       "statement_fr_ca": "Planifier la synchronisation du catalogue",
-      "limit_en": "Active PRO licence and WordPress cron; not instant. Live-store qualification is not established by this reference.",
-      "limit_fr_ca": "Licence PRO active et cron WordPress; non instantané. La qualification en boutique réelle n’est pas établie par cette référence."
+      "limit_en": "Active PRO licence; hourly, twice daily or daily through WP-Cron. WordPress must execute scheduled events; no real-time webhook service.",
+      "limit_fr_ca": "Licence PRO active; chaque heure, deux fois par jour ou chaque jour avec WP-Cron. WordPress doit exécuter les événements planifiés; ce n’est pas un service de webhooks en temps réel."
     }
   }
 }
