@@ -94,9 +94,9 @@
     },
     {
       "source": "ECOSYSTEM.md",
-      "source_sha256": "ed999f4af885a8fcf44bdb7ee23f1a6a2d4c977cac4406376d0683283b106581",
+      "source_sha256": "2eaeb2b8efae94f16ef94d8644dcfe19329998145c7d075b3815fc68389b6526",
       "translation": "fr-ca/ECOSYSTEM.md",
-      "translation_sha256": "7ff530f4b3203b8d65845758974227d496fb0f38faf10199d5fd770f89b901ae",
+      "translation_sha256": "e101b13e4e99956c40fbfe0f81f8d98a6146ff18cb9bd535d05e9457106d41ac",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
       "reviewed_on": "2026-10-15"
