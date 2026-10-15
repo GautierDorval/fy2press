@@ -16,7 +16,12 @@ Context: `anywhere`. FREE 1.0.0. Compatibility alias: `shopipress_product`. [Sou
 [fy2press_product id="123"]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 4041 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -39,7 +44,12 @@ Context: `product`. FREE 1.0.0. Compatibility alias: `shopipress_product_title`.
 [fy2press_product_title]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 89 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -67,7 +77,12 @@ Context: `product`. FREE 1.0.0. Compatibility alias: `shopipress_product_descrip
 [fy2press_product_description content_type="excerpt"]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 173 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -100,7 +115,12 @@ Context: `product`. FREE 1.0.0. Compatibility alias: `shopipress_product_price`.
 [fy2press_product_price type="range"]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 67 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -135,7 +155,12 @@ Context: `product`. FREE 1.0.0. Compatibility alias: `shopipress_product_image`.
 [fy2press_product_image link_to="product"]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 272 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -168,7 +193,12 @@ Context: `product`. FREE 1.0.0. Compatibility alias: `shopipress_product_url`. [
 [fy2press_product_url]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 63 returned bytes, 0 bytes echoed outside the return. URL by default; HTML with format=link.
+
+</details>
 
 `format="url"` returns a scalar URL; `format="link"` returns an HTML link. Both modes were executed. Without a product the code can return an illustrative URL; always supply valid context.
 
@@ -192,7 +222,12 @@ Context: `product`. FREE 1.0.0. Compatibility alias: `shopipress_product_vendor`
 [fy2press_product_vendor]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 86 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -205,7 +240,7 @@ Limit: local returned HTML does not qualify browser interactions, theme compatib
 
 ## fy2press_product_type
 
-Expected result: The product type when available; this fixture returned no content.
+Expected result: The product type when available; the inspected FREE 1.0.0 data path has a field-name mismatch. See the compatibility notes.
 
 Context: `product`. FREE 1.0.0. Compatibility alias: `shopipress_product_type`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/product/ProductType.php).
 
@@ -213,9 +248,14 @@ Context: `product`. FREE 1.0.0. Compatibility alias: `shopipress_product_type`. 
 [fy2press_product_type]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 0 returned bytes, 0 bytes echoed outside the return. HTML string.
 
-**Empty output observed with this fixture; populated display is not demonstrated.**
+</details>
+
+**Product-type display not demonstrated: the local result is empty.** [Known limitation](../docs/compatibility-and-evidence.md).
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -236,7 +276,12 @@ Context: `product`. FREE 1.0.0. Compatibility alias: `shopipress_product_tags`. 
 [fy2press_product_tags]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 285 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -265,7 +310,12 @@ Context: `product`. FREE 1.0.0. Compatibility alias: `shopipress_product_gallery
 [fy2press_product_gallery]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 263 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -291,7 +341,12 @@ Context: `product`. FREE 1.0.0. Compatibility alias: `shopipress_product_availab
 [fy2press_product_availability]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 156 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -317,7 +372,12 @@ Context: `product`. FREE 1.0.0. Compatibility alias: `shopipress_product_variant
 [fy2press_product_variants]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 602 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -342,7 +402,12 @@ Context: `product`. FREE 1.0.0. Compatibility alias: `shopipress_product_collect
 [fy2press_product_collections]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 353 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -371,7 +436,12 @@ Context: `product`. FREE 1.0.0. Compatibility alias: `shopipress_add_to_cart`. [
 [fy2press_add_to_cart]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 1077 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -389,7 +459,12 @@ Context: `product`. FREE 1.0.0. Compatibility alias: `shopipress_buy_now`. [Sour
 [fy2press_buy_now]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 475 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -410,7 +485,12 @@ Context: `product`. FREE 1.0.0. Compatibility alias: `shopipress_related_product
 [fy2press_related_products limit="4"]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 4305 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -432,7 +512,12 @@ Context: `anywhere`. FREE 1.0.0. Compatibility alias: `shopipress_collection`. [
 [fy2press_collection handle="morrowfield"]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 6155 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -457,7 +542,12 @@ Context: `anywhere`. FREE 1.0.0. Compatibility alias: `shopipress_products_loop`
 [fy2press_products_loop collection="morrowfield" limit="12"]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 3207 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -481,7 +571,12 @@ Context: `collection`. FREE 1.0.0. Compatibility alias: `shopipress_collection_t
 [fy2press_collection_title]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 90 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -502,7 +597,12 @@ Context: `collection`. FREE 1.0.0. Compatibility alias: `shopipress_collection_d
 [fy2press_collection_description]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 161 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -522,7 +622,12 @@ Context: `loop`. FREE 1.0.0. Compatibility alias: `shopipress_collection_sort`. 
 [fy2press_collection_sort]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 822 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -545,7 +650,12 @@ Context: `loop`. FREE 1.0.0. Compatibility alias: `shopipress_product_search`. [
 [fy2press_product_search]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 482 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -570,7 +680,12 @@ Context: `loop`. FREE 1.0.0. Compatibility alias: `shopipress_collection_filter`
 [fy2press_collection_filter type="dropdown"]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 425 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -601,7 +716,12 @@ Context: `loop`. FREE 1.0.0. Compatibility alias: `shopipress_tag_filter`. [Sour
 [fy2press_tag_filter type="tags"]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 226 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 Dynamic default: tag-filter type follows a valid saved design setting; otherwise `tags`.
 
@@ -635,7 +755,12 @@ Context: `loop`. FREE 1.0.0. Compatibility alias: `shopipress_filter_sidebar`. [
 [fy2press_filter_sidebar][fy2press_product_search][fy2press_collection_filter][/fy2press_filter_sidebar]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 1234 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -661,7 +786,12 @@ Context: `loop`. FREE 1.0.0. Compatibility alias: `shopipress_price_filter`. [So
 [fy2press_price_filter min="0" max="250"]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 3186 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -685,7 +815,12 @@ Context: `loop`. FREE 1.0.0. Compatibility alias: `shopipress_availability_filte
 [fy2press_availability_filter type="checkbox"]
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 511 returned bytes, 0 bytes echoed outside the return. HTML string.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |

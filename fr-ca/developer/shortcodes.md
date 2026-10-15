@@ -16,7 +16,12 @@ Contexte: `anywhere`. FREE 1.0.0. Alias de compatibilité: `shopipress_product`.
 [fy2press_product id="123"]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 4041 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -39,7 +44,12 @@ Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_ti
 [fy2press_product_title]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 89 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -67,7 +77,12 @@ Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_de
 [fy2press_product_description content_type="excerpt"]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 173 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -100,7 +115,12 @@ Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_pr
 [fy2press_product_price type="range"]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 67 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -135,7 +155,12 @@ Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_im
 [fy2press_product_image link_to="product"]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 272 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -168,7 +193,12 @@ Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_ur
 [fy2press_product_url]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 63 octets retournés, 0 octets imprimés hors retour. URL par défaut; HTML avec format=link.
+
+</details>
 
 `format="url"` retourne une URL scalaire; `format="link"` retourne un lien HTML. Les deux modes ont été exécutés. Sans produit, le code peut retourner une URL illustrative; toujours fournir un contexte valide.
 
@@ -192,7 +222,12 @@ Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_ve
 [fy2press_product_vendor]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 86 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -205,7 +240,7 @@ Limite : un retour HTML local ne qualifie ni interactions navigateur, ni thème
 
 ## fy2press_product_type
 
-Résultat attendu: Le type de produit lorsqu’il est disponible; cette fixture n’a retourné aucun contenu.
+Résultat attendu: Le type de produit lorsqu’il est disponible ; le parcours FREE 1.0.0 examiné comporte une incohérence de nom de champ. Consultez les notes de compatibilité.
 
 Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_type`. [Source](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/product/ProductType.php).
 
@@ -213,9 +248,14 @@ Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_ty
 [fy2press_product_type]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 0 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
 
-**Sortie vide observée avec cette fixture; affichage rempli non démontré.**
+</details>
+
+**Affichage du type non démontré : le résultat local est vide.** [Limite connue](../docs/compatibility-and-evidence.md).
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -236,7 +276,12 @@ Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_ta
 [fy2press_product_tags]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 285 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -265,7 +310,12 @@ Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_ga
 [fy2press_product_gallery]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 263 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -291,7 +341,12 @@ Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_av
 [fy2press_product_availability]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 156 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -317,7 +372,12 @@ Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_va
 [fy2press_product_variants]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 602 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -342,7 +402,12 @@ Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_co
 [fy2press_product_collections]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 353 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -371,7 +436,12 @@ Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_add_to_car
 [fy2press_add_to_cart]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 1077 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -389,7 +459,12 @@ Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_buy_now`. 
 [fy2press_buy_now]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 475 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -410,7 +485,12 @@ Contexte: `product`. FREE 1.0.0. Alias de compatibilité: `shopipress_related_pr
 [fy2press_related_products limit="4"]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 4305 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -432,7 +512,12 @@ Contexte: `anywhere`. FREE 1.0.0. Alias de compatibilité: `shopipress_collectio
 [fy2press_collection handle="morrowfield"]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 6155 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -457,7 +542,12 @@ Contexte: `anywhere`. FREE 1.0.0. Alias de compatibilité: `shopipress_products_
 [fy2press_products_loop collection="morrowfield" limit="12"]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 3207 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -481,7 +571,12 @@ Contexte: `collection`. FREE 1.0.0. Alias de compatibilité: `shopipress_collect
 [fy2press_collection_title]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 90 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -502,7 +597,12 @@ Contexte: `collection`. FREE 1.0.0. Alias de compatibilité: `shopipress_collect
 [fy2press_collection_description]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 161 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -522,7 +622,12 @@ Contexte: `loop`. FREE 1.0.0. Alias de compatibilité: `shopipress_collection_so
 [fy2press_collection_sort]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 822 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -545,7 +650,12 @@ Contexte: `loop`. FREE 1.0.0. Alias de compatibilité: `shopipress_product_searc
 [fy2press_product_search]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 482 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -570,7 +680,12 @@ Contexte: `loop`. FREE 1.0.0. Alias de compatibilité: `shopipress_collection_fi
 [fy2press_collection_filter type="dropdown"]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 425 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -601,7 +716,12 @@ Contexte: `loop`. FREE 1.0.0. Alias de compatibilité: `shopipress_tag_filter`. 
 [fy2press_tag_filter type="tags"]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 226 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 Défaut dynamique : le type du filtre d’étiquettes vient du design sauvegardé valide; sinon `tags`.
 
@@ -635,7 +755,12 @@ Contexte: `loop`. FREE 1.0.0. Alias de compatibilité: `shopipress_filter_sideba
 [fy2press_filter_sidebar][fy2press_product_search][fy2press_collection_filter][/fy2press_filter_sidebar]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 1234 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -661,7 +786,12 @@ Contexte: `loop`. FREE 1.0.0. Alias de compatibilité: `shopipress_price_filter`
 [fy2press_price_filter min="0" max="250"]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 3186 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -685,7 +815,12 @@ Contexte: `loop`. FREE 1.0.0. Alias de compatibilité: `shopipress_availability_
 [fy2press_availability_filter type="checkbox"]
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 511 octets retournés, 0 octets imprimés hors retour. chaîne HTML.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |

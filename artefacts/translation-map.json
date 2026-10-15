@@ -4,12 +4,12 @@
   "translations": [
     {
       "source": "developer/blocks.md",
-      "source_sha256": "906eb33bd979db2d176e835b02f2239bd31d921f918656d135ea3c75eb4f17d2",
+      "source_sha256": "498709b731e9cbc76408f9729bc12712b1dfcb59f0cc903fe69db180fed49357",
       "translation": "fr-ca/developer/blocks.md",
-      "translation_sha256": "25a896c441d145804c63d2db3078583ad174cb70e2531493ab31384959609c66",
+      "translation_sha256": "3e435e1cab406510693fd12268ccab1ef1a0424a18f4aae89c140292c046dce1",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
-      "reviewed_on": "2026-10-14"
+      "reviewed_on": "2026-10-15"
     },
     {
       "source": "developer/extension-points.md",
@@ -31,12 +31,12 @@
     },
     {
       "source": "developer/shortcodes.md",
-      "source_sha256": "20bd4b2918825585a541c87789fb98a578403ac13a4ac3489eb1250ff4f5ef1d",
+      "source_sha256": "81d9da4622b3971f6e791b78d14fada4ba6f3597770b9059df03a62f83164f38",
       "translation": "fr-ca/developer/shortcodes.md",
-      "translation_sha256": "e4228df0ab56f97ed8bd15afdbea64dc22f50757909fadde2c4a4f48eb621553",
+      "translation_sha256": "807b0ff7699978df6332f6f39b8b120cacb1899445fc649a86d3c4487801dc9d",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
-      "reviewed_on": "2026-10-14"
+      "reviewed_on": "2026-10-15"
     },
     {
       "source": "docs/architecture.md",
@@ -49,12 +49,12 @@
     },
     {
       "source": "docs/compatibility-and-evidence.md",
-      "source_sha256": "60618722ed7c6b0e97ff1467c1a042359b5694d5711b0e23d5015b0a80f8c13c",
+      "source_sha256": "5cdb855129cba716abd7ca05134a31fc2ddac94eded5982f208b295d23066633",
       "translation": "fr-ca/docs/compatibility-and-evidence.md",
-      "translation_sha256": "dfa8f186a8105ba459d7ecd60a0388860dcaf2023010bcea2eb3f7e6436ac00a",
+      "translation_sha256": "aa2296419ce3d1eef5d1ce56a40ccadbb9d08b9dd5f4d603ef45fc6e0d1a9910",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
-      "reviewed_on": "2026-10-14"
+      "reviewed_on": "2026-10-15"
     },
     {
       "source": "docs/data-ownership-and-freshness.md",
@@ -85,12 +85,12 @@
     },
     {
       "source": "docs/seo-decision-matrix.md",
-      "source_sha256": "04aaf3f9b9cd6318d8039b0ce13603db8817ef030fdc23b12a2153e6d0e3ca63",
+      "source_sha256": "d90106207e4181e714aab445ea14af30bc5c89f5d355c19d94e227d3edc38b37",
       "translation": "fr-ca/docs/seo-decision-matrix.md",
-      "translation_sha256": "8cf5b1e0045cad7a7cd9a5daebb23c10bf6abdea2741e18fed76d4bcdb090ef2",
+      "translation_sha256": "4554fc1530692d0005788fc50d7224a58f9c583e319e65aab3f98cd348f26a89",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
-      "reviewed_on": "2026-10-14"
+      "reviewed_on": "2026-10-15"
     },
     {
       "source": "ECOSYSTEM.md",
@@ -130,12 +130,12 @@
     },
     {
       "source": "README.md",
-      "source_sha256": "f4c5270aca23c466c3b0e0f1965269524c7f86ad2fce31f9e5e764c7c202beed",
+      "source_sha256": "ec007364a25a0c3338fbe1998ddfe825b55a3ab6fd3e0204abd2964b996dcaa0",
       "translation": "fr-ca/README.md",
-      "translation_sha256": "befa3d4b048ed3f0ecae7bf040e715aff4934fe718745eff040766dce3ed2b51",
+      "translation_sha256": "a51a3d738e91a6ed8c56d6ace35cb11e40ef0f314b194113c2fdd7bd9c72f7d2",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
       "reviewer": "Codex",
-      "reviewed_on": "2026-10-14"
+      "reviewed_on": "2026-10-15"
     },
     {
       "source": "reusable/agency-handover.md",

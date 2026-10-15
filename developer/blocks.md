@@ -16,7 +16,12 @@ Context: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/
 <!-- wp:shopipress/title /-->
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 160 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -94,7 +99,12 @@ Context: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/
 <!-- wp:shopipress/price /-->
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 101 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -175,7 +185,12 @@ Context: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/
 <!-- wp:shopipress/description /-->
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 248 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -256,7 +271,12 @@ Context: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/
 <!-- wp:shopipress/image /-->
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 313 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -314,7 +334,12 @@ Context: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/
 <!-- wp:shopipress/variants /-->
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 814 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -380,7 +405,12 @@ Context: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/
 <!-- wp:shopipress/gallery /-->
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 309 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -446,7 +476,12 @@ Context: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/
 <!-- wp:shopipress/add-to-cart /-->
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 916 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -541,7 +576,12 @@ Context: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/
 <!-- wp:shopipress/availability /-->
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 478 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -626,7 +666,12 @@ Context: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/
 <!-- wp:shopipress/vendor /-->
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 202 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -706,7 +751,12 @@ Context: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/
 <!-- wp:shopipress/collections /-->
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 465 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -784,7 +834,12 @@ Context: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/
 <!-- wp:shopipress/tags /-->
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 378 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -875,7 +930,12 @@ Context: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn/
 <!-- wp:shopipress/buy-now /-->
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 655 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -968,7 +1028,12 @@ Context: `collection`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!s
 <!-- wp:shopipress/collection-title /-->
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 178 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -1048,7 +1113,12 @@ Context: `collection`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!s
 <!-- wp:shopipress/collection-description /-->
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 274 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -1123,7 +1193,12 @@ Context: `anywhere`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn
 <!-- wp:shopipress/products-loop /-->
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 3234 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -1227,7 +1302,12 @@ Context: `collection`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!s
 <!-- wp:shopipress/collection-sort /-->
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 668 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |
@@ -1301,7 +1381,12 @@ Context: `collection`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!s
 <!-- wp:shopipress/collection-products-per-page /-->
 ```
 
+<details>
+<summary>Local test details</summary>
+
 Local test trace: 493 returned bytes, 0 bytes echoed outside the return. Returned HTML.
+
+</details>
 
 | Attribute | Type | Default / contract |
 | --- | --- | --- |

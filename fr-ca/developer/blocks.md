@@ -16,7 +16,12 @@ Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn
 <!-- wp:shopipress/title /-->
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 160 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -94,7 +99,12 @@ Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn
 <!-- wp:shopipress/price /-->
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 101 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -175,7 +185,12 @@ Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn
 <!-- wp:shopipress/description /-->
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 248 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -256,7 +271,12 @@ Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn
 <!-- wp:shopipress/image /-->
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 313 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -314,7 +334,12 @@ Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn
 <!-- wp:shopipress/variants /-->
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 814 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -380,7 +405,12 @@ Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn
 <!-- wp:shopipress/gallery /-->
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 309 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -446,7 +476,12 @@ Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn
 <!-- wp:shopipress/add-to-cart /-->
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 916 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -541,7 +576,12 @@ Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn
 <!-- wp:shopipress/availability /-->
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 478 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -626,7 +666,12 @@ Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn
 <!-- wp:shopipress/vendor /-->
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 202 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -706,7 +751,12 @@ Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn
 <!-- wp:shopipress/collections /-->
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 465 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -784,7 +834,12 @@ Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn
 <!-- wp:shopipress/tags /-->
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 378 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -875,7 +930,12 @@ Contexte: `product`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!svn
 <!-- wp:shopipress/buy-now /-->
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 655 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -968,7 +1028,12 @@ Contexte: `collection`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!
 <!-- wp:shopipress/collection-title /-->
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 178 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -1048,7 +1113,12 @@ Contexte: `collection`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!
 <!-- wp:shopipress/collection-description /-->
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 274 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -1123,7 +1193,12 @@ Contexte: `anywhere`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!sv
 <!-- wp:shopipress/products-loop /-->
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 3234 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -1227,7 +1302,12 @@ Contexte: `collection`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!
 <!-- wp:shopipress/collection-sort /-->
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 668 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |
@@ -1301,7 +1381,12 @@ Contexte: `collection`. FREE 1.0.0. [Source](https://plugins.svn.wordpress.org/!
 <!-- wp:shopipress/collection-products-per-page /-->
 ```
 
+<details>
+<summary>Détails de l’essai local</summary>
+
 Trace de l’essai local: 493 octets retournés, 0 octets imprimés hors retour. HTML retourné.
+
+</details>
 
 | Attribut | Type | Défaut / contrat |
 | --- | --- | --- |

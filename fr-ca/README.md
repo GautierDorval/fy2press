@@ -25,6 +25,6 @@ Installez FREE depuis [WordPress.org](https://wordpress.org/plugins/fy2press/). 
 
 Cette référence publique décrit FREE 1.0.0 à partir du paquet collecté le 14 octobre 2026. Observations du produit, portée des essais et maturité documentaire restent distinctes. Consultez la [référence de version](../artefacts/release-reference.json) et la [préséance des sources](../artefacts/source-precedence.json).
 
-Les textes et modèles originaux sont offerts sous CC BY 4.0, les outils originaux sous MIT. Ces droits ont été autorisés lors de la publication du 14 octobre 2026. [Licences et exclusions de marque](../LICENSE.md). Préparation assistée par IA; aucune révision humaine indépendante ou linguistique native n’est revendiquée. Coordination documentaire : Gautier Dorval pour PAGUP.
+Les textes et modèles originaux sont offerts sous CC BY 4.0, les outils originaux sous MIT. Ces droits ont été autorisés lors de la publication du 14 octobre 2026. [Licences et exclusions de marque](../LICENSE.md). Publication et maintenance : PAGUP, sous la coordination de Gautier Dorval. [Provenance éditoriale](../THIRD-PARTY-NOTICES.md).
 
 La dernière édition documentaire vérifiée est [docs-v1.0.0-rc.1](https://github.com/GautierDorval/fy2press/releases/tag/docs-v1.0.0-rc.1), publiée le 14 octobre 2026. Les changements préparés après ce tag figurent dans le [journal](../CHANGELOG.md); ils ne déplacent pas la version publiée.

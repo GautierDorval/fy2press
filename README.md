@@ -25,6 +25,6 @@ Install FREE from [WordPress.org](https://wordpress.org/plugins/fy2press/). Use 
 
 This public reference describes FREE 1.0.0 from the package collected on October 14, 2026. Product observations, test scope and document maturity are separate. See the [release reference](artefacts/release-reference.json) and [source precedence](artefacts/source-precedence.json).
 
-Original text and templates are offered under CC BY 4.0, original tools under MIT. These grants were authorized for the October 14, 2026 publication. [Licensing and brand exclusions](LICENSE.md). Prepared with AI assistance; no independent human or native-language review is claimed. Maintained by Gautier Dorval for PAGUP.
+Original text and templates are offered under CC BY 4.0, original tools under MIT. These grants were authorized for the October 14, 2026 publication. [Licensing and brand exclusions](LICENSE.md). Published and maintained by PAGUP, coordinated by Gautier Dorval. [Editorial provenance](THIRD-PARTY-NOTICES.md).
 
 The latest verified documentary edition is [docs-v1.0.0-rc.1](https://github.com/GautierDorval/fy2press/releases/tag/docs-v1.0.0-rc.1), published October 14, 2026. Changes prepared after that tag are listed in the [changelog](CHANGELOG.md); they do not move the published version.

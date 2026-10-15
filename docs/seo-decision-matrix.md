@@ -23,6 +23,14 @@ A canonical is a preference for duplicate or very similar content, not a guarant
 | [SEO-11](#seo-11--unavailable-removed-or-renamed) | Unavailable, removed or renamed |
 | [SEO-12](#seo-12--several-languages) | Several languages |
 
+## Checks shared by all twelve cases
+
+Apply these checks to every decision below. Each case then describes what changes for that page.
+
+- **SEO extension:** Inspect the installed SEO extension and version; registered integration hooks do not prove every version compatible.
+- **Verification:** Inspect rendered canonical, robots, sitemap inclusion and internal links; then observe the selected search URL where available.
+- **Version:** FREE 1.0.0 / SVN 3744276
+
 ## SEO-01 · Similar product, Shopify preferred
 
 | Criterion | Decision |
@@ -37,10 +45,7 @@ A canonical is a preference for duplicate or very similar content, not a guarant
 | WordPress action | Enable product indexing and select the Shopify product canonical source; inspect output. |
 | Shopify action | Keep the preferred product reachable and review its canonical, sitemap and links. |
 | Fy2Press control | FREE product canonical source; not a collection setting. |
-| SEO extension | Inspect the installed SEO extension and version; registered integration hooks do not prove every version compatible. |
 | Risks | Conflicting links or an unavailable Shopify destination. |
-| Verification | Inspect rendered canonical, robots, sitemap inclusion and internal links; then observe the selected search URL where available. |
-| Version | FREE 1.0.0 / SVN 3744276 |
 
 ## SEO-02 · Enriched WordPress product
 
@@ -56,10 +61,7 @@ A canonical is a preference for duplicate or very similar content, not a guarant
 | WordPress action | Keep product canonical source WordPress; verify self-canonical output with the SEO extension. |
 | Shopify action | Review Shopify separately; Fy2Press does not edit that platform’s canonical. |
 | Fy2Press control | FREE product preference, with Shopify changes outside the plugin. |
-| SEO extension | Inspect the installed SEO extension and version; registered integration hooks do not prove every version compatible. |
 | Risks | Assuming one local option consolidates both sites. |
-| Verification | Inspect rendered canonical, robots, sitemap inclusion and internal links; then observe the selected search URL where available. |
-| Version | FREE 1.0.0 / SVN 3744276 |
 
 ## SEO-03 · Original buying guide
 
@@ -75,10 +77,7 @@ A canonical is a preference for duplicate or very similar content, not a guarant
 | WordPress action | Use normal WordPress/SEO page controls and link relevant products. |
 | Shopify action | Maintain product destinations; no cross-canonical needed merely for links. |
 | Fy2Press control | Product canonical settings do not turn an original guide into a product. |
-| SEO extension | Inspect the installed SEO extension and version; registered integration hooks do not prove every version compatible. |
 | Risks | Canonicalizing a valuable guide to an unrelated product. |
-| Verification | Inspect rendered canonical, robots, sitemap inclusion and internal links; then observe the selected search URL where available. |
-| Version | FREE 1.0.0 / SVN 3744276 |
 
 ## SEO-04 · Useful WordPress collection
 
@@ -94,10 +93,7 @@ A canonical is a preference for duplicate or very similar content, not a guarant
 | WordPress action | Review collection indexing and the taxonomy canonical emitted by the SEO extension. |
 | Shopify action | Review any corresponding Shopify collection independently. |
 | Fy2Press control | FREE collection indexing; no Shopify collection-canonical selector found in the inspected service. |
-| SEO extension | Inspect the installed SEO extension and version; registered integration hooks do not prove every version compatible. |
 | Risks | Applying the product canonical setting to taxonomies. |
-| Verification | Inspect rendered canonical, robots, sitemap inclusion and internal links; then observe the selected search URL where available. |
-| Version | FREE 1.0.0 / SVN 3744276 |
 
 ## SEO-05 · Competing collection pages
 
@@ -113,10 +109,7 @@ A canonical is a preference for duplicate or very similar content, not a guarant
 | WordPress action | Use verified taxonomy controls or a separately maintained canonical implementation when justified. |
 | Shopify action | Coordinate the matching collection and links with its owner. |
 | Fy2Press control | Indexing is available; automatic collection canonical mapping is not established. |
-| SEO extension | Inspect the installed SEO extension and version; registered integration hooks do not prove every version compatible. |
 | Risks | Consolidating pages with different intent. |
-| Verification | Inspect rendered canonical, robots, sitemap inclusion and internal links; then observe the selected search URL where available. |
-| Version | FREE 1.0.0 / SVN 3744276 |
 
 ## SEO-06 · Seasonal selection
 
@@ -132,10 +125,7 @@ A canonical is a preference for duplicate or very similar content, not a guarant
 | WordPress action | Publish original copy and a loop; plan retention, update or a justified redirect. |
 | Shopify action | Maintain product availability and offers. |
 | Fy2Press control | FREE composition; no automatic campaign expiry contract. |
-| SEO extension | Inspect the installed SEO extension and version; registered integration hooks do not prove every version compatible. |
 | Risks | Orphaned seasonal pages and obsolete offers. |
-| Verification | Inspect rendered canonical, robots, sitemap inclusion and internal links; then observe the selected search URL where available. |
-| Version | FREE 1.0.0 / SVN 3744276 |
 
 ## SEO-07 · Thin tags
 
@@ -151,10 +141,7 @@ A canonical is a preference for duplicate or very similar content, not a guarant
 | WordPress action | Review tag indexing; default observed setting is false. Keep noindex crawlable when removal from results is intended. |
 | Shopify action | Review Shopify tags separately; no taxonomy policy is pushed there. |
 | Fy2Press control | FREE tag indexing, separate from products and collections. |
-| SEO extension | Inspect the installed SEO extension and version; registered integration hooks do not prove every version compatible. |
 | Risks | Using robots.txt as a canonical control. |
-| Verification | Inspect rendered canonical, robots, sitemap inclusion and internal links; then observe the selected search URL where available. |
-| Version | FREE 1.0.0 / SVN 3744276 |
 
 ## SEO-08 · Editorialized tags
 
@@ -170,10 +157,7 @@ A canonical is a preference for duplicate or very similar content, not a guarant
 | WordPress action | Assess consequences before enabling the global tag index option; inspect all affected archives. |
 | Shopify action | No matching Shopify action is implied. |
 | Fy2Press control | FREE global taxonomy setting; per-tag exceptions are not established here. |
-| SEO extension | Inspect the installed SEO extension and version; registered integration hooks do not prove every version compatible. |
 | Risks | Making every thin tag indexable for one useful topic. |
-| Verification | Inspect rendered canonical, robots, sitemap inclusion and internal links; then observe the selected search URL where available. |
-| Version | FREE 1.0.0 / SVN 3744276 |
 
 ## SEO-09 · Filters and sorting
 
@@ -189,10 +173,7 @@ A canonical is a preference for duplicate or very similar content, not a guarant
 | WordPress action | Inspect actual parameter URLs and SEO output; create dedicated useful pages where justified. |
 | Shopify action | Review any corresponding Shopify filtering independently. |
 | Fy2Press control | FREE discovery controls do not establish a universal parameter canonical policy. |
-| SEO extension | Inspect the installed SEO extension and version; registered integration hooks do not prove every version compatible. |
 | Risks | Indexing arbitrary combinations or hiding all useful selections. |
-| Verification | Inspect rendered canonical, robots, sitemap inclusion and internal links; then observe the selected search URL where available. |
-| Version | FREE 1.0.0 / SVN 3744276 |
 
 ## SEO-10 · Selected variants
 
@@ -208,10 +189,7 @@ A canonical is a preference for duplicate or very similar content, not a guarant
 | WordPress action | Check selected state, visible price, structured offer and returned URL together. |
 | Shopify action | Confirm the selected merchandise and checkout context. |
 | Fy2Press control | Variant controls exist; distinct native variant-page routing is not established. |
-| SEO extension | Inspect the installed SEO extension and version; registered integration hooks do not prove every version compatible. |
 | Risks | Publishing an offer inconsistent with the visible selection. |
-| Verification | Inspect rendered canonical, robots, sitemap inclusion and internal links; then observe the selected search URL where available. |
-| Version | FREE 1.0.0 / SVN 3744276 |
 
 ## SEO-11 · Unavailable, removed or renamed
 
@@ -227,10 +205,7 @@ A canonical is a preference for duplicate or very similar content, not a guarant
 | WordPress action | Check status and links after sync. Code soft-removes absent products, default draft; this is not permanent deletion. |
 | Shopify action | Confirm the source event and any merchant redirect. |
 | Fy2Press control | FREE reconciliation code observed statically; connected lifecycle not retested here. |
-| SEO extension | Inspect the installed SEO extension and version; registered integration hooks do not prove every version compatible. |
 | Risks | Treating stock loss as disappearance or assuming automatic redirects. |
-| Verification | Inspect rendered canonical, robots, sitemap inclusion and internal links; then observe the selected search URL where available. |
-| Version | FREE 1.0.0 / SVN 3744276 |
 
 ## SEO-12 · Several languages
 
@@ -246,10 +221,7 @@ A canonical is a preference for duplicate or very similar content, not a guarant
 | WordPress action | Verify language links and canonicals with the localization stack. |
 | Shopify action | Verify the store’s language and market settings independently. |
 | Fy2Press control | Interface translation is distinct from multilingual catalog sync, which is not available in the stated scope. |
-| SEO extension | Inspect the installed SEO extension and version; registered integration hooks do not prove every version compatible. |
 | Risks | Assuming translated UI proves translated synchronized products. |
-| Verification | Inspect rendered canonical, robots, sitemap inclusion and internal links; then observe the selected search URL where available. |
-| Version | FREE 1.0.0 / SVN 3744276 |
 
 Control source: [SEOIndexingService.php at SVN 3744276](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/services/SEOIndexingService.php). States: [release reference](../artefacts/release-reference.json).
 

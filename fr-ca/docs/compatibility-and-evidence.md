@@ -2,22 +2,34 @@
 
 [English](../../docs/compatibility-and-evidence.md) · [Accueil](../README.md)
 
-Utiliser une preuve pour la question à laquelle elle répond. Un essai local de callback démontre un contrat de rendu local, pas un paiement Shopify complet ou une compatibilité universelle avec les thèmes.
+Utilisez ce bilan pour choisir les vérifications à faire sur votre site. Les essais locaux couvrent l’inscription des composants FREE et leur contenu retourné. Ils ne démontrent ni la compatibilité avec tous les thèmes ni un achat Shopify complet.
 
-| Observation | Artefact et environnement | Producteur/date | Portée |
+## Ce qui a été vérifié
+
+PAGUP maintient ce bilan. Les outils et méthodes utilisés figurent dans la [provenance éditoriale](../../THIRD-PARTY-NOTICES.md) et les [résultats détaillés](../../sources/developer-observation.json).
+
+| Vérification | Version et environnement | Date | Ce que le résultat établit |
 | --- | --- | --- | --- |
-| Téléchargement officiel identifié | FREE 1.0.0; 488 fichiers; SVN 3744276; hash ZIP complet dans la référence de version | Codex, 2026-10-14 | Octets fournisseur collectés; aucune reconstruction depuis une autre révision. |
-| Activation | WordPress 7.1 / PHP 8.4, WordPress Docker jetable | Codex, 2026-10-14 | Activation locale sans réseau externe. |
-| Registre natif | 17 blocs, 27 shortcodes canoniques et 27 alias | Codex, 2026-10-14 | Inscriptions WordPress réelles; les alias ne sont pas comptés comme fonctions supplémentaires. |
-| Exemples de composants | do_blocks/do_shortcode natifs, données fictives | Codex, 2026-10-14 | Sortie, contexte et limites par entrée; aucune boutique connectée. |
-| Modes du shortcode URL | URL scalaire et lien HTML | Codex, 2026-10-14 | Deux modes observés en contexte produit local. |
-| Descriptions PRO | Observations de l’éditeur, version 1.0.0 | Dates conservées dans le registre de sources | Ni runtime PRO sous licence ni identité du paquet courant revérifiés ici. |
-| Paiement ou planification connectés | Aucune boutique réelle, transaction ou licence activée | Non exécuté | Ni défaut établi ni parcours commercial réussi. |
+| Téléchargement officiel | FREE 1.0.0 ; 488 fichiers ; SVN 3744276 | 2026-10-14 | Le paquet téléchargé est identifié par son empreinte complète dans la référence de version. |
+| Activation de l’extension | WordPress 7.1 / PHP 8.4, WordPress Docker jetable | 2026-10-14 | Activation locale sans réseau externe. |
+| Registre des composants | 17 blocs, 27 codes courts canoniques et 27 alias de compatibilité | 2026-10-14 | Composants inscrits dans WordPress. Les alias ne sont pas des fonctions supplémentaires. |
+| Contenu des composants | do_blocks/do_shortcode natifs avec des produits et une collection fictifs | 2026-10-14 | Le contenu retourné et le contexte sont consignés par composant. Aucune boutique connectée. |
+| Code court d’URL produit | URL scalaire et lien HTML | 2026-10-14 | Les deux modes ont retourné la forme attendue en contexte produit local. |
+| Descriptions PRO | Documentation publiée de la version 1.0.0 | Dates du [registre de sources](../../artefacts/source-lock.json) | Descriptions seulement ; ni l’exécution PRO sous licence ni le paquet PRO courant n’ont été revérifiés. |
+| Paiement connecté et synchronisation planifiée | Aucune boutique réelle, transaction ou licence activée | Non exécuté | Aucune conclusion sur un parcours commercial complet. |
 
-Le ZIP WordPress courant diffère du reçu précédent de l’éditeur. La comparaison SVN de 3742640 à 3744276 indique uniquement `readme.txt`; la version reste 1.0.0. L’ancien reçu n’est pas réécrit comme s’il avait observé les octets actuels.
+## Paquet et portée de compatibilité
 
-La déclaration de version testée de l’API diffère de celle du readme. Aucune n’est un essai de compatibilité. L’environnement WordPress/PHP réellement utilisé demeure explicite. [Versions et divergences](../../artefacts/release-reference.json).
+Entre les révisions SVN 3742640 et 3744276, seul `readme.txt` a changé. Les deux paquets portent la version 1.0.0, mais leurs empreintes ZIP diffèrent. Chaque observation reste liée au paquet réellement examiné.
 
-Le shortcode de type produit a retourné une chaîne vide avec la fixture locale normalisée. Son exemple demeure une sortie vide observée, pas la démonstration d’un type produit rempli. Les autres callbacks HTML ne prouvent pas les interactions navigateur. Tester les versions précises des thèmes, extensions SEO et constructeurs avant acceptation client.
+L’API WordPress.org et le readme du paquet déclarent des versions WordPress testées différentes. Ces déclarations ne constituent pas des essais de compatibilité. L’environnement réellement utilisé figure ci-dessus. [Détails des versions](../../artefacts/release-reference.json).
 
-[Observation détaillée](../../sources/developer-observation.json) · [Référence développeur](../developer/README.md) · [Actualisation des données](data-ownership-and-freshness.md).
+## Limite du code court de type de produit
+
+`fy2press_product_type` est inscrit, mais n’a retourné aucun texte dans l’essai local, même si le produit fictif comportait un type. La lecture du même paquet FREE révèle une incohérence de nom de champ : [ShopifyService.php](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/services/ShopifyService.php) transforme `productType` en `product_type`, alors que [ProductType.php](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/page-builders/shortcodes/product/ProductType.php) lit `productType`.
+
+Considérez l’affichage du type de produit comme une limite connue du parcours examiné. Le résultat vide est conservé par souci d’exactitude ; ce n’est pas un exemple rempli réussi. Aucune correction de l’extension ni nouvelle exécution n’est revendiquée ici. Avant de vous appuyer sur ce champ, vérifiez la version installée avec un produit dont le type est renseigné.
+
+Pour les autres composants, un retour HTML ne vérifie pas à lui seul les interactions navigateur. Testez les versions précises du thème, de l’extension SEO et du constructeur avant l’acceptation client.
+
+[Référence développeur](../developer/README.md) · [Actualisation des données](data-ownership-and-freshness.md).

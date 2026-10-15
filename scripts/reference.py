@@ -66,8 +66,8 @@ COMPONENT_PURPOSES = {'product': ('A complete product component for the supplied
  'product_url': ('A scalar product URL by default, or an HTML link with format="link".',
                  'Une URL produit scalaire par défaut, ou un lien HTML avec format="link".'),
  'product_vendor': ('The product vendor label.', 'Le nom du fournisseur du produit.'),
- 'product_type': ('The product type when available; this fixture returned no content.',
-                  'Le type de produit lorsqu’il est disponible; cette fixture n’a retourné aucun contenu.'),
+ 'product_type': ('The product type when available; the inspected FREE 1.0.0 data path has a field-name mismatch. See the compatibility notes.',
+                  'Le type de produit lorsqu’il est disponible ; le parcours FREE 1.0.0 examiné comporte une incohérence de nom de champ. Consultez les notes de compatibilité.'),
  'product_tags': ('The product’s tag list.', 'La liste des étiquettes du produit.'),
  'product_gallery': ('The product image gallery.', 'La galerie d’images du produit.'),
  'product_availability': ('The availability label from the available product data.',
@@ -129,8 +129,8 @@ def dev_page(root,kind,fr):
   s+='[Source]('+url+').\n\n```'+('html' if kind=='blocks' else 'text')+'\n'+x['example']+'\n```\n\n'
   test=x['test'];n=test['output_bytes']
   result=('HTML retourné' if kind=='blocks' else {'HTML string':'chaîne HTML','URL by default; HTML with format=link':'URL par défaut; HTML avec format=link'}[x['result_kind']]) if fr else ('Returned HTML' if kind=='blocks' else x['result_kind'])
-  s+=('Trace de l’essai local' if fr else 'Local test trace')+f': {n} '+('octets retournés' if fr else 'returned bytes')+f', {test["echo_bytes"]} '+('octets imprimés hors retour' if fr else 'bytes echoed outside the return')+'. '+result+'.\n\n'
-  if not n:s+=('**Sortie vide observée avec cette fixture; affichage rempli non démontré.**\n\n' if fr else '**Empty output observed with this fixture; populated display is not demonstrated.**\n\n')
+  s+='<details>\n<summary>'+('Détails de l’essai local' if fr else 'Local test details')+'</summary>\n\n'+('Trace de l’essai local' if fr else 'Local test trace')+f': {n} '+('octets retournés' if fr else 'returned bytes')+f', {test["echo_bytes"]} '+('octets imprimés hors retour' if fr else 'bytes echoed outside the return')+'. '+result+'.\n\n</details>\n\n'
+  if not n:s+=('**Affichage du type non démontré : le résultat local est vide.** [Limite connue](../docs/compatibility-and-evidence.md).\n\n' if fr else '**Product-type display not demonstrated: the local result is empty.** [Known limitation](../docs/compatibility-and-evidence.md).\n\n')
   if x['name']=='fy2press_product_url':s+=('`format="url"` retourne une URL scalaire; `format="link"` retourne un lien HTML. Les deux modes ont été exécutés. Sans produit, le code peut retourner une URL illustrative; toujours fournir un contexte valide.\n\n' if fr else '`format="url"` returns a scalar URL; `format="link"` returns an HTML link. Both modes were executed. Without a product the code can return an illustrative URL; always supply valid context.\n\n')
   if 'dynamic_defaults' in x:s+=('Défaut dynamique : le type du filtre d’étiquettes vient du design sauvegardé valide; sinon `tags`.\n\n' if fr else 'Dynamic default: tag-filter type follows a valid saved design setting; otherwise `tags`.\n\n')
   s+='| '+('Attribut | Type | Défaut / contrat' if fr else 'Attribute | Type | Default / contract')+' |\n| --- | --- | --- |\n'

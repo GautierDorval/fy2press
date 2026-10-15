@@ -1,4 +1,8 @@
 # Provenance and third-party notices
+
+PAGUP publishes and maintains this reference, coordinated by Gautier Dorval. The text, translations and documentation tools were prepared with AI assistance. Source review and automated tests are recorded separately; no independent human or native-language review is claimed. Tool names in observation records identify how the work was performed, not the publisher or an independent endorsement.
+
+PAGUP publie et maintient cette référence, sous la coordination de Gautier Dorval. Les textes, traductions et outils documentaires ont été préparés avec l’aide de l’IA. La revue des sources et les essais automatisés sont consignés séparément; aucune révision humaine indépendante ou linguistique native n’est revendiquée. Les outils nommés dans les observations indiquent la méthode de travail, pas l’éditeur ni une approbation indépendante.
 | Material | Origin and scope | Treatment |
 | --- | --- | --- |
 | Common reference filenames and navigation idea | PAGUP Better Robots.txt reference | Structure only; no prose, doctrine, validator or CC BY-NC-SA material copied. |

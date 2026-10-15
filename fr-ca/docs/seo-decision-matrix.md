@@ -23,6 +23,14 @@ Une canonique exprime une préférence pour des contenus identiques ou très sim
 | [SEO-11](#seo-11--indisponible-retiré-ou-renommé) | Indisponible, retiré ou renommé |
 | [SEO-12](#seo-12--plusieurs-langues) | Plusieurs langues |
 
+## Vérifications communes aux douze cas
+
+Ces contrôles s’appliquent à chaque décision ci-dessous. Les fiches détaillent ensuite ce qui varie selon la page.
+
+- **Extension SEO :** Inspecter l’extension SEO installée et sa version; des hooks enregistrés ne prouvent pas la compatibilité de toutes les versions.
+- **Vérification :** Inspecter canonique rendue, directives robots, présence au sitemap et liens internes; observer ensuite l’URL choisie par le moteur lorsque disponible.
+- **Version :** FREE 1.0.0 / SVN 3744276
+
 ## SEO-01 · Produit similaire, Shopify prioritaire
 
 | Critère | Décision |
@@ -37,10 +45,7 @@ Une canonique exprime une préférence pour des contenus identiques ou très sim
 | Action WordPress | Activer l’indexation produit et choisir Shopify comme source de canonique produit; inspecter le rendu. |
 | Action Shopify | Garder le produit prioritaire accessible et vérifier sa canonique, son sitemap et ses liens. |
 | Contrôle Fy2Press | Source canonique produit FREE; ce n’est pas un réglage de collection. |
-| Extension SEO | Inspecter l’extension SEO installée et sa version; des hooks enregistrés ne prouvent pas la compatibilité de toutes les versions. |
 | Risques | Liens contradictoires ou destination Shopify indisponible. |
-| Vérification | Inspecter canonique rendue, directives robots, présence au sitemap et liens internes; observer ensuite l’URL choisie par le moteur lorsque disponible. |
-| Version | FREE 1.0.0 / SVN 3744276 |
 
 ## SEO-02 · Produit WordPress enrichi
 
@@ -56,10 +61,7 @@ Une canonique exprime une préférence pour des contenus identiques ou très sim
 | Action WordPress | Conserver WordPress comme source produit; vérifier la canonique propre avec l’extension SEO. |
 | Action Shopify | Réviser Shopify séparément; Fy2Press n’en modifie pas la canonique. |
 | Contrôle Fy2Press | Préférence produit FREE; modifications Shopify hors extension. |
-| Extension SEO | Inspecter l’extension SEO installée et sa version; des hooks enregistrés ne prouvent pas la compatibilité de toutes les versions. |
 | Risques | Supposer qu’une option locale consolide les deux sites. |
-| Vérification | Inspecter canonique rendue, directives robots, présence au sitemap et liens internes; observer ensuite l’URL choisie par le moteur lorsque disponible. |
-| Version | FREE 1.0.0 / SVN 3744276 |
 
 ## SEO-03 · Guide d’achat original
 
@@ -75,10 +77,7 @@ Une canonique exprime une préférence pour des contenus identiques ou très sim
 | Action WordPress | Utiliser les contrôles de page WordPress/SEO et relier les produits pertinents. |
 | Action Shopify | Entretenir les destinations produit; les liens seuls n’exigent pas une canonique croisée. |
 | Contrôle Fy2Press | Le réglage produit ne transforme pas un guide original en fiche produit. |
-| Extension SEO | Inspecter l’extension SEO installée et sa version; des hooks enregistrés ne prouvent pas la compatibilité de toutes les versions. |
 | Risques | Canonicaliser un guide utile vers un produit non équivalent. |
-| Vérification | Inspecter canonique rendue, directives robots, présence au sitemap et liens internes; observer ensuite l’URL choisie par le moteur lorsque disponible. |
-| Version | FREE 1.0.0 / SVN 3744276 |
 
 ## SEO-04 · Collection WordPress utile
 
@@ -94,10 +93,7 @@ Une canonique exprime une préférence pour des contenus identiques ou très sim
 | Action WordPress | Vérifier l’indexation des collections et la canonique de taxonomie émise par l’extension SEO. |
 | Action Shopify | Réviser séparément la collection Shopify correspondante. |
 | Contrôle Fy2Press | Indexation de collection FREE; aucun sélecteur de canonique de collection Shopify trouvé dans le service inspecté. |
-| Extension SEO | Inspecter l’extension SEO installée et sa version; des hooks enregistrés ne prouvent pas la compatibilité de toutes les versions. |
 | Risques | Appliquer le réglage de canonique produit aux taxonomies. |
-| Vérification | Inspecter canonique rendue, directives robots, présence au sitemap et liens internes; observer ensuite l’URL choisie par le moteur lorsque disponible. |
-| Version | FREE 1.0.0 / SVN 3744276 |
 
 ## SEO-05 · Collections concurrentes
 
@@ -113,10 +109,7 @@ Une canonique exprime une préférence pour des contenus identiques ou très sim
 | Action WordPress | Utiliser les contrôles de taxonomie vérifiés ou une implémentation canonique distincte si justifiée. |
 | Action Shopify | Coordonner la collection correspondante et les liens avec son responsable. |
 | Contrôle Fy2Press | L’indexation est disponible; la correspondance canonique automatique des collections n’est pas établie. |
-| Extension SEO | Inspecter l’extension SEO installée et sa version; des hooks enregistrés ne prouvent pas la compatibilité de toutes les versions. |
 | Risques | Consolider des pages d’intentions différentes. |
-| Vérification | Inspecter canonique rendue, directives robots, présence au sitemap et liens internes; observer ensuite l’URL choisie par le moteur lorsque disponible. |
-| Version | FREE 1.0.0 / SVN 3744276 |
 
 ## SEO-06 · Sélection saisonnière
 
@@ -132,10 +125,7 @@ Une canonique exprime une préférence pour des contenus identiques ou très sim
 | Action WordPress | Publier un texte original et une boucle; planifier maintien, actualisation ou redirection justifiée. |
 | Action Shopify | Entretenir disponibilité et offres produit. |
 | Contrôle Fy2Press | Composition FREE; aucun contrat d’expiration automatique de campagne. |
-| Extension SEO | Inspecter l’extension SEO installée et sa version; des hooks enregistrés ne prouvent pas la compatibilité de toutes les versions. |
 | Risques | Pages saisonnières orphelines et offres périmées. |
-| Vérification | Inspecter canonique rendue, directives robots, présence au sitemap et liens internes; observer ensuite l’URL choisie par le moteur lorsque disponible. |
-| Version | FREE 1.0.0 / SVN 3744276 |
 
 ## SEO-07 · Étiquettes pauvres
 
@@ -151,10 +141,7 @@ Une canonique exprime une préférence pour des contenus identiques ou très sim
 | Action WordPress | Vérifier l’indexation des étiquettes; le défaut observé est faux. Laisser explorer le noindex lorsque le retrait des résultats est souhaité. |
 | Action Shopify | Réviser les étiquettes Shopify séparément; aucune politique de taxonomie n’y est envoyée. |
 | Contrôle Fy2Press | Indexation des étiquettes FREE, distincte des produits et collections. |
-| Extension SEO | Inspecter l’extension SEO installée et sa version; des hooks enregistrés ne prouvent pas la compatibilité de toutes les versions. |
 | Risques | Employer robots.txt comme contrôle canonique. |
-| Vérification | Inspecter canonique rendue, directives robots, présence au sitemap et liens internes; observer ensuite l’URL choisie par le moteur lorsque disponible. |
-| Version | FREE 1.0.0 / SVN 3744276 |
 
 ## SEO-08 · Étiquettes éditorialisées
 
@@ -170,10 +157,7 @@ Une canonique exprime une préférence pour des contenus identiques ou très sim
 | Action WordPress | Évaluer les conséquences avant d’activer l’option globale; inspecter toutes les archives touchées. |
 | Action Shopify | Aucune action Shopify correspondante n’est implicite. |
 | Contrôle Fy2Press | Réglage global FREE; exceptions par étiquette non établies ici. |
-| Extension SEO | Inspecter l’extension SEO installée et sa version; des hooks enregistrés ne prouvent pas la compatibilité de toutes les versions. |
 | Risques | Rendre toutes les étiquettes pauvres indexables pour un seul sujet utile. |
-| Vérification | Inspecter canonique rendue, directives robots, présence au sitemap et liens internes; observer ensuite l’URL choisie par le moteur lorsque disponible. |
-| Version | FREE 1.0.0 / SVN 3744276 |
 
 ## SEO-09 · Filtres et tri
 
@@ -189,10 +173,7 @@ Une canonique exprime une préférence pour des contenus identiques ou très sim
 | Action WordPress | Inspecter les URL à paramètres et leur rendu SEO; créer des pages utiles dédiées si justifié. |
 | Action Shopify | Réviser séparément tout filtrage Shopify correspondant. |
 | Contrôle Fy2Press | Les contrôles de navigation FREE n’établissent pas une politique canonique universelle des paramètres. |
-| Extension SEO | Inspecter l’extension SEO installée et sa version; des hooks enregistrés ne prouvent pas la compatibilité de toutes les versions. |
 | Risques | Indexer des combinaisons arbitraires ou masquer toutes les sélections utiles. |
-| Vérification | Inspecter canonique rendue, directives robots, présence au sitemap et liens internes; observer ensuite l’URL choisie par le moteur lorsque disponible. |
-| Version | FREE 1.0.0 / SVN 3744276 |
 
 ## SEO-10 · Variantes sélectionnées
 
@@ -208,10 +189,7 @@ Une canonique exprime une préférence pour des contenus identiques ou très sim
 | Action WordPress | Vérifier ensemble sélection, prix visible, offre structurée et URL retournée. |
 | Action Shopify | Confirmer la marchandise choisie et le contexte de paiement. |
 | Contrôle Fy2Press | Les contrôles de variante existent; des routes natives de pages variantes distinctes ne sont pas établies. |
-| Extension SEO | Inspecter l’extension SEO installée et sa version; des hooks enregistrés ne prouvent pas la compatibilité de toutes les versions. |
 | Risques | Publier une offre incohérente avec la sélection visible. |
-| Vérification | Inspecter canonique rendue, directives robots, présence au sitemap et liens internes; observer ensuite l’URL choisie par le moteur lorsque disponible. |
-| Version | FREE 1.0.0 / SVN 3744276 |
 
 ## SEO-11 · Indisponible, retiré ou renommé
 
@@ -227,10 +205,7 @@ Une canonique exprime une préférence pour des contenus identiques ou très sim
 | Action WordPress | Vérifier statut et liens après synchronisation. Le code retire logiquement les absents, brouillon par défaut; ce n’est pas une suppression définitive. |
 | Action Shopify | Confirmer l’événement source et les redirections marchandes. |
 | Contrôle Fy2Press | Code de réconciliation FREE observé statiquement; cycle connecté non retesté ici. |
-| Extension SEO | Inspecter l’extension SEO installée et sa version; des hooks enregistrés ne prouvent pas la compatibilité de toutes les versions. |
 | Risques | Confondre rupture de stock et disparition ou supposer des redirections automatiques. |
-| Vérification | Inspecter canonique rendue, directives robots, présence au sitemap et liens internes; observer ensuite l’URL choisie par le moteur lorsque disponible. |
-| Version | FREE 1.0.0 / SVN 3744276 |
 
 ## SEO-12 · Plusieurs langues
 
@@ -246,10 +221,7 @@ Une canonique exprime une préférence pour des contenus identiques ou très sim
 | Action WordPress | Vérifier liens linguistiques et canoniques avec les outils de localisation. |
 | Action Shopify | Vérifier séparément les langues et marchés de la boutique. |
 | Contrôle Fy2Press | Traduction d’interface distincte de la synchronisation multilingue du catalogue, non disponible dans la portée annoncée. |
-| Extension SEO | Inspecter l’extension SEO installée et sa version; des hooks enregistrés ne prouvent pas la compatibilité de toutes les versions. |
 | Risques | Supposer qu’une interface traduite prouve la traduction des produits synchronisés. |
-| Vérification | Inspecter canonique rendue, directives robots, présence au sitemap et liens internes; observer ensuite l’URL choisie par le moteur lorsque disponible. |
-| Version | FREE 1.0.0 / SVN 3744276 |
 
 Source des contrôles : [SEOIndexingService.php at SVN 3744276](https://plugins.svn.wordpress.org/!svn/bc/3744276/fy2press/tags/1.0.0/admin/services/SEOIndexingService.php). Statuts : [release reference](../../artefacts/release-reference.json).
 
