@@ -11,7 +11,7 @@ Le tableau est généré depuis la projection relue de l’éditeur. « Livré
 | --- | --- | --- | --- |
 | Connecter une boutique Shopify | FREE | livré | Exige un jeton Storefront public ; aucune gestion multiboutique. |
 | Publier des fiches de catalogue natives | FREE | livré | Shopify gère les données commerciales ; les fiches natives ne rendent pas le commerce hors ligne. |
-| Synchroniser manuellement le catalogue | FREE | partiel | Statut partiel de l’éditeur ; découverte, écriture et reprise exigent des vérifications distinctes. Aucun essai connecté de reprise ici. |
+| Synchroniser manuellement le catalogue | FREE | partiel | Lancez la synchronisation manuellement dans FREE. La découverte reprend par lots ; les écritures interrompues ne reprennent pas automatiquement. |
 | Utiliser les modèles de catalogue inclus | FREE | livré | Vérifier le thème réel et le contexte de page. |
 | Composer avec les codes courts publics | FREE | livré | 27 noms canoniques et leurs alias observés ; les alias ne sont pas des fonctions supplémentaires. |
 | Composer avec les blocs Gutenberg | FREE | livré | 17 inscriptions natives observées ; les contextes produit et collection diffèrent. |
@@ -21,14 +21,14 @@ Le tableau est généré depuis la projection relue de l’éditeur. « Livré
 | Fonctionner sans WooCommerce | FREE | livré | Les services Shopify et WordPress restent nécessaires. |
 | Régler l’indexation et la préférence d’URL produit | FREE | partiel | Canonique produit et indexation des taxonomies sont distinctes ; aucun classement garanti. |
 | Conserver FREE après un retour de PRO | FREE | partiel | Portée partielle ; vérifier le remplacement des designs premium et l’option de désinstallation. |
-| Utiliser les composants Elementor natifs | PRO | livré | PRO et constructeur sous licence distincte ; combinaison exacte sous licence non testée ici. |
-| Utiliser les composants WPBakery natifs | PRO | livré | PRO et constructeur sous licence distincte ; combinaison exacte sous licence non testée ici. |
+| Utiliser les composants Elementor natifs | PRO | livré | PRO et constructeur Elementor sous licence distincte ; utilisez les composants natifs de cette édition. |
+| Utiliser les composants WPBakery natifs | PRO | livré | PRO et constructeur WPBakery sous licence distincte ; utilisez les composants natifs de cette édition. |
 | Utiliser les réglages de design avancés | PRO | livré | Observation PRO de l’éditeur ; aucun essai runtime PRO sous licence ici. |
 | Personnaliser les composants | PRO | livré | Observation PRO de l’éditeur ; valider composant et thème choisis. |
 | Ajuster la présentation selon l’appareil | PRO | livré | Observation PRO de l’éditeur ; inspecter le rendu mobile et ordinateur réel. |
 | Entretenir plusieurs modèles | PRO | livré | Observation PRO de l’éditeur ; consigner les affectations et le retour à FREE. |
 | Ajouter du CSS personnalisé | PRO | livré | Observation PRO de l’éditeur ; vérifier accessibilité et mobile du style ajouté. |
-| Planifier la synchronisation du catalogue | PRO | partiel | Licence PRO active et cron WordPress ; non instantané. La qualification en boutique réelle n’est pas établie par cette référence. |
+| Planifier la synchronisation du catalogue | PRO | livré | Licence PRO active ; chaque heure, deux fois par jour ou chaque jour avec WP-Cron. WordPress doit exécuter les événements planifiés ; ce n’est pas un service de webhooks en temps réel. |
 <!-- /generated:claims -->
 
 ## Prérequis d’intégration

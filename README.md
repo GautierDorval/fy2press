@@ -11,13 +11,15 @@ Keep your Shopify catalog alongside the articles, guides and pages you already p
 - Building a page? Use the [blocks and shortcodes reference](developer/README.md).
 - Handing a site to a client? Adapt the [agency handover](reusable/agency-handover.md).
 
-Fy2Press publishes native WordPress catalog records while Shopify remains the source for the commercial catalog and checkout. FREE includes blocks and shortcodes; PRO adds native builder components and additional design controls. Read [editions and integrations](docs/editions-and-integrations.md), then verify [data freshness](docs/data-ownership-and-freshness.md) for your intended page.
+Fy2Press publishes native WordPress catalog records while Shopify remains the source for the commercial catalog and checkout. FREE includes blocks and shortcodes; PRO adds scheduled synchronization, native builder components, multiple templates and advanced design controls. Read [editions and integrations](docs/editions-and-integrations.md), then verify [data freshness](docs/data-ownership-and-freshness.md) for your intended page.
 
 ## Install the product
 
 Install FREE from [WordPress.org](https://wordpress.org/plugins/fy2press/). Use the [installation and connection guides](https://fy2press.com/docs/) and the [product page](https://fy2press.com/product/) for PRO and current commercial terms.
 
 **This GitHub repository and its ZIP archives contain documentation. They cannot be installed as a WordPress plugin.** Public FREE source and build instructions remain available through [WordPress SVN](https://plugins.svn.wordpress.org/fy2press/trunk/BUILDING.md).
+
+The `main` branch contains the latest documentation updates; releases identify archived editions.
 
 ## Use the reference
 
@@ -27,4 +29,4 @@ This public reference describes FREE 1.0.0 from the package collected on October
 
 Original text and templates are offered under CC BY 4.0, original tools under MIT. These grants were authorized for the October 14, 2026 publication. [Licensing and brand exclusions](LICENSE.md). Published and maintained by PAGUP, coordinated by Gautier Dorval. [Editorial provenance](THIRD-PARTY-NOTICES.md).
 
-The latest verified documentary edition is [docs-v1.0.0-rc.1](https://github.com/GautierDorval/fy2press/releases/tag/docs-v1.0.0-rc.1), published October 14, 2026. Changes prepared after that tag are listed in the [changelog](CHANGELOG.md); they do not move the published version.
+Documentary edition: **docs-v1.0.0-rc.2**. See the [changes](CHANGELOG.md), [citation](CITATION.cff) and [matching GitHub release](https://github.com/GautierDorval/fy2press/releases/tag/docs-v1.0.0-rc.2) for its publication date and archive. Earlier tagged editions remain unchanged.

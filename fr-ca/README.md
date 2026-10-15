@@ -11,13 +11,15 @@ Présentez votre catalogue Shopify dans les articles, guides et pages que vous p
 - Vous composez une page ? Consultez la [référence des blocs et codes courts](developer/README.md).
 - Vous remettez un site à un client ? Adaptez le [modèle de passation](reusable/agency-handover.md).
 
-Fy2Press publie des fiches natives dans WordPress ; Shopify conserve le catalogue commercial et le paiement. FREE comprend des blocs et des codes courts. PRO ajoute des composants natifs pour les constructeurs et des réglages de présentation supplémentaires. Consultez les [éditions et intégrations](docs/editions-and-integrations.md), puis vérifiez l’[actualisation des données](docs/data-ownership-and-freshness.md) pour votre page.
+Fy2Press publie des fiches natives dans WordPress ; Shopify conserve le catalogue commercial et le paiement. FREE comprend des blocs et des codes courts. PRO ajoute la synchronisation planifiée, des composants natifs pour les constructeurs, plusieurs modèles et des réglages de présentation avancés. Consultez les [éditions et intégrations](docs/editions-and-integrations.md), puis vérifiez l’[actualisation des données](docs/data-ownership-and-freshness.md) pour votre page.
 
 ## Installer le produit
 
 Installez FREE depuis [WordPress.org](https://wordpress.org/plugins/fy2press/). Les [guides d’installation et de connexion](https://fy2press.com/fr-ca/docs/) décrivent la configuration. La [page produit](https://fy2press.com/fr-ca/product/) présente PRO et les conditions commerciales actuelles.
 
 **Ce dépôt GitHub et ses archives ZIP contiennent de la documentation. Ils ne s’installent pas comme extension WordPress.** Les sources FREE et les instructions de construction restent accessibles dans [SVN WordPress](https://plugins.svn.wordpress.org/fy2press/trunk/BUILDING.md).
+
+La branche `main` contient les dernières mises à jour documentaires; les releases identifient les éditions archivées.
 
 ## Utiliser la référence
 
@@ -27,4 +29,4 @@ Cette référence publique décrit FREE 1.0.0 à partir du paquet collecté le 1
 
 Les textes et modèles originaux sont offerts sous CC BY 4.0, les outils originaux sous MIT. Ces droits ont été autorisés lors de la publication du 14 octobre 2026. [Licences et exclusions de marque](../LICENSE.md). Publication et maintenance : PAGUP, sous la coordination de Gautier Dorval. [Provenance éditoriale](../THIRD-PARTY-NOTICES.md).
 
-La dernière édition documentaire vérifiée est [docs-v1.0.0-rc.1](https://github.com/GautierDorval/fy2press/releases/tag/docs-v1.0.0-rc.1), publiée le 14 octobre 2026. Les changements préparés après ce tag figurent dans le [journal](../CHANGELOG.md) ; ils ne déplacent pas la version publiée.
+Édition documentaire : **docs-v1.0.0-rc.2**. Consultez les [changements](../CHANGELOG.md), la [citation](../CITATION.cff) et la [version GitHub correspondante](https://github.com/GautierDorval/fy2press/releases/tag/docs-v1.0.0-rc.2) pour sa date de publication et son archive. Les éditions antérieures restent inchangées.

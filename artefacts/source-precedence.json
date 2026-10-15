@@ -18,6 +18,10 @@
     ],
     "rights": [
       "applicable licence and rights holder"
+    ],
+    "current_test_status": [
+      "dated and scoped publisher confirmation",
+      "historical agent observations within their own scope"
     ]
   },
   "rules": [
@@ -25,6 +29,7 @@
     "A manifest does not invalidate reproducible contrary behaviour.",
     "Proposed policy does not mean proposed software.",
     "A test against FREE never qualifies PRO.",
-    "Network failure is UNAVAILABLE, not absence."
+    "Network failure is UNAVAILABLE, not absence.",
+    "An agent not running a test does not establish that the product was never tested. A publisher confirmation does not invent agent execution, binary identity or independent audit."
   ]
 }

@@ -14,6 +14,15 @@ class BoundaryTests(unittest.TestCase):
   data=self.load(path);fn(data);self.save(path,data)
  def keep_translation_hash(self,source):
   self.mutate('artefacts/translation-map.json',lambda d:[t.update(source_sha256=p.digest((self.root/source).read_bytes())) for t in d['translations'] if t['source']==source])
+ def test_pro_not_run_requires_documentation_scope(self):
+  path=self.root/'artefacts/release-reference.json'
+  document=json.loads(path.read_text(encoding='utf-8'))
+  self.assertEqual(document['PRO']['connected_qualification'],'NOT_RUN')
+  self.assertIn('Independent connected PRO execution',document['PRO']['connected_qualification_scope'])
+  del document['PRO']['connected_qualification_scope']
+  path.write_text(json.dumps(document),encoding='utf-8')
+  with self.assertRaises(ValidationError): p.check(self.root)
+
  def test_future_observation_and_review_rejected(self):
   from datetime import datetime, timezone, timedelta
   future=datetime.now(timezone.utc)+timedelta(days=2)
@@ -39,6 +48,27 @@ class BoundaryTests(unittest.TestCase):
   self.assertIn('Contexte\u00a0: texte\u00a0; [codes courts](../developer/shortcodes.md)',result)
   self.assertIn(code,result);self.assertIn('https://example.invalid/a?x=1',result)
   self.assertIn(tick*3+'text\na:b; c?\n'+tick*3,result)
+
+ def test_current_confirmation_supersedes_local_not_run(self):
+  manifest=self.load('sources/manifest-projection.json')
+  confirmation=manifest['capability_observation']['current_validation']
+  cap={'id':'sync.scheduled','implementation':'delivered'}
+  self.assertEqual(p.current_validation(manifest,cap)['state'],'PUBLISHER_CONFIRMED')
+  self.assertIn(confirmation['confirmed_by'],p.current_validation(manifest,cap)['scope'])
+  manifest['capability_observation'].pop('current_validation')
+  self.assertEqual(p.current_validation(manifest,cap)['state'],'NOT_RUN')
+ def test_confirmation_cannot_invent_execution_or_independence(self):
+  for key,value in [('test_execution_date','2026-10-15'),('tested_environment','all themes'),('independent_audit',True)]:
+   with self.subTest(key=key):
+    manifest=self.load('sources/manifest-projection.json')
+    manifest['capability_observation']['current_validation'][key]=value
+    with self.assertRaisesRegex(ValueError,'invent execution'):p.current_validation(manifest,{'id':'sync.scheduled','implementation':'delivered'})
+ def test_confirmation_does_not_make_absent_or_unknown_features_available(self):
+  manifest=self.load('sources/manifest-projection.json')
+  original=copy.deepcopy(manifest)
+  for state in ['absent','unknown',None]:
+   self.assertEqual(p.current_validation(manifest,{'id':'builders.gutenberg','implementation':state})['state'],'NOT_RUN')
+  self.assertEqual(manifest,original)
 
  def test_baseline(self):p.check(self.root)
  def test_source_modified_without_lock(self):
@@ -165,20 +195,73 @@ class BoundaryTests(unittest.TestCase):
   self.git('add','private-fixture.txt');self.git('-c','user.name=Synthetic Test','-c','user.email=test@example.invalid','commit','-m','Synthetic forbidden object')
   with self.assertRaisesRegex(ValueError,'unapproved historical'):p.check_history(self.root)
  def test_published_release_requires_date(self):
-  self.mutate('artefacts/release-reference.json',lambda d:d['documentation'].update(published_at=None))
+  self.mutate('artefacts/release-reference.json',lambda d:d['documentary_publications'][0].update(published_at=None))
   with self.assertRaisesRegex(ValidationError,"None is not of type 'string'"):p.check(self.root)
  def test_publication_timestamp_must_be_valid(self):
-  self.mutate('artefacts/release-reference.json',lambda d:d['documentation'].update(published_at='2026-99-99T22:28:51Z'))
+  self.mutate('artefacts/release-reference.json',lambda d:d['documentary_publications'][0].update(published_at='2026-99-99T22:28:51Z'))
   with self.assertRaisesRegex(Exception,'date-time|invalid publication timestamp'):p.check(self.root)
  def test_release_link_must_match_tag(self):
-  self.mutate('artefacts/release-reference.json',lambda d:d['documentation'].update(release_url='https://github.com/GautierDorval/fy2press/releases/tag/nonexistent'))
+  self.mutate('artefacts/release-reference.json',lambda d:d['documentary_publications'][0].update(release_url='https://github.com/GautierDorval/fy2press/releases/tag/nonexistent'))
   with self.assertRaisesRegex(ValueError,'publication URL/version'):p.check(self.root)
  def test_local_entity_cannot_describe_published_reference(self):
   self.mutate('artefacts/repository-entity.jsonld',lambda d:d.update(creativeWorkStatus='Local publication candidate'))
-  with self.assertRaisesRegex(ValueError,'publication entity'):p.check(self.root)
- def test_citation_must_identify_verified_edition(self):
-  self.mutate('CITATION.cff',lambda d:d['preferred-citation'].update(version='docs-v1.0.0-rc.2'))
-  with self.assertRaisesRegex(ValueError,'citation/publication'):p.check(self.root)
+  with self.assertRaisesRegex(ValueError,'edition entity'):p.check(self.root)
+ def test_citation_must_identify_current_edition(self):
+  self.mutate('CITATION.cff',lambda d:d['preferred-citation'].update(version='docs-v1.0.0-rc.1'))
+  with self.assertRaisesRegex(ValueError,'citation/edition'):p.check(self.root)
+ def test_edition_cannot_claim_provider_receipt_fields(self):
+  self.mutate('artefacts/release-reference.json',lambda d:d['documentation'].update(published_at='2026-10-14T22:28:51Z'))
+  with self.assertRaisesRegex(ValidationError,'Additional properties'):p.check(self.root)
+ def test_edition_link_must_match_version(self):
+  self.mutate('artefacts/release-reference.json',lambda d:d['documentation'].update(release_url='https://github.com/GautierDorval/fy2press/releases/tag/docs-v1.0.0-rc.1'))
+  with self.assertRaisesRegex(ValueError,'edition URL/version'):p.check(self.root)
+ def test_source_lock_must_name_current_edition(self):
+  self.mutate('artefacts/source-lock.json',lambda d:d.update(documentation_version='docs-v1.0.0-rc.1'))
+  with self.assertRaisesRegex(ValueError,'source-lock/edition'):p.check(self.root)
+ def test_unverified_citation_date_refused(self):
+  self.mutate('CITATION.cff',lambda d:d.update(**{'date-released':'2026-10-14'}))
+  with self.assertRaisesRegex(ValueError,'citation date requires'):p.check(self.root)
+ def test_unverified_entity_date_refused(self):
+  self.mutate('artefacts/repository-entity.jsonld',lambda d:d.update(datePublished='2026-10-14T22:28:51Z'))
+  with self.assertRaisesRegex(ValueError,'publication date belongs'):p.check(self.root)
+ def test_duplicate_publication_receipt_refused(self):
+  self.mutate('artefacts/release-reference.json',lambda d:d['documentary_publications'].append(copy.deepcopy(d['documentary_publications'][0])))
+  with self.assertRaisesRegex(ValueError,'duplicate publication'):p.check(self.root)
+ def test_future_publication_receipt_refused(self):
+  self.mutate('artefacts/release-reference.json',lambda d:d['documentary_publications'][0].update(published_at='2099-01-01T00:00:00Z'))
+  with self.assertRaisesRegex(ValueError,'future publication'):p.check(self.root)
+ def test_matching_current_edition_receipt_is_supported(self):
+  # Synthetic receipt in the disposable fixture only; not a publication assertion.
+  ref=self.load('artefacts/release-reference.json');receipt=copy.deepcopy(ref['documentary_publications'][0])
+  receipt.update(version=ref['documentation']['version'],release_url=ref['documentation']['release_url'])
+  ref['documentary_publications'].append(receipt);self.save('artefacts/release-reference.json',ref)
+  path=self.root/'CHANGELOG.md';text=path.read_text(encoding='utf-8')
+  text=text.replace('## '+receipt['version']+'\n','## '+receipt['version']+' (published '+receipt['published_at'][:10]+')\n')
+  path.write_text(text,encoding='utf-8')
+  cff=self.load('CITATION.cff')
+  for record in [cff,cff['preferred-citation']]:record['date-released']=receipt['published_at'][:10]
+  self.save('CITATION.cff',cff);p.check(self.root)
+  cff['preferred-citation']['date-released']='2026-10-13';self.save('CITATION.cff',cff)
+  with self.assertRaisesRegex(ValueError,'citation date requires'):p.check(self.root)
+ def test_readme_edition_disagreement_refused(self):
+  for name in ['README.md','fr-ca/README.md']:
+   with self.subTest(readme=name):
+    path=self.root/name;original=path.read_text(encoding='utf-8')
+    path.write_text(original.replace('docs-v1.0.0-rc.2','docs-v1.0.0-rc.1'),encoding='utf-8')
+    mapping=self.load('artefacts/translation-map.json')
+    for row in mapping['translations']:
+     if row['source']=='README.md':
+      row['source_sha256']=p.digest((self.root/row['source']).read_bytes())
+      row['translation_sha256']=p.digest((self.root/row['translation']).read_bytes())
+    self.save('artefacts/translation-map.json',mapping)
+    with self.assertRaisesRegex(ValueError,'README/edition disagreement'):p.check(self.root)
+    path.write_text(original,encoding='utf-8')
+    self.save('artefacts/translation-map.json',p.load(ROOT,'artefacts/translation-map.json'))
+ def test_readme_release_link_missing_refused(self):
+  path=self.root/'README.md';text=path.read_text(encoding='utf-8')
+  text=text.replace(self.load('artefacts/release-reference.json')['documentation']['release_url'],'https://github.com/GautierDorval/fy2press/releases')
+  path.write_text(text,encoding='utf-8');self.keep_translation_hash('README.md')
+  with self.assertRaisesRegex(ValueError,'README/edition disagreement'):p.check(self.root)
  def test_changed_example_requires_new_browser_observation(self):
   with (self.root/'examples/morrowfield.html').open('a',encoding='utf-8') as f:f.write('<!-- changed -->')
   with self.assertRaisesRegex(ValueError,'stale Morrowfield browser'):p.check(self.root)

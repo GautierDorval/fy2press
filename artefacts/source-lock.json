@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0.0",
-  "documentation_version": "docs-v1.0.0-rc.1",
+  "documentation_version": "docs-v1.0.0-rc.2",
   "sources": [
     {
       "id": "manifest",
       "url": "https://fy2press.com/ai-manifest.json",
-      "role": "Publisher capability descriptions",
-      "retrieved_at": "2026-10-14T16:59:28.6485801Z",
+      "role": "Publisher capability descriptions; reviewed local site candidate, not a new observation of the served URL",
+      "retrieved_at": "2026-10-15T22:34:29.226696+00:00",
       "observed_at": "2026-10-11T00:00:00Z",
-      "raw_sha256": "5beae3bcb67171c377aa24ba5f066218ac8f89abd6314a0c3ab29d8826c90a58",
+      "raw_sha256": "81f0d72fe46638a80a355d80396c57fdf6405f4eb3d223817c594138eca1a384",
       "retained_path": "sources/manifest-projection.json",
-      "retained_sha256": "7e9ac55dcd2d97a38c6e2c420aa3adca8c4d962ff28764928fbad3dc5166471e",
+      "retained_sha256": "0248958e34fe511d46ebcd07946d8a57e3dfb875f2fe51dea09a3e4c356b33bc",
       "export_policy": "reviewed_projection_not_raw_copy",
       "mapping_version": "1.0.0",
       "source_fields": [
@@ -22,17 +22,18 @@
         "canonical_surfaces"
       ],
       "omissions": "Private references, historical review archives, incidental metadata and unrelated policies are omitted. No absent capability is inferred.",
-      "source_schema_version": "2.0.0"
+      "source_schema_version": "2.0.0",
+      "acquisition_kind": "local_candidate"
     },
     {
       "id": "release",
       "url": "https://fy2press.com/governance/release-state.json",
-      "role": "Dated distribution and commercial observations",
-      "retrieved_at": "2026-10-14T16:59:28.9826969Z",
+      "role": "Dated distribution and commercial observations; reviewed local site candidate, not a new observation of the served URL",
+      "retrieved_at": "2026-10-15T22:34:29.227555+00:00",
       "observed_at": null,
-      "raw_sha256": "6b350ccbebf73407928204c54bc0bdbe91f3d0cbda02c3d2b7cedfb7ce215877",
+      "raw_sha256": "3a1d1f85164b89c3a23f2ca519dea259350b218837106c87cfe37cc703be6729",
       "retained_path": "sources/release-projection.json",
-      "retained_sha256": "f6a1e1804123b0c187bae2db1330c35de0b7850a54b3dade3b1503416e04e0f7",
+      "retained_sha256": "c65cc039916ad190f5d8c680bfeadb72bde1134555b35c05578323b392ae880e",
       "export_policy": "reviewed_projection_not_raw_copy",
       "mapping_version": "1.0.0",
       "source_fields": [
@@ -42,7 +43,8 @@
         "commercial"
       ],
       "omissions": "Private references, historical review archives, incidental metadata and unrelated policies are omitted. No absent capability is inferred.",
-      "source_schema_version": "2.0.0"
+      "source_schema_version": "2.0.0",
+      "acquisition_kind": "local_candidate"
     },
     {
       "id": "policy",

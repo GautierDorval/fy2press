@@ -11,7 +11,7 @@ The table below is generated from the reviewed publisher projection. “Delivere
 | --- | --- | --- | --- |
 | Connect one Shopify store | FREE | delivered | Requires a public Storefront token; no multi-store management. |
 | Publish native catalog records | FREE | delivered | Shopify owns commercial data; native records do not mean offline commerce. |
-| Manually synchronize the catalog | FREE | partial | Publisher partial status; discovery, writing and interruption recovery need separate checks. No connected resumption test here. |
+| Manually synchronize the catalog | FREE | partial | Start synchronization manually in FREE. Discovery resumes in batches; interrupted writes do not automatically resume. |
 | Use included catalog templates | FREE | delivered | Verify the actual theme and page context. |
 | Compose with public shortcodes | FREE | delivered | 27 canonical names plus compatibility aliases observed; aliases are not extra features. |
 | Compose with Gutenberg blocks | FREE | delivered | 17 native registrations observed; product and collection contexts differ. |
@@ -21,14 +21,14 @@ The table below is generated from the reviewed publisher projection. “Delivere
 | Run without WooCommerce | FREE | delivered | Shopify and WordPress services remain required. |
 | Control catalog indexing and product URL preference | FREE | partial | Product canonical and taxonomy indexing are different controls; no ranking guarantee. |
 | Retain FREE access when returning from PRO | FREE | partial | Partial scope; verify premium layout fallback and the chosen uninstall option. |
-| Use native Elementor components | PRO | delivered | PRO and a separately licensed builder; exact connected/licensed combination not tested here. |
-| Use native WPBakery components | PRO | delivered | PRO and a separately licensed builder; exact connected/licensed combination not tested here. |
+| Use native Elementor components | PRO | delivered | PRO and a separately licensed Elementor builder; use the native components included in the edition. |
+| Use native WPBakery components | PRO | delivered | PRO and a separately licensed WPBakery builder; use the native components included in the edition. |
 | Use advanced design controls | PRO | delivered | Publisher PRO observation; no licensed PRO runtime test here. |
 | Customize components | PRO | delivered | Publisher PRO observation; validate the selected component and theme. |
 | Adjust device-specific presentation | PRO | delivered | Publisher PRO observation; inspect actual mobile and desktop output. |
 | Maintain multiple templates | PRO | delivered | Publisher PRO observation; document template assignments and downgrade behavior. |
 | Add custom CSS | PRO | delivered | Publisher PRO observation; custom styling needs its own accessibility and mobile checks. |
-| Schedule catalog synchronization | PRO | partial | Active PRO licence and WordPress cron; not instant. Live-store qualification is not established by this reference. |
+| Schedule catalog synchronization | PRO | delivered | Active PRO licence; hourly, twice daily or daily through WP-Cron. WordPress must execute scheduled events; no real-time webhook service. |
 <!-- /generated:claims -->
 
 ## Integration prerequisites

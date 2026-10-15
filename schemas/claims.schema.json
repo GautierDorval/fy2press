@@ -81,7 +81,8 @@
               "state": {
                 "enum": [
                   "NOT_RUN",
-                  "LOCAL_COMPONENT_OBSERVATION"
+                  "LOCAL_COMPONENT_OBSERVATION",
+                  "PUBLISHER_CONFIRMED"
                 ]
               },
               "scope": {

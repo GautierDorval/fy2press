@@ -10,7 +10,7 @@ python -B -m unittest discover -s tests
 python scripts/reference.py export-public --dry-run
 ```
 
-`check` is offline and does not write files. It validates schemas, links, provenance hashes, translation hashes, generated content and the explicit publication list. It also checks the published reference/citation agreement and that Morrowfield’s recorded browser observation and screenshots match the current file bytes. `generate --check` computes expected bytes in memory and compares them without writing. `generate` writes only `artefacts/claims.json`, the edition-table regions and the four EN/FR developer pages.
+`check` is offline and does not write files. It validates schemas, links, provenance hashes, translation hashes, generated content and the explicit publication list. It also checks the edition/citation agreement and historical publication receipts and that Morrowfield’s recorded browser observation and screenshots match the current file bytes. `generate --check` computes expected bytes in memory and compares them without writing. `generate` writes only `artefacts/claims.json`, the edition-table regions and the four EN/FR developer pages.
 
 ## Source updates are separate
 
@@ -52,7 +52,7 @@ The export destination must be new. `check-history` requires an independently in
 
 - `claims.json`: one assertion per publisher capability, preserving edition, implementation state, limits and separate validation.
 - `source-lock.json`: complete raw-byte hash plus the hash of each reviewed projection. A projection is not described as a byte-identical source copy.
-- `release-reference.json`: separate documentation/FREE/PRO identities and provider observations. Its documentation object identifies the latest verified tagged release, not untagged follow-up changes in `CHANGELOG.md`.
+- `release-reference.json`: separate documentation/FREE/PRO identities and provider observations. Its documentation object identifies the edition in this tree. Historical verified releases are recorded separately in `documentary_publications`, which is not a live list of every GitHub release. The version does not prove that its tag has been published; consult the corresponding GitHub release. Publication dates, release IDs and source commits must never be guessed before publication. Citation dates are omitted when this tree contains no verified receipt for the edition. Package observations stay tied to the package actually tested.
 - `translation-map.json`: exact English and French UTF-8 hashes; assisted review remains human-review-pending.
 - `developer-observation.json`: version-specific native registrations and local callback outcomes, not a stable API promise.
 - `examples/morrowfield-observation.json`: a separate, dated standalone-browser observation and screenshot hashes. Editing the HTML or public captures requires a new browser check and visual inspection before recording their hashes; matching hashes alone does not execute those checks.
