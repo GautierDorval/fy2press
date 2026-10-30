@@ -8,6 +8,8 @@ La référence provient de FREE 1.0.0 téléchargé depuis WordPress.org, avec s
 
 Chaque entrée indique source, contexte, défauts, exemple et retour local observé. Les ID WordPress des exemples sont à remplacer. Un contexte absent peut produire une chaîne vide ou un remplacement ; un callback HTML ne prouve ni interaction navigateur réussie ni achat connecté.
 
+La [référence opérationnelle](operational-reference.md) décrit Fy2Press 1.1.0 tel que publié sur WordPress.org : données du catalogue et caches des pages, serveurs mandataires de confiance, thèmes et modèles, désinstallation avec WP-CLI, ainsi que vérifications de disponibilité et de panier. Elle conserve sa propre portée de version.
+
 Seul le [point d’extension explicitement documenté](extension-points.md) est présenté pour l’intégration. Les autres hooks internes détectés et symboles PRO ne deviennent pas des API publiques stables. Cette référence ne demande aucune migration de préfixe.
 
 Pour actualiser : utiliser les [commandes d’extraction et de validation](../../scripts/README.md), vérifier l’identité du paquet et reproduire les observations dynamiques en environnement isolé avant de remplacer l’inventaire conservé.
