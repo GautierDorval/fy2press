@@ -21,13 +21,22 @@
       "reviewed_on": "2026-10-15"
     },
     {
-      "source": "developer/README.md",
-      "source_sha256": "3b97ea6fc688248727d894038783d16a323892071058e6198f704fc2b25792e8",
-      "translation": "fr-ca/developer/README.md",
-      "translation_sha256": "ec6879d1b9f5d20c0642a0da9fd9eb73fc9725999eb750cc342f7418767efd24",
+      "source": "developer/operational-reference.md",
+      "source_sha256": "45c0ac8a27161e21094db0278b54172627230e2fecfafde90dc03a06e17ada48",
+      "translation": "fr-ca/developer/operational-reference.md",
+      "translation_sha256": "b5e1f58fc79bf417c5aeafda93b173e4324f6aa697c85d332328fd9ea10a66e8",
       "review_state": "AI_REVIEWED_HUMAN_PENDING",
-      "reviewer": "Codex",
-      "reviewed_on": "2026-10-15"
+      "reviewer": "Claude",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "source": "developer/README.md",
+      "source_sha256": "dd11254241f0584de0ce34f8cb99aeef869dad4500290abecb838be685fd5c61",
+      "translation": "fr-ca/developer/README.md",
+      "translation_sha256": "8eb32fbec7074a24ee27701239c326f9099787c4787beaf9506e2701d63a8b29",
+      "review_state": "AI_REVIEWED_HUMAN_PENDING",
+      "reviewer": "Claude",
+      "reviewed_on": "2026-10-30"
     },
     {
       "source": "developer/shortcodes.md",

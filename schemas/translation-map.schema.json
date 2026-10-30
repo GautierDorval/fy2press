@@ -33,7 +33,10 @@
             "const": "AI_REVIEWED_HUMAN_PENDING"
           },
           "reviewer": {
-            "const": "Codex"
+            "enum": [
+              "Codex",
+              "Claude"
+            ]
           },
           "reviewed_on": {
             "type": "string",

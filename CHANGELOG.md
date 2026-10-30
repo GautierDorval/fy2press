@@ -1,5 +1,11 @@
 # Documentation changes
 
+## Unreleased
+
+- Add an operational reference for Fy2Press 1.1.0 as published on WordPress.org at SVN revision 3774245: catalog data and page caches, trusted proxies, themes and templates, uninstalling with WP-CLI, and availability and cart checks. The WordPress.org listing links to it for these details. The rest of the reference keeps its FREE 1.0.0 scope.
+
+Ajout d’une référence opérationnelle pour Fy2Press 1.1.0, tel que publié sur WordPress.org à la révision SVN 3774245 : données du catalogue et caches des pages, serveurs mandataires de confiance, thèmes et modèles, désinstallation avec WP-CLI, ainsi que vérifications de disponibilité et de panier. La fiche WordPress.org y renvoie pour ces précisions. Le reste de la référence conserve sa portée FREE 1.0.0.
+
 ## docs-v1.0.0-rc.2
 
 - Recognize the publisher’s October 15 real-store launch confirmation; preserve the separate historical component observations.
